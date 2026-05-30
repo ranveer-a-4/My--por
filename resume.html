@@ -6,24 +6,16 @@
     <title>Resume | Ranveer Amilkanthwar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media (pointer: fine) {
-            html, body, a, button { cursor: none !important; }
-            #mountainCursor { display: block !important; }
-        }
+        body { background: #04080f; color: white; cursor: none; }
         .glass-ui-refractive {
             background: rgba(10, 16, 26, 0.65);
             backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        @keyframes fadeInScale {
-            0% { opacity: 0; transform: translateY(40px) scale(0.95); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .reveal-node { animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        #mountainCursor { display: block; position: fixed; pointer-events: none; z-index: 99; }
     </style>
 </head>
-<body class="bg-[#04080f] text-white min-h-screen p-6 md:p-12 overflow-x-hidden">
+<body class="p-6 md:p-12 overflow-x-hidden">
 
     <div id="mountainCursor" class="fixed top-0 left-0 w-8 h-8 pointer-events-none z-50 hidden -translate-x-[16px] -translate-y-[2px]">
         <svg viewBox="0 0 32 32" fill="none" class="w-full h-full drop-shadow-[0_2px_12px_rgba(90,228,255,0.4)]">
@@ -31,27 +23,20 @@
         </svg>
     </div>
 
-    <div class="fixed inset-0 z-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 bg-black/50"></div>
-    </div>
-
-    <main class="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-8 reveal-node">
-        
+    <main class="max-w-4xl mx-auto flex flex-col items-center gap-8">
         <header class="w-full flex justify-between items-center glass-ui-refractive p-6 rounded-3xl border border-white/10">
-            <a href="index.html" class="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase hover:text-cyan-400 transition-colors">
-                <span>&larr;</span> HOME
-            </a>
-            <h1 class="font-black tracking-[0.3em] uppercase text-xl">RESUME</h1>
-            <button onclick="alert('Navigation Radial Menu Active')" class="font-mono text-[10px] tracking-widest uppercase hover:text-emerald-400 transition-colors">MENU</button>
+            <a href="index.html" class="font-mono text-[10px] tracking-widest uppercase hover:text-cyan-400 transition-colors">&larr; HOME</a>
+            <h1 class="font-black tracking-[0.3em] uppercase">RESUME</h1>
+            <a href="index.html#deck-section" class="font-mono text-[10px] tracking-widest uppercase hover:text-emerald-400 transition-colors">MENU</a>
         </header>
 
-        <section class="w-full">
-            <div class="glass-ui-refractive w-full rounded-3xl p-4 transition-transform hover:scale-[1.01] duration-500 border border-white/10">
-                <img id="domResumeImage" src="https://via.placeholder.com/800x1100?text=Resume+Not+Loaded" alt="Resume" class="w-full h-auto rounded-2xl shadow-2xl">
-            </div>
-        </section>
+        <div class="glass-ui-refractive w-full rounded-3xl p-4 shadow-2xl border border-white/10">
+            <img id="domResumeImage" 
+                 src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80" 
+                 alt="Resume Document" class="w-full h-auto rounded-xl">
+        </div>
 
-        <a id="downloadResumeBtn" href="#" download="Ranveer_Amilkanthwar_Resume.pdf" 
+        <a id="downloadResumeBtn" href="#" download="Ranveer_Resume.pdf" 
            class="glass-ui-refractive px-12 py-4 rounded-full font-bold tracking-widest uppercase text-sm hover:scale-105 hover:bg-white hover:text-black transition-all border border-white/10">
             DOWNLOAD PDF RESUME
         </a>
@@ -64,11 +49,11 @@
         });
 
         window.addEventListener('DOMContentLoaded', () => {
-            // Pulls image from main portal cache to maintain consistency
-            const cache = localStorage.getItem('nomad_cache_scroll_v6');
+            const cache = JSON.parse(localStorage.getItem('nomad_cache_scroll_v6'));
             if (cache) {
-                const state = JSON.parse(cache);
-                if(state.photo) document.getElementById('domResumeImage').src = state.photo;
+                // If you uploaded your own, this replaces the example placeholder
+                if(cache.photo) document.getElementById('domResumeImage').src = cache.photo;
+                if(cache.routes && cache.routes.GitHub) document.getElementById('downloadResumeBtn').href = cache.routes.GitHub;
             }
         });
     </script>
