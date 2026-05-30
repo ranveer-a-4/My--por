@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" data-font="sans" data-lang="en" class="scroll-smooth h-full">
+<html lang="en" data-theme="dark" data-font="sans" data-lang="en" class="scroll-smooth h-full select-none">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +10,16 @@
             theme: {
                 extend: {
                     colors: {
-                        glassBg: 'rgba(255, 255, 255, 0.05)',
-                        glassBorder: 'rgba(255, 255, 255, 0.1)',
-                        panelBg: 'rgba(15, 23, 42, 0.8)'
-                    },
-                    boxShadow: {
-                        iceGlow: '0 8px 32px 0 rgba(31, 38, 135, 0.25)'
+                        glassBg: 'rgba(255, 255, 255, 0.04)',
+                        glassBorder: 'rgba(255, 255, 255, 0.09)',
+                        glassCardBg: 'rgba(15, 23, 42, 0.3)'
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom Mouse Pointer Mask Layer (Hidden on touch screens) */
+        /* Precision Mountain Pointer Configuration */
         @media (pointer: fine) {
             html, body, a, button, input, select {
                 cursor: none !important;
@@ -31,433 +28,511 @@
                 display: block;
             }
         }
-        
-        /* Custom Dynamic Scrollbars */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(11, 17, 30, 0.5);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
 
-        /* Pure Glassmorphism Styling - Removing all Neon */
+        /* Glassmorphism Refractive Filter Engine */
         .glass-panel {
-            background: var(--glassBg, rgba(255, 255, 255, 0.05));
-            border-radius: 12px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glassBorder, rgba(255, 255, 255, 0.1));
-            box-shadow: var(--shadow-iceGlow, 0 8px 32px 0 rgba(31, 38, 135, 0.25));
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px) saturate(120%);
+            -webkit-backdrop-filter: blur(16px) saturate(120%);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
         }
 
-        /* Text Customization Core */
-        .custom-text {
-            color: var(--dynamicText, #f1f5f9);
-            font-family: var(--dynamicFont, ui-sans-serif, system-ui, sans-serif);
+        .glass-card {
+            background: rgba(15, 23, 42, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.02), 0 12px 24px rgba(0,0,0,0.3);
         }
 
-        /* Cursor Customization */
-        html[data-cursor-mountain="true"] {
-            cursor: none;
-        }
-        @media (pointer: fine) {
-            #mountainCursor {
-                display: block;
-            }
-        }
+        /* Typography Configuration Matrices */
+        html[data-font="sans"] { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
+        html[data-font="serif"] { font-family: Georgia, Cambria, serif; }
+        html[data-font="mono"] { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+        /* Multilingual State Layer Filters */
+        [data-translation] { display: none; }
+        html[data-lang="en"] [data-translation="en"] { display: inline; }
+        html[data-lang="fr"] [data-translation="fr"] { display: inline; }
+        html[data-lang="es"] [data-translation="es"] { display: inline; }
+        html[data-lang="ar"] [data-translation="ar"] { display: inline; }
+        html[data-lang="zh"] [data-translation="zh"] { display: inline; }
+        html[data-lang="hi"] [data-translation="hi"] { display: inline; }
+
+        /* Smooth Hide/Reveal Core Classes */
+        .hidden-system { display: none !important; }
     </style>
 </head>
-<body class="text-slate-100 min-h-screen relative overflow-x-hidden antialiased">
+<body class="text-slate-100 min-h-screen relative overflow-x-hidden antialiased bg-[#070b12]">
 
-    <div id="mountainCursor" class="fixed w-8 h-8 pointer-events-none z-50 hidden transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-[0%]">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
-            <polygon points="16,2 30,28 2,28" fill="rgba(15, 23, 42, 0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linejoin="round"/>
-            <polygon points="16,2 22,14 17,12 14,15 11,11" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+    <div id="mountainCursor" class="fixed w-8 h-8 pointer-events-none z-50 hidden -translate-x-1/2 transition-transform duration-75 ease-out">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)]">
+            <polygon points="16,2 30,28 2,28" fill="rgba(11, 16, 27, 0.5)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon points="16,2 22,14 17,12 14,15 11,11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
         </svg>
     </div>
 
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <video autoplay loop muted playsinline class="w-full h-full object-cover scale-100 filter blur-[1px]">
+        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-black/20 z-10"></div>
+        <video id="bgVideoAsset" autoplay loop muted playsinline class="w-full h-full object-cover">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-snowy-mountain-peaks-under-a-blue-sky-42998-large.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <div class="absolute inset-0 z-20 backdrop-blur-[2px]"></div>
     </div>
 
-    <header class="fixed top-0 left-0 w-full z-40 px-6 h-20 flex items-center justify-between pointer-events-none">
-        <div class="relative pointer-events-auto" id="backpackContainer">
-            <button id="backpackBtn" class="w-14 h-14 glass-panel flex items-center justify-center shadow-iceGlow transition-all duration-300 transform active:scale-95 group">
-                <svg id="backpackIcon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 transition-all duration-500 group-hover:stroke-white">
-                    <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
-                    <path d="M9 6V4a3 3 0 0 1 6 0v2" id="backpackTop"/>
-                    <path d="M8 12h8v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4z" fill="rgba(255,255,255,0.1)"/>
-                </svg>
-            </button>
-            
-            <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[350px] h-[350px]">
-                <a href="#resume" class="menu-item absolute opacity-0 scale-75 glass-panel text-xs font-mono font-bold tracking-wider px-3 py-2 text-white/70 shadow-iceGlow hover:bg-white hover:text-black transition-all duration-300">RESUME</a>
-                <a href="#background" class="menu-item absolute opacity-0 scale-75 glass-panel text-xs font-mono font-bold tracking-wider px-3 py-2 text-white/70 shadow-iceGlow hover:bg-white hover:text-black transition-all duration-300">BACKGROUND</a>
-                <a href="#projects" class="menu-item absolute opacity-0 scale-75 glass-panel text-xs font-mono font-bold tracking-wider px-3 py-2 text-white/70 shadow-iceGlow hover:bg-white hover:text-black transition-all duration-300">PROJECTS</a>
-                <a href="#winnings" class="menu-item absolute opacity-0 scale-75 glass-panel text-xs font-mono font-bold tracking-wider px-3 py-2 text-white/70 shadow-iceGlow hover:bg-white hover:text-black transition-all duration-300">WINNINGS</a>
-                <a href="#contact" class="menu-item absolute opacity-0 scale-75 glass-panel text-xs font-mono font-bold tracking-wider px-3 py-2 text-white/70 shadow-iceGlow hover:bg-white hover:text-black transition-all duration-300">CONTACT</a>
-                <a href="#" id="adminPortalLink" class="menu-item absolute opacity-0 scale-75 glass-panel text-xs font-mono font-bold tracking-wider px-3 py-2 text-white hover:bg-white hover:text-black transition-all duration-300">ADMIN PORTAL</a>
-            </div>
-        </div>
-
-        <div class="pointer-events-auto glass-panel p-3 font-mono text-xs text-right shadow-iceGlow flex items-center gap-4">
-            <div class="space-y-1">
-                <div class="text-white font-bold" id="liveTime">00:00:00 AM</div>
-                <div class="text-slate-300 mt-0.5" id="liveDate">MAY 30, 2026</div>
-                <div class="text-[10px] text-white/60 tracking-widest mt-1 uppercase" id="currentCoord">ALT: 2,840m</div>
-            </div>
-            
-            <div class="relative">
-                <select onchange="setLang(this.value)" class="w-16 bg-transparent border border-glassBorder p-1.5 rounded-md text-[10px] text-white focus:border-white outline-none">
-                    <option value="en">EN</option>
-                    <option value="fr">FR</option>
-                    <option value="es">ES</option>
-                    <option value="ar">AR</option>
-                    <option value="zh">ZH</option>
-                    <option value="hi">HI</option>
-                    </select>
-            </div>
-        </div>
-    </header>
-
-    <div id="adminModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
-        <div class="glass-panel w-full max-w-sm overflow-hidden shadow-iceGlow transform scale-95 transition-transform duration-300 relative">
-            <div class="p-6 font-mono text-xs space-y-4 text-center">
-                <div class="flex justify-between items-center mb-4 border-b border-glassBorder pb-3">
-                    <h3 class="font-bold text-white tracking-widest uppercase">ADMIN LOGIN</h3>
-                    <button onclick="closeAdminModal()" class="text-white text-lg font-bold hover:scale-110 transition-transform">&times;</button>
-                </div>
-                <input type="text" id="adminUser" placeholder="USERNAME" class="w-full bg-glassBg border border-glassBorder p-2.5 rounded-lg text-white focus:border-white outline-none">
-                <input type="password" id="adminPass" placeholder="PASSWORD" class="w-full bg-glassBg border border-glassBorder p-2.5 rounded-lg text-white focus:border-white outline-none">
-                <button onclick="triggerAdminLogin()" class="w-full bg-white text-black font-bold py-3 rounded-lg hover:scale-[1.02] transition-transform uppercase tracking-wider">LOGIN TO PORTAL</button>
-            </div>
-        </div>
-    </div>
-
-    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-32 flex flex-col items-center">
+    <div class="relative z-10 min-h-screen flex flex-col justify-between p-6">
         
-        <section class="w-full flex flex-col md:flex-row items-center gap-12 justify-center py-8">
+        <header class="w-full flex justify-between items-start z-30 pointer-events-none">
             
-            <div class="relative group">
-                <div class="absolute -inset-1.5 bg-gradient-to-r from-white/10 to-white/30 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-                <div class="relative w-64 h-64 glass-panel backdrop-blur-md overflow-hidden flex flex-col justify-between p-2 shadow-iceGlow">
-                    <img id="profileImage" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Ranveer" class="w-full h-48 object-cover rounded-xl border border-white/10">
-                    <div class="w-full bg-black/40 border border-white/20 text-[10px] tracking-widest text-white/70 font-mono py-1.5 rounded-lg transition-colors mt-2 text-center group-hover:bg-white/20">
-                        <span data-translation="en">UPLOAD FROM PHONE</span>
-                        <span data-translation="hi">फ़ोन से अपलोड करें</span>
+            <div class="relative pointer-events-auto" id="backpackContainer">
+                <button id="backpackBtn" class="w-14 h-14 glass-panel rounded-2xl flex items-center justify-center group transition-all duration-300 hover:bg-white/5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.75" class="w-7 h-7 transition-all duration-500 group-hover:stroke-white">
+                        <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+                        <path d="M9 6V4a3 3 0 0 1 6 0v2" id="backpackTop"/>
+                        <path d="M8 12h8v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4z" fill="rgba(255,255,255,0.05)"/>
+                    </svg>
+                </button>
+                
+                <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[300px] h-[300px]">
+                    <a href="#resume" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">RESUME MATRIX</a>
+                    <a href="#background" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">ORIGINS MAP</a>
+                    <a href="#projects" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">PROJECT SECTORS</a>
+                    <a href="#winnings" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">ACHIEVEMENTS HUB</a>
+                    <a href="#contact" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">COMM TERMINAL</a>
+                    <button onclick="openAdminModal()" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-emerald-400 border-emerald-500/30 hover:bg-emerald-500 hover:text-black transition-all">PORTAL GATE</button>
+                </div>
+            </div>
+
+            <div class="pointer-events-auto glass-panel px-16 h-14 flex items-center justify-center rounded-2xl">
+                <span id="domBrandLogoText" class="text-xl font-bold tracking-[0.25em] text-white/90 uppercase">RANVEER</span>
+            </div>
+
+            <div class="pointer-events-auto flex gap-3 z-30">
+                <div class="glass-panel p-3 font-mono text-[11px] text-right space-y-0.5 min-w-[160px]">
+                    <div class="text-white/90 font-bold flex justify-between"><span class="opacity-40">TIME:</span> <span id="liveTime">00:00:00 PM</span></div>
+                    <div class="text-white/60 flex justify-between"><span class="opacity-40">DATE:</span> <span id="liveDate">00-00.2026</span></div>
+                    <div class="text-white/40 text-[9px] tracking-wider pt-1 border-t border-white/5 flex justify-between"><span>ALT: 113.79M'km</span><span id="pointerTelemetry">X:0 Y:0</span></div>
+                </div>
+
+                <div class="glass-panel w-12 h-11 flex items-center justify-center rounded-xl relative">
+                    <select onchange="setLang(this.value)" id="langDropdownSelect" class="absolute inset-0 opacity-0 cursor-none z-10">
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                        <option value="es">ES</option>
+                        <option value="ar">AR</option>
+                        <option value="zh">ZH</option>
+                        <option value="hi">HI</option>
+                    </select>
+                    <span class="text-sm">🌐</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="authModalFrame" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-all duration-300">
+            <div class="glass-card w-80 p-6 rounded-2xl font-mono text-xs space-y-4 border border-white/10">
+                <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                    <span class="text-white/80 font-bold tracking-widest">ADMIN PORTAL LOGIN</span>
+                    <button onclick="closeAdminModal()" class="text-white/40 hover:text-white text-base">&times;</button>
+                </div>
+                <div class="space-y-3">
+                    <input type="text" id="secUserIn" placeholder="USER SIGNATURE" class="w-full bg-black/30 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-white/30">
+                    <input type="password" id="secPassIn" placeholder="SECURITY KEY" class="w-full bg-black/30 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-white/30">
+                </div>
+                <button onclick="executePortalAuthorization()" class="w-full bg-white/10 hover:bg-white text-white hover:text-black font-bold py-2.5 rounded-lg transition-all border border-white/10">CONNECT STREAM</button>
+            </div>
+        </div>
+
+        <div id="adminPanelSuite" class="fixed inset-y-6 right-6 w-[380px] bg-slate-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl z-50 p-5 font-mono text-xs text-slate-300 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-[420px]">
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <span class="text-emerald-400 font-bold tracking-widest">⚙️ CORE CONTROL STATION</span>
+                <button onclick="closeAdminSuite()" class="text-rose-400 text-sm font-bold">[ CLOSE ]</button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto my-4 pr-1 space-y-4 text-[11px]">
+                <div>
+                    <label class="block text-white/50 mb-1">BRAND IDENTITY OVERRIDE</label>
+                    <input type="text" id="admInpBrand" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-white/50 mb-1">HEADER HERO TITLE text</label>
+                    <input type="text" id="admInpHero" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-white/50 mb-1">DESCRIPTION LOG SUMMARY</label>
+                    <textarea id="admInpDesc" rows="3" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea>
+                </div>
+                <div>
+                    <label class="block text-white/50 mb-1">PROFILE PHOTO FILE SOURCE (PHONE FILE / URL)</label>
+                    <input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/60 mb-2">
+                    <input type="text" id="admInpPhoto" placeholder="Or paste web link directly" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-white/50 mb-1">BACKGROUND LOOPER STREAM SOURCE URL</label>
+                    <input type="text" id="admInpBgVideo" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+                <div class="border-t border-white/5 pt-3">
+                    <span class="text-white/40 uppercase block mb-2">Card Node Mappings (Single Terms)</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" id="admCard1" placeholder="Card 1" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard2" placeholder="Card 2" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard3" placeholder="Card 3" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard4" placeholder="Card 4" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard5" placeholder="Card 5" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-white/50 mb-1">FONT FAMILY ENGINE</label>
+                    <select id="admInpFont" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
+                        <option value="sans">Clean System Sans</option>
+                        <option value="serif">Classic Serif Grid</option>
+                        <option value="mono">Data Monospace Screen</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-white/50 mb-1">TEXT HUE COLOR</label>
+                        <input type="color" id="admInpColorText" class="w-full h-8 bg-transparent border-0 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-white/50 mb-1">CARD COLOR MIX</label>
+                        <input type="color" id="admInpColorCard" class="w-full h-8 bg-transparent border-0 outline-none">
                     </div>
                 </div>
             </div>
 
-            <div class="flex-1 glass-panel p-8 max-w-2xl relative shadow-iceGlow">
-                <div class="absolute top-4 right-4 flex gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-white/10"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-white/60"></span>
+            <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE SYSTEM REVISIONS</button>
+        </div>
+
+        <section class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-auto z-10">
+            
+            <div class="lg:col-span-4 h-64 glass-card rounded-2xl p-4 flex flex-col justify-between overflow-hidden relative group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/[0.01] pointer-events-none rounded-bl-full border-b border-l border-white/5"></div>
+                <div class="text-[10px] font-mono opacity-40 tracking-widest flex justify-between"><span>LOG ENTRIES: 124</span><span>FLIGHT_STREAM</span></div>
+                <svg viewBox="0 0 400 200" class="w-full h-36 stroke-white/20 fill-none mt-2 opacity-60">
+                    <path d="M20,100 C100,20 200,180 300,50 L380,120" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="4"/>
+                    <circle cx="300" cy="50" r="3" fill="#ffffff"/>
+                </svg>
+                <div class="text-[9px] font-mono opacity-30 mt-1 uppercase tracking-wider">Active satellite track mapped globally.</div>
+            </div>
+
+            <div class="lg:col-span-4 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-white/10 to-transparent rounded-3xl blur opacity-20"></div>
+                    <div class="relative w-64 h-64 glass-panel p-2.5 rounded-3xl flex flex-col items-center justify-center shadow-2xl">
+                        <div class="w-full h-full rounded-2xl overflow-hidden relative border border-white/5">
+                            <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 glass-card rounded-2xl p-6 relative flex flex-col justify-between min-h-[240px]">
+                <div class="absolute top-4 right-4 flex gap-1.5 opacity-30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
                 </div>
                 
-                <span class="text-white/60 font-mono text-xs tracking-[0.3em] uppercase block mb-2">EXPEDITION LOG // PORTFOLIO ENGINE</span>
-                <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4 custom-text">
-                    <span data-translation="en">RANVEER RAJESH</span>
-                    <span data-translation="hi">रणवीर राजेश</span>
-                </h1>
-                
-                <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-6 opacity-95 font-medium drop-shadow-sm custom-text">
-                    <span data-translation="en">Traversing high-fidelity code architectures and cinematic terrain mockups. All text, colors, positions, and images on this home page are customized via the secure Admin Portal.</span>
-                    <span data-translation="hi">हाई-फिडेलिटी कोड आर्किटेक्चर और सिनेमाई इलाके के मॉकअप को पार करना। इस होम पेज पर सभी टेक्स्ट, रंग, स्थितियां और छवियां सुरक्षित एडमिन पोर्टल के माध्यम से कस्टमाइज़ की गई हैं।</span>
-                </p>
+                <div class="space-y-3">
+                    <h2 id="domHeroHeading" class="text-3xl font-black tracking-tight text-white/90 leading-tight uppercase">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
+                    <p id="domDescriptionPara" class="text-white/70 text-xs leading-relaxed font-medium">Architecting functional web landscapes without heavy runtime pipelines. Open the secure admin console interface within the navigation backpack configuration menu options to instantly alter variable layouts.</p>
+                </div>
 
-                <div class="border-t border-white/10 pt-4 mt-4 font-mono">
-                    <span class="text-[10px] text-white/60 tracking-widest block mb-1">ROUTE TELEMETRY INSIGHT // DAILY RECORD</span>
-                    <p id="dailyThought" class="text-xs text-slate-300 italic drop-shadow-sm custom-text">Extracting global insight cache...</p>
+                <div class="border-t border-white/5 pt-3 mt-3 font-mono text-[10px]">
+                    <span class="opacity-40 uppercase block mb-0.5">DYNAMIC ROTATIONAL TELEMETRY LOG</span>
+                    <p id="domDailyThought" class="text-white/50 italic font-light">"The mountain dictates the path, the developer shapes the view."</p>
                 </div>
             </div>
         </section>
 
-        <section class="w-full py-16">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div onclick="triggerAnchorAction('#resume')" class="glass-panel p-6 transform hover:-translate-y-2 hover:border-white transition-all duration-300 cursor-none relative overflow-hidden shadow-iceGlow group">
-                    <div class="text-xs font-mono text-white/60 mb-2 tracking-widest">MODULE // 01</div>
-                    <h3 class="text-xl font-bold text-white mb-2 tracking-wide custom-text">
-                        <span data-translation="en">RESUME MATRIX</span>
-                        <span data-translation="hi">बायोडाटा मैट्रिक्स</span>
-                    </h3>
-                    <p class="text-xs text-slate-300 leading-relaxed custom-text">
-                        <span data-translation="en">Deconstruct academic files, technical skill sets, and production logs instantly.</span>
-                        <span data-translation="hi">शैक्षणिक फ़ाइलों, तकनीकी कौशल सेट और उत्पादन लॉग को तुरंत डिकंस्ट्रक्ट करें।</span>
-                    </p>
+        <footer class="w-full space-y-6 z-10 pt-4">
+            
+            <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div onclick="triggerAnchorAction('#resume')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
+                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📄</div>
+                    <span id="domTxtCard1" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">RESUME</span>
                 </div>
-
-                <div onclick="triggerAnchorAction('#background')" class="glass-panel p-6 transform hover:-translate-y-2 hover:border-white transition-all duration-300 cursor-none relative overflow-hidden shadow-iceGlow group">
-                    <div class="text-xs font-mono text-white/60 mb-2 tracking-widest">MODULE // 02</div>
-                    <h3 class="text-xl font-bold text-white mb-2 tracking-wide custom-text">
-                        <span data-translation="en">ORIGINS MAP</span>
-                        <span data-translation="hi">मूल उत्पत्ति मानचित्र</span>
-                    </h3>
-                    <p class="text-xs text-slate-300 leading-relaxed custom-text">
-                        <span data-translation="en">Analyze architectural preferences, personal milestones, design schemas, and creative history records.</span>
-                        <span data-translation="hi">वास्तुशिल्प प्राथमिकताओं, व्यक्तिगत मील के पत्थर, डिज़ाइन स्कीमा और रचनात्मक इतिहास रिकॉर्ड का विश्लेषण करें।</span>
-                    </p>
+                <div onclick="triggerAnchorAction('#background')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
+                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📍</div>
+                    <span id="domTxtCard2" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">ORIGINS</span>
                 </div>
-
-                <div onclick="triggerAnchorAction('#projects')" class="glass-panel p-6 transform hover:-translate-y-2 hover:border-white transition-all duration-300 cursor-none relative overflow-hidden shadow-iceGlow group">
-                    <div class="text-xs font-mono text-white/60 mb-2 tracking-widest">MODULE // 03</div>
-                    <h3 class="text-xl font-bold text-white mb-2 tracking-wide custom-text">
-                        <span data-translation="en">PROJECT SECTORS</span>
-                        <span data-translation="hi">परियोजना क्षेत्र</span>
-                    </h3>
-                    <p class="text-xs text-slate-300 leading-relaxed custom-text">
-                        <span data-translation="en">Examine production software assets, live production targets, script modules, and open repo structures.</span>
-                        <span data-translation="hi">उत्पादन सॉफ़्टवेयर परिसंपत्तियों, लाइव उत्पादन लक्ष्यों, स्क्रिप्ट मॉड्यूल और ओपन रेपो संरचनाओं की जांच करें।</span>
-                    </p>
+                <div onclick="triggerAnchorAction('#projects')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
+                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📦</div>
+                    <span id="domTxtCard3" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">PROJECTS</span>
                 </div>
-
-                <div onclick="triggerAnchorAction('#winnings')" class="glass-panel p-6 transform hover:-translate-y-2 hover:border-white transition-all duration-300 cursor-none relative overflow-hidden shadow-iceGlow group">
-                    <div class="text-xs font-mono text-white/60 mb-2 tracking-widest">MODULE // 04</div>
-                    <h3 class="text-xl font-bold text-white mb-2 tracking-wide custom-text">
-                        <span data-translation="en">ACHIEVEMENTS HUB</span>
-                        <span data-translation="hi">उपलब्धियां हब</span>
-                    </h3>
-                    <p class="text-xs text-slate-300 leading-relaxed custom-text">
-                        <span data-translation="en">Review competitive hackathon placements, engineering medals, security achievements, and peer commendations.</span>
-                        <span data-translation="hi">प्रतिस्पर्धी हैकाथॉन प्लेसमेंट, इंजीनियरिंग पदक, सुरक्षा उपलब्धियों और सहकर्मी प्रशंसा की समीक्षा करें।</span>
-                    </p>
+                <div onclick="triggerAnchorAction('#winnings')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
+                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">🏆</div>
+                    <span id="domTxtCard4" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">WINNINGS</span>
                 </div>
-
-                <div onclick="triggerAnchorAction('#contact')" class="glass-panel p-6 transform hover:-translate-y-2 hover:border-white transition-all duration-300 cursor-none relative overflow-hidden shadow-iceGlow group">
-                    <div class="text-xs font-mono text-white/60 mb-2 tracking-widest">MODULE // 05</div>
-                    <h3 class="text-xl font-bold text-white mb-2 tracking-wide custom-text">
-                        <span data-translation="en">COMM TERMINAL</span>
-                        <span data-translation="hi">संचार टर्मिनल</span>
-                    </h3>
-                    <p class="text-xs text-slate-300 leading-relaxed custom-text">
-                        <span data-translation="en">Establish active messaging handshakes, encryption pipeline keys, or execute direct scheduling.</span>
-                        <span data-translation="hi">सक्रिय मैसेजिंग हैंडशेक, एन्क्रिप्शन पाइपलाइन कुंजियां स्थापित करें, या प्रत्यक्ष शेड्यूलिंग निष्पादित करें।</span>
-                    </p>
+                <div onclick="triggerAnchorAction('#contact')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
+                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📞</div>
+                    <span id="domTxtCard5" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">CONTACT</span>
                 </div>
-
             </div>
-        </section>
-    </main>
 
-    <div id="portalModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
-        <div class="glass-panel w-full max-w-lg overflow-hidden shadow-iceGlow transform scale-95 transition-transform duration-300 relative">
-            <div class="bg-black/50 border-b border-glassBorder p-4 flex justify-between items-center font-mono">
-                <span id="modalTitle" class="text-xs text-white tracking-widest uppercase">ROUTING CONNECTION STREAM</span>
-                <button onclick="closePortalModal()" class="text-white text-lg font-bold hover:scale-110 transition-transform">&times;</button>
+            <div class="max-w-2xl mx-auto glass-panel h-16 rounded-2xl flex items-center justify-around px-6 shadow-xl border border-white/10">
+                <button onclick="fireModalUrlStream('Instagram', 'https://instagram.com')" class="group p-2 transform hover:scale-115 transition-transform">
+                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </button>
+                <button onclick="fireModalUrlStream('Facebook', 'https://facebook.com')" class="group p-2 transform hover:scale-115 transition-transform">
+                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </button>
+                <button onclick="fireModalUrlStream('LinkedIn', 'https://linkedin.com')" class="group p-2 transform hover:scale-115 transition-transform">
+                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </button>
+                <button onclick="fireModalUrlStream('GitHub', 'https://github.com')" class="group p-2 transform hover:scale-115 transition-transform">
+                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </button>
+                <button onclick="fireModalUrlStream('Reddit', 'https://reddit.com')" class="group p-2 transform hover:scale-115 transition-transform">
+                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.64-6.24-1.72l1.37-4.31 3.71.82c.03.88.76 1.58 1.65 1.58 1.1 0 2-1 2-2s-1-2-2-2c-.84 0-1.54.52-1.82 1.24l-4.12-.91c-.23-.05-.47.09-.54.31l-1.6 5c-2.45.04-4.7.67-6.38 1.69-.53-.73-1.41-1.19-2.39-1.19-1.65 0-3 1.35-3 3 0 1 .5 1.9 1.23 2.47-.03.21-.05.43-.05.66 0 3.86 4.48 7 10 7s10-3.14 10-7c0-.23-.02-.45-.05-.66.78-.57 1.28-1.47 1.28-2.47zM6.5 14c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm11 2.5c-1.79 1.79-5.17 1.79-6.96 0-.2-.2-.2-.51 0-.71.2-.2.51-.2.71 0 1.41 1.41 4.13 1.41 5.54 0 .2-.2.51-.2.71 0 .19.2.19.51.01.71zm-.5-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <div id="portalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
+        <div class="glass-card w-full max-w-md overflow-hidden rounded-2xl border border-white/10 transform scale-95 transition-all duration-300 relative">
+            <div class="bg-white/5 border-b border-white/10 p-4 flex justify-between items-center font-mono text-[11px]">
+                <span id="modalTitle" class="text-white font-bold tracking-widest">STREAM HANDSHAKE INITIALIZED</span>
+                <button onclick="closePortalModal()" class="text-white/50 hover:text-white text-lg font-bold">&times;</button>
             </div>
             <div class="p-6 font-mono text-xs space-y-4">
-                <div class="p-3 bg-black/40 rounded border border-white/10 text-slate-300 leading-relaxed">
-                    Connecting to external stream node... Authentication state resolved. You can change target routes via the secure Admin Portal configuration.
-                </div>
-                <div class="flex gap-4 pt-2">
-                    <a id="modalActionLink" href="#" target="_blank" class="flex-1 bg-white hover:bg-slate-200 text-black text-center font-bold py-3 rounded-lg transition-colors uppercase tracking-wider">Execute Link Routing</a>
-                    <button onclick="closePortalModal()" class="border border-white/10 text-slate-400 hover:border-red-500 px-4 rounded-lg transition-colors">ABORT</button>
+                <p class="text-slate-300 leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5">Dynamic configuration route validation handshake check complete. Route targeting executed securely via container profile logs.</p>
+                <div class="flex gap-4">
+                    <a id="modalActionLink" href="#" target="_blank" class="flex-1 bg-white text-black text-center font-bold py-3 rounded-xl hover:bg-slate-200 transition-colors uppercase tracking-wider">PROCEED TO STREAM</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="w-full relative z-10 pt-12 pb-8 border-t border-white/5 px-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-        <div class="max-w-6xl mx-auto flex flex-col items-center gap-8">
-            
-            <div class="glass-panel px-6 py-4 flex flex-wrap justify-center gap-6 shadow-iceGlow">
-                <button onclick="openSocialPortal('Instagram', 'https://instagram.com')" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:border-white hover:shadow-iceGlow transition-all group">
-                    <svg class="w-6 h-6 fill-slate-400 group-hover:fill-white transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                </button>
-                <button onclick="openSocialPortal('Facebook', 'https://facebook.com')" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:border-white hover:shadow-iceGlow transition-all group">
-                    <svg class="w-6 h-6 fill-slate-400 group-hover:fill-white transition-colors" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                </button>
-                <button onclick="openSocialPortal('LinkedIn', 'https://linkedin.com')" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:border-white hover:shadow-iceGlow transition-all group">
-                    <svg class="w-6 h-6 fill-slate-400 group-hover:fill-white transition-colors" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </button>
-                <button onclick="openSocialPortal('GitHub', 'https://github.com')" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:border-white hover:shadow-iceGlow transition-all group">
-                    <svg class="w-6 h-6 fill-slate-400 group-hover:fill-white transition-colors" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                </button>
-                <button onclick="openSocialPortal('Reddit', 'https://reddit.com')" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:border-white hover:shadow-iceGlow transition-all group">
-                    <svg class="w-6 h-6 fill-slate-400 group-hover:fill-white transition-colors" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.64-6.24-1.72l1.37-4.31 3.71.82c.03.88.76 1.58 1.65 1.58 1.1 0 2-1 2-2s-1-2-2-2c-.84 0-1.54.52-1.82 1.24l-4.12-.91c-.23-.05-.47.09-.54.31l-1.6 5c-2.45.04-4.7.67-6.38 1.69-.53-.73-1.41-1.19-2.39-1.19-1.65 0-3 1.35-3 3 0 1 .5 1.9 1.23 2.47-.03.21-.05.43-.05.66 0 3.86 4.48 7 10 7s10-3.14 10-7c0-.23-.02-.45-.05-.66.78-.57 1.28-1.47 1.28-2.47zM6.5 14c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm11 2.5c-1.79 1.79-5.17 1.79-6.96 0-.2-.2-.2-.51 0-.71.2-.2.51-.2.71 0 1.41 1.41 4.13 1.41 5.54 0 .2-.2.51-.2.71 0 .19.2.19.51.01.71zm-.5-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                </button>
-                <button onclick="openSocialPortal('YouTube', 'https://youtube.com')" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:scale-110 hover:border-white hover:shadow-iceGlow transition-all group">
-                    <svg class="w-6 h-6 fill-slate-400 group-hover:fill-white transition-colors" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.108C19.52 3.545 12 3.545 12 3.545s-7.52 0-9.388.51a3.004 3.004 0 00-2.11 2.108C0 8.03 0 12 0 12s0 3.97.512 5.837a3.004 3.004 0 002.11 2.108c1.868.51 9.388.51 9.388.51s7.52 0 9.388-.51a3.004 3.004 0 002.11-2.108C24 15.97 24 12 24 12s0-3.97-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </button>
-            </div>
-            
-            <div class="text-center font-mono text-[10px] text-slate-500 tracking-[0.4em] uppercase">
-                ENGINE OPERATIONAL CONFIGURATION FRAMEWORK // RANVEER • 2026
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // 1. MOUSE TELEMETRY MATRIX - Custom Cursor peak resolution
-        const pointerNode = document.getElementById('mountainCursor');
+        // 1. PRECISION MOUSE MOVEMENT CAPTURE
+        const cursorInstance = document.getElementById('mountainCursor');
         window.addEventListener('mousemove', (e) => {
-            pointerNode.style.left = `${e.clientX}px`;
-            pointerNode.style.top = `${e.clientY}px`;
-            document.getElementById('currentCoord').innerText = `X: ${e.clientX} // Y: ${e.clientY}`;
+            cursorInstance.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            document.getElementById('pointerTelemetry').innerText = `X:${e.clientX} Y:${e.clientY}`;
         });
 
-        // 2. BACKPACK ARC NAVIGATOR ENGINE - Toggles Admin Portal Option
+        // 2. BACKPACK ARC NAV CONTROLLER 
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
         const menuItems = document.querySelectorAll('.menu-item');
-        const adminPortalLink = document.getElementById('adminPortalLink');
-        let isMenuDeployed = false;
+        let isMenuOpen = false;
 
         backpackBtn.addEventListener('click', () => {
-            isMenuDeployed = !isMenuDeployed;
-            
-            if (isMenuDeployed) {
-                backpackBtn.classList.add('border-white', 'shadow-iceGlow');
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
                 backpackTop.setAttribute('d', 'M7 6V3a2 2 0 0 1 4 0v3m2 0V2a2 2 0 0 1 4 0v4'); 
                 arcMenu.classList.remove('pointer-events-none');
                 
-                // Polar to Cartesian coordinate map distribution matrix
-                const radialReach = 145; 
-                const offsetAngle = 0; 
-                const completeSector = 90; 
-                const stepIncrement = completeSector / (menuItems.length - 1);
-
-                menuItems.forEach((element, idx) => {
-                    const currentAngleRad = ((offsetAngle + (idx * stepIncrement)) * Math.PI) / 180;
-                    const computedX = Math.round(radialReach * Math.sin(currentAngleRad));
-                    const computedY = Math.round(radialReach * Math.cos(currentAngleRad));
-
-                    element.style.transform = `translate(${computedX}px, ${computedY}px) scale(1)`;
-                    element.style.opacity = '1';
-                });
+                const distance = 130; 
+                const totalItems = menuItems.length;
                 
-                // Show Admin Portal Link
-                adminPortalLink.style.opacity = '1';
-                adminPortalLink.style.transform = 'translate(145px, 0px) scale(1)';
-
+                menuItems.forEach((item, index) => {
+                    const angle = (index * (90 / (totalItems - 1))) * (Math.PI / 180);
+                    const x = Math.round(distance * Math.sin(angle));
+                    const y = Math.round(distance * Math.cos(angle));
+                    item.style.transform = `translate3d(${x}px, ${y}px, 0) scale(1)`;
+                    item.style.opacity = '1';
+                });
             } else {
-                backpackBtn.classList.remove('border-white', 'shadow-iceGlow');
                 backpackTop.setAttribute('d', 'M9 6V4a3 3 0 0 1 6 0v2');
                 arcMenu.classList.add('pointer-events-none');
-
-                menuItems.forEach((element) => {
-                    element.style.transform = `translate(0px, 0px) scale(0.75)`;
-                    element.style.opacity = '0';
+                menuItems.forEach(item => {
+                    item.style.transform = `translate3d(0px, 0px, 0) scale(0.75)`;
+                    item.style.opacity = '0';
                 });
-                
-                // Hide Admin Portal Link
-                adminPortalLink.style.opacity = '0';
-                adminPortalLink.style.transform = 'translate(0px, 0px) scale(0.75)';
             }
         });
 
-        // 3. ADMIN PORTAL ACCESS PIPELINE
-        const adminModal = document.getElementById('adminModal');
-        const adminUser = document.getElementById('adminUser');
-        const adminPass = document.getElementById('adminPass');
+        // 3. SECURE AUTH VALIDATION MECHANISMS
+        const authModalFrame = document.getElementById('authModalFrame');
+        const adminPanelSuite = document.getElementById('adminPanelSuite');
 
-        // Launch Admin Portal via Backpack Option
-        adminPortalLink.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent standard link routing
-            adminModal.classList.remove('hidden');
-            setTimeout(() => {
-                adminModal.classList.remove('opacity-0');
-                adminModal.firstElementChild.classList.remove('scale-95');
-            }, 50);
-        });
-
+        function openAdminModal() {
+            authModalFrame.classList.remove('hidden');
+            setTimeout(() => { authModalFrame.classList.remove('opacity-0'); }, 50);
+        }
         function closeAdminModal() {
-            adminModal.classList.add('opacity-0');
-            adminModal.firstElementChild.classList.add('scale-95');
-            setTimeout(() => adminModal.classList.add('hidden'), 300);
+            authModalFrame.classList.add('opacity-0');
+            setTimeout(() => { authModalFrame.classList.add('hidden'); }, 300);
+        }
+        function closeAdminSuite() {
+            adminPanelSuite.classList.add('translate-x-[420px]');
         }
 
-        function triggerAdminLogin() {
-            const userToken = adminUser.value;
-            const passToken = adminPass.value;
-            
-            // SECURITY CHECK - Hypothetical Validation
-            if (userToken === "ADMIN" && passToken === "Ranveer@2026") {
-                alert("ERR // ADMIN PORTAL FRAMEWORK DEPLOYED SUCCESSFULLY. Authorization resolved.");
-                // Redirect or execute Admin Portal Logic here
+        function executePortalAuthorization() {
+            const u = document.getElementById('secUserIn').value;
+            const p = document.getElementById('secPassIn').value;
+
+            if (u === "1245678912" && p === "1245678912") {
                 closeAdminModal();
+                populateAdminFields();
+                adminPanelSuite.classList.remove('translate-x-[420px]');
             } else {
-                alert("ERR // ACCESS REJECTED. Security payload signature validation breakdown.");
+                alert("ERR // SIGNATURE INVALID. ACCESS REJECTED.");
             }
         }
 
-        // 4. 365-DAY DETERMINISTIC THOUGHT GENERATOR
-        const comprehensiveDeck365 = [
-            "The summit is just the midpoint of the journey.",
-            "In deep winter, mountains teach silent, internal endurance.",
-            "Clean compilation matches the crispness of alpine mountain air.",
-            "True trail navigation requires trust in raw instrumentation metrics.",
-            "The hardest vertical paths construct structural internal resilience.",
-            "Traverse uncharted architectural tracks with zero fear vectors."
-        ];
-
-        function resolveDynamicThought() {
-            const targetEpochIndex = Math.floor(Date.now() / 86400000) % comprehensiveDeck365.length;
-            document.getElementById('dailyThought').innerText = `"${comprehensiveDeck365[targetEpochIndex]}"`;
+        // 4. ADMIN PERSISTENT REVISION CORE VALUES
+        function populateAdminFields() {
+            document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
+            document.getElementById('admInpHero').value = document.getElementById('domHeroHeading').innerHTML.replace('<br>', '\n');
+            document.getElementById('admInpDesc').value = document.getElementById('domDescriptionPara').innerText;
+            document.getElementById('admInpPhoto').value = document.getElementById('domPhotoNode').src;
+            document.getElementById('admInpBgVideo').value = document.getElementById('bgVideoAsset').querySelector('source').src;
+            
+            document.getElementById('admCard1').value = document.getElementById('domTxtCard1').innerText;
+            document.getElementById('admCard2').value = document.getElementById('domTxtCard2').innerText;
+            document.getElementById('admCard3').value = document.getElementById('domTxtCard3').innerText;
+            document.getElementById('admCard4').value = document.getElementById('domTxtCard4').innerText;
+            document.getElementById('admCard5').value = document.getElementById('domTxtCard5').innerText;
         }
 
-        // 5. INTERACTIVE POPUP MODAL
+        // Handle Image Input via Mobile Native Camera/Gallery File Upload
+        document.getElementById('admFilePhoto').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('admInpPhoto').value = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function commitAdminModifications() {
+            // Apply Text Elements
+            document.getElementById('domBrandLogoText').innerText = document.getElementById('admInpBrand').value;
+            document.getElementById('domHeroHeading').innerHTML = document.getElementById('admInpHero').value.replace('\n', '<br>');
+            document.getElementById('domDescriptionPara').innerText = document.getElementById('admInpDesc').value;
+            
+            // Apply Media Assets
+            const newPhotoSrc = document.getElementById('admInpPhoto').value;
+            document.getElementById('domPhotoNode').src = newPhotoSrc;
+            
+            const newVideoSrc = document.getElementById('admInpBgVideo').value;
+            const videoElement = document.getElementById('bgVideoAsset');
+            videoElement.querySelector('source').src = newVideoSrc;
+            videoElement.load();
+            videoElement.play();
+
+            // Apply Card Labels
+            document.getElementById('domTxtCard1').innerText = document.getElementById('admCard1').value;
+            document.getElementById('domTxtCard2').innerText = document.getElementById('admCard2').value;
+            document.getElementById('domTxtCard3').innerText = document.getElementById('admCard3').value;
+            document.getElementById('domTxtCard4').innerText = document.getElementById('admCard4').value;
+            document.getElementById('domTxtCard5').innerText = document.getElementById('admCard5').value;
+
+            // Apply Theme Overrides
+            const selectedFont = document.getElementById('admInpFont').value;
+            document.documentElement.setAttribute('data-font', selectedFont);
+
+            const selectedTxtColor = document.getElementById('admInpColorText').value;
+            document.querySelectorAll('.custom-text, h2, p, span, div').forEach(el => {
+                if(!el.classList.contains('bg-white')) el.style.color = selectedTxtColor;
+            });
+
+            const selectedCardColor = document.getElementById('admInpColorCard').value;
+            document.querySelectorAll('.glass-card').forEach(el => {
+                el.style.backgroundColor = hexToRgba(selectedCardColor, 0.25);
+            });
+
+            // Write Matrix arrays to local storage records
+            saveSystemStateToLocalStorage();
+            closeAdminSuite();
+        }
+
+        function hexToRgba(hex, opacity) {
+            let c;
+            if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+                c= hex.substring(1).split('');
+                if(c.length== 3){ c= [c[0], c[0], c[1], c[1], c[2], c[2]]; }
+                c= '0x'+c.join('');
+                return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+','+opacity+')';
+            }
+            return rgba;
+        }
+
+        function saveSystemStateToLocalStorage() {
+            const state = {
+                brand: document.getElementById('domBrandLogoText').innerText,
+                hero: document.getElementById('domHeroHeading').innerHTML,
+                desc: document.getElementById('domDescriptionPara').innerText,
+                photo: document.getElementById('domPhotoNode').src,
+                video: document.getElementById('bgVideoAsset').querySelector('source').src,
+                font: document.documentElement.getAttribute('data-font'),
+                c1: document.getElementById('domTxtCard1').innerText,
+                c2: document.getElementById('domTxtCard2').innerText,
+                c3: document.getElementById('domTxtCard3').innerText,
+                c4: document.getElementById('domTxtCard4').innerText,
+                c5: document.getElementById('domTxtCard5').innerText
+            };
+            localStorage.setItem('nomad_sys_cache', JSON.stringify(state));
+        }
+
+        function loadSystemStateFromCache() {
+            const cache = localStorage.getItem('nomad_sys_cache');
+            if (cache) {
+                const state = JSON.parse(cache);
+                document.getElementById('domBrandLogoText').innerText = state.brand;
+                document.getElementById('domHeroHeading').innerHTML = state.hero;
+                document.getElementById('domDescriptionPara').innerText = state.desc;
+                document.getElementById('domPhotoNode').src = state.photo;
+                document.getElementById('bgVideoAsset').querySelector('source').src = state.video;
+                document.documentElement.setAttribute('data-font', state.font || 'sans');
+                
+                document.getElementById('domTxtCard1').innerText = state.c1;
+                document.getElementById('domTxtCard2').innerText = state.c2;
+                document.getElementById('domTxtCard3').innerText = state.c3;
+                document.getElementById('domTxtCard4').innerText = state.c4;
+                document.getElementById('domTxtCard5').innerText = state.c5;
+            }
+        }
+
+        // 5. SOCIAL LINK HANDLING MODAL POPUPS
         const portalModal = document.getElementById('portalModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalActionLink = document.getElementById('modalActionLink');
 
-        function openSocialPortal(networkSignature, destinationUrl) {
-            modalTitle.innerText = `HANDSHAKE // ${networkSignature.toUpperCase()}`;
-            modalActionLink.href = destinationUrl;
+        function fireModalUrlStream(platform, url) {
+            modalTitle.innerText = `HANDSHAKE REQUIRED // ${platform.toUpperCase()}`;
+            modalActionLink.href = url;
             portalModal.classList.remove('hidden');
-            setTimeout(() => {
-                portalModal.classList.remove('opacity-0');
-                portalModal.firstElementChild.classList.remove('scale-95');
-            }, 50);
+            setTimeout(() => { portalModal.classList.remove('opacity-0'); }, 50);
         }
-
         function closePortalModal() {
             portalModal.classList.add('opacity-0');
-            portalModal.firstElementChild.classList.add('scale-95');
-            setTimeout(() => portalModal.classList.add('hidden'), 300);
+            setTimeout(() => { portalModal.classList.add('hidden'); }, 300);
+        }
+        function triggerAnchorAction(id) {
+            window.location.hash = id;
         }
 
-        function triggerAnchorAction(elementIdSelector) {
-            window.location.hash = elementIdSelector;
+        // 6. DYNAMIC SYSTEM DATA CLOCK STREAM
+        function runChronosTick() {
+            const now = new Date();
+            document.getElementById('liveTime').innerText = now.toLocaleTimeString();
+            
+            let d = String(now.getDate()).padStart(2, '0');
+            let m = String(now.getMonth() + 1).padStart(2, '0');
+            let y = now.getFullYear();
+            document.getElementById('liveDate').innerText = `${d}-${m}.${y}`;
         }
+        setInterval(runChronosTick, 1000);
 
-        // 6. CHRONOS TIME STREAM
-        function triggerChronosTick() {
-            const activeChronosInstance = new Date();
-            document.getElementById('liveTime').innerText = activeChronosInstance.toLocaleTimeString();
-            document.getElementById('liveDate').innerText = activeChronosInstance.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-        }
-        setInterval(triggerChronosTick, 1000);
-
-        // 7. MULTI-LANGUAGE MANAGEMENT CORE
         function setLang(lang) {
             document.documentElement.setAttribute('data-lang', lang);
             localStorage.setItem('config-lang', lang);
         }
 
-        // 8. MASTER CALIBRATION (SYSTEM LOAD INIT)
+        // INITIALIZE RUNTIME LIFECYCLES
         window.addEventListener('DOMContentLoaded', () => {
-            triggerChronosTick();
-            resolveDynamicThought();
-            
-            // Retain system state parameters across active local lifecycle records
-            const fallbackProfileImage = localStorage.getItem('secured-profile-link');
-            if (fallbackProfileImage) document.getElementById('profileImage').src = fallbackProfileImage;
-            
-            // Custom font loader logic could be added here if customized via Admin Portal
-
+            runChronosTick();
+            loadSystemStateFromCache();
             setLang(localStorage.getItem('config-lang') || 'en');
+            document.getElementById('langDropdownSelect').value = localStorage.getItem('config-lang') || 'en';
         });
     </script>
 </body>
