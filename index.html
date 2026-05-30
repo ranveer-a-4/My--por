@@ -10,7 +10,7 @@
             theme: {
                 extend: {
                     colors: {
-                        glassBorder: 'rgba(255, 255, 255, 0.18)'
+                        glassBorder: 'rgba(255, 255, 255, 0.22)'
                     },
                     animation: {
                         'scenery-drift': 'driftLoop 36s ease-in-out infinite',
@@ -22,27 +22,27 @@
         }
     </script>
     <style>
-        /* Light & Dark Advanced Glassmorphic Layout States */
+        /* CSS Variable Tokens for Interactive Scenery Environments */
         html[data-theme="dark"] {
-            --bg-overlay: rgba(4, 7, 12, 0.35);
+            --bg-overlay: rgba(4, 7, 12, 0.4);
             --glass-bg: rgba(10, 16, 26, 0.65);
             --glass-border: rgba(255, 255, 255, 0.2);
             --text-main: #f8fafc;
             --text-muted: #cbd5e1;
-            --card-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.75);
-            --bg-default-img: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Mountain Sky */
+            --card-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.8);
+            --bg-default-img: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Starfield Night */
         }
         html[data-theme="light"] {
-            --bg-overlay: rgba(255, 255, 255, 0.12);
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(15, 23, 42, 0.18);
+            --bg-overlay: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(15, 23, 42, 0.2);
             --text-main: #0f172a;
             --text-muted: #334155;
             --card-shadow: 0 30px 70px -15px rgba(15, 23, 42, 0.15);
-            --bg-default-img: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Day Mountain Sunny Landscape */
+            --bg-default-img: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Alpine Day Landscape */
         }
 
-        /* Cutting Edge 3D Perspective Refractive Rotating Cards Deck Setup */
+        /* 3D Refractive Interactive Cards Deck Setup */
         .perspective-container {
             perspective: 1500px;
         }
@@ -51,7 +51,7 @@
             transform-style: preserve-3d;
         }
         .perspective-container:hover .rotating-card-3d {
-            transform: rotateY(180deg) scale(1.03);
+            transform: rotateY(180deg) scale(1.04);
         }
         .card-front, .card-back {
             backface-visibility: hidden;
@@ -61,43 +61,43 @@
             transform: rotateY(180deg);
         }
 
-        /* Laser Light Sheen Overlay Animation Effect */
+        /* Laser Light Sheen Overlay Effects Loop */
         @keyframes sheenEffect {
             0% { transform: translateX(-150%) rotate(25deg); }
             100% { transform: translateX(150%) rotate(25deg); }
         }
         .sheen-overlay {
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         }
 
-        /* Precision Pointer Calibration Matrix */
+        /* Desktop Targeting Mountain Cursor Peak */
         @media (pointer: fine) {
             html, body, a, button, input, select { cursor: none !important; }
             #mountainCursor { display: block; }
         }
 
-        /* Refractive Frosting strictly embedded inside UI modules to preserve crisp background views */
+        /* Refractive Frosting applied STRICTLY within panels to preserve completely crisp backdrop viewports */
         .glass-ui-refractive {
             background: var(--glass-bg);
-            backdrop-filter: blur(24px) saturate(150%);
-            -webkit-backdrop-filter: blur(24px) saturate(150%);
+            backdrop-filter: blur(28px) saturate(150%);
+            -webkit-backdrop-filter: blur(28px) saturate(150%);
             border: 1px solid var(--glass-border);
             box-shadow: var(--card-shadow);
             color: var(--text-main);
             transition: background 0.4s ease, border 0.4s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Continuous Ambient Parallax Drift Loop */
+        /* Ambient Parallax Loop */
         @keyframes driftLoop {
             0%, 100% { transform: scale(1.01) translate(0px, 0px); }
-            50% { transform: scale(1.04) translate(-8px, -4px); }
+            50% { transform: scale(1.05) translate(-10px, -5px); }
         }
         @keyframes fadeGlideUp {
             0% { opacity: 0; transform: translateY(45px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Advanced Scroll Presentation Trigger Logic Classes */
+        /* Scroll Presentation Trigger Logic Classes */
         .scroll-reveal-node {
             opacity: 0;
             transform: translateY(40px) scale(0.97);
@@ -116,9 +116,11 @@
 </head>
 <body class="min-h-screen relative overflow-x-hidden h-full transition-colors duration-500 pb-24">
 
+    <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 via-pink-500 to-indigo-500 z-50 transition-all duration-100" style="w: 0%"></div>
+
     <div id="mountainCursor" class="fixed w-8 h-8 pointer-events-none z-50 hidden -translate-x-1/2 transition-transform duration-500 ease-out">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_12px_rgba(255,255,255,0.35)]">
-            <polygon points="16,2 30,28 2,28" fill="rgba(0,0,0,0.12)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_12px_rgba(255,255,255,0.4)]">
+            <polygon points="16,2 30,28 2,28" fill="rgba(0,0,0,0.15)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
             <polygon points="16,2 22,14 17,12 14,15 11,11" fill="none" stroke="#5ae4ff" stroke-width="1.25"/>
         </svg>
     </div>
@@ -131,7 +133,7 @@
     <header class="fixed top-0 left-0 w-full z-40 p-6 flex items-center justify-between pointer-events-none gap-6">
         
         <div class="pointer-events-auto relative" id="backpackContainer">
-            <button id="backpackBtn" class="w-14 h-14 glass-ui-refractive rounded-2xl flex items-center justify-center shadow-2xl duration-300 select-none">
+            <button id="backpackBtn" class="w-14 h-14 glass-ui-refractive rounded-2xl flex items-center justify-center shadow-2xl duration-300">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7 transition-transform duration-500">
                     <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
                     <path d="M9 6V4a3 3 0 0 1 6 0v2" id="backpackTop"/>
@@ -154,7 +156,7 @@
         </div>
 
         <div class="pointer-events-auto flex items-center gap-3">
-            <div class="glass-ui-refractive p-2.5 font-mono text-[10px] rounded-xl hidden lg:block shadow-2xl select-none">
+            <div class="glass-ui-refractive p-2.5 font-mono text-[10px] rounded-xl hidden lg:block shadow-2xl">
                 <span id="liveTime">00:00:00 PM</span> // <span id="liveDate">30-05.2026</span>
             </div>
 
@@ -180,53 +182,83 @@
             </div>
             <div class="space-y-3">
                 <input type="text" id="secUserIn" placeholder="IDENTITY SIGNATURE" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
-                <input type="password" id="secPassIn" placeholder="MASTER ACCESS PASSKEY" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
+                <input type="password" id="secPassIn" placeholder="MASTER REVISION PASSWORD" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
             </div>
-            <button onclick="executePortalAuthorization()" class="w-full bg-white/10 hover:bg-white hover:text-black font-bold py-2.5 rounded-lg border border-white/10 tracking-widest transition-colors uppercase">AUTHORIZE</button>
+            <button onclick="executePortalAuthorization()" class="w-full bg-white/5 hover:bg-white hover:text-black font-bold py-2.5 rounded-lg border border-white/10 tracking-widest transition-colors uppercase">UNLOCK ENGINE</button>
         </div>
     </div>
 
     <div id="adminPanelSuite" class="fixed inset-y-4 right-4 w-[430px] bg-slate-950/98 border border-white/10 rounded-3xl z-50 p-5 font-mono text-xs text-slate-300 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-[470px]">
         <div class="flex justify-between items-center border-b border-white/10 pb-3">
-            <span class="text-emerald-400 font-bold tracking-widest">⚙️ ADVANCED CONTROL SYSTEM</span>
+            <span class="text-emerald-400 font-bold tracking-widest">⚙️ TOTAL CONTROL ENGINE MODULE</span>
             <button onclick="closeAdminSuite()" class="text-rose-400 text-xs font-bold">[ DISCONNECT ]</button>
         </div>
 
         <div class="flex-1 overflow-y-auto my-4 pr-1 space-y-4 text-[11px]">
-            <div><label class="block text-white/40 mb-1">BRAND TITLE BAR LOGO STRING</label><input type="text" id="admInpBrand" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div class="grid grid-cols-2 gap-2">
-                <div><label class="block text-white/40 mb-1">MENU CAPTION HOME</label><input type="text" id="admMenu0" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-                <div><label class="block text-white/40 mb-1">MENU CAPTION RESUME</label><input type="text" id="admMenu1" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div>
+                <label class="block text-white/40 mb-1">CENTRAL BRAND HUD TEXT</label>
+                <input type="text" id="admInpBrand" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
             </div>
-            <div><label class="block text-white/40 mb-1">PRIMARY TRAIL HERO TITLE text</label><input type="text" id="admInpHero" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/40 mb-1">BIOMETRIC SYNOPSIS LOG SUMMARY</label><textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea></div>
-            <div><label class="block text-white/40 mb-1">AVATAR CELL GRAPHIC LINK / SOURCE (CHOOSE PHONE FILE)</label><input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/40 mb-1">DARK THEME LANDSCAPE (STARFIELD IMAGE TARGET LINK)</label><input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/40 mb-1">LIGHT THEME LANDSCAPE (SUNNY TRAIL IMAGE TARGET LINK)</label><input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-            
+            <div class="grid grid-cols-2 gap-2">
+                <div>
+                    <label class="block text-white/40 mb-1">MENU HOME STRING</label>
+                    <input type="text" id="admMenu0" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-white/40 mb-1">MENU RESUME STRING</label>
+                    <input type="text" id="admMenu1" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">MAIN LANDING HERO TITLE</label>
+                <input type="text" id="admInpHero" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">PROFILE DESCRIPTION SYNOPSIS LOG</label>
+                <textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea>
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">AVATAR PICTURE SOURCE (CHOOSE PHONE FILE / URL)</label>
+                <input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1">
+                <input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">DARK MODE BACKDROP IMAGE SOURCE (CHOOSE PHONE FILE)</label>
+                <input type="file" id="admFileBgDark" accept="image/*" class="w-full text-white/50 mb-1">
+                <input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">LIGHT MODE BACKDROP IMAGE SOURCE (CHOOSE PHONE FILE)</label>
+                <input type="file" id="admFileBgLight" accept="image/*" class="w-full text-white/50 mb-1">
+                <input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
             <div class="border-t border-white/5 pt-3">
-                <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">3D Dual-Sided Cards Labels Configurator</span>
+                <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">3D Rotating Card Label Modifiers</span>
                 <div class="grid grid-cols-2 gap-2">
-                    <input type="text" id="admCard1" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard1B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard2" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard2B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard3" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard3B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard4" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard4B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard5" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard5B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard1" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard1B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard2" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard2B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard3" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard3B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard4" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard4B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard5" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard5B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
                 </div>
             </div>
             <div class="border-t border-white/5 pt-2 grid grid-cols-2 gap-2">
-                <div><label class="block text-white/40 mb-1">HERO TITLE HUE SECTOR</label><input type="color" id="admColorHero" class="w-full h-8 bg-transparent border-0 outline-none"></div>
-                <div><label class="block text-white/40 mb-1">PARAGRAPH HUE SECTOR</label><input type="color" id="admColorPara" class="w-full h-8 bg-transparent border-0 outline-none"></div>
+                <div><label class="block text-white/40 mb-1">MAIN HERO TEXT COLOR</label><input type="color" id="admColorHero" class="w-full h-8 bg-transparent border-0 outline-none"></div>
+                <div><label class="block text-white/40 mb-1">PARAGRAPH TEXT COLOR</label><input type="color" id="admColorPara" class="w-full h-8 bg-transparent border-0 outline-none"></div>
             </div>
         </div>
-        <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-2xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">COMMIT ENGINE VALUES</button>
+        <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-2xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE ENGINE MODIFICATIONS</button>
     </div>
 
     <main class="relative z-10 w-full flex flex-col items-center px-6">
         
-        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center gap-12 pt-32 pb-20 animate-fade-glide">
+        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center gap-12 pt-32 pb-20">
             
             <div class="flex-shrink-0 relative group">
-                <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-20"></div>
+                <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
                 <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale-[1.01] duration-300">
                     <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
-                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Center Identification Profile" class="w-full h-full object-cover">
+                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -238,17 +270,17 @@
                 </div>
                 <div class="space-y-4">
                     <h2 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase transition-colors" style="color: var(--text-main);">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
-                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">Traversing dynamic code realities. Every structural block down this trail page uses high-contrast internal glass layouts to guarantee absolute text legibility while keeping the mountain horizon crisp and unblurred.</p>
+                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">Traversing dynamic realities. Every structural layout down this trail page utilizes frosted panel structures to guarantee absolute text clarity while leaving your backdrop scenery completely crisp and unblurred.</p>
                 </div>
                 <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-40">
-                    <span class="uppercase block tracking-widest mb-1">ROTATING INTERACTION DISCOVERY TRACKS</span>
-                    <p id="domDailyThought" class="italic font-light">"Isolated panel frosting leaves content fully visible over completely neat scenery."</p>
+                    <span class="uppercase block tracking-widest mb-1">DAILY TIME TELEMETRY RECORD</span>
+                    <p id="domDailyThought" class="italic font-light">"Isolated element frosting keeps variables legible over sharp sceneries."</p>
                 </div>
             </div>
         </section>
 
         <div class="h-44 md:h-64 w-full flex items-center justify-center pointer-events-none opacity-25 font-mono text-[9px] tracking-[0.5em] text-center uppercase text-white drop-shadow-md">
-            [ Scrolling Terrain Sector Buffer Layer // Crystal Clear Landscape View ]
+            [ Scrolling Terrain Sector Buffer Layer // Clear Landscape View ]
         </div>
 
         <section id="deck-section" class="w-full max-w-5xl py-20 flex flex-col gap-10 scroll-reveal-node">
@@ -258,7 +290,7 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 
-                <div id="resume-card" onclick="triggerAnchorAction('#resume-card')" class="perspective-container h-32 w-full active:scale-95 duration-200">
+                <div id="resume-card" onclick="triggerAnchorAction('#resume-card')" class="perspective-container h-32 w-full active:scale-95 duration-200 group">
                     <div class="rotating-card-3d w-full h-full relative">
                         <div class="card-front absolute inset-0 glass-ui-refractive rounded-2xl flex flex-col items-center justify-center border shadow-2xl overflow-hidden">
                             <div class="absolute inset-0 sheen-overlay w-[200%] h-full opacity-0 group-hover:opacity-100 animate-sheen-flow pointer-events-none"></div>
@@ -271,9 +303,10 @@
                     </div>
                 </div>
 
-                <div id="origins-card" onclick="triggerAnchorAction('#origins-card')" class="perspective-container h-32 w-full active:scale-95 duration-200">
+                <div id="origins-card" onclick="triggerAnchorAction('#origins-card')" class="perspective-container h-32 w-full active:scale-95 duration-200 group">
                     <div class="rotating-card-3d w-full h-full relative">
                         <div class="card-front absolute inset-0 glass-ui-refractive rounded-2xl flex flex-col items-center justify-center border shadow-2xl overflow-hidden">
+                            <div class="absolute inset-0 sheen-overlay w-[200%] h-full opacity-0 group-hover:opacity-100 animate-sheen-flow pointer-events-none"></div>
                             <div class="text-xl mb-1 opacity-60">📍</div>
                             <span id="domTxtCard2" class="text-[11px] font-mono font-black tracking-widest uppercase">ORIGINS</span>
                         </div>
@@ -283,9 +316,10 @@
                     </div>
                 </div>
 
-                <div id="projects-card" onclick="triggerAnchorAction('#projects-card')" class="perspective-container h-32 w-full active:scale-95 duration-200">
+                <div id="projects-card" onclick="triggerAnchorAction('#projects-card')" class="perspective-container h-32 w-full active:scale-95 duration-200 group">
                     <div class="rotating-card-3d w-full h-full relative">
                         <div class="card-front absolute inset-0 glass-ui-refractive rounded-2xl flex flex-col items-center justify-center border shadow-2xl overflow-hidden">
+                            <div class="absolute inset-0 sheen-overlay w-[200%] h-full opacity-0 group-hover:opacity-100 animate-sheen-flow pointer-events-none"></div>
                             <div class="text-xl mb-1 opacity-60">📦</div>
                             <span id="domTxtCard3" class="text-[11px] font-mono font-black tracking-widest uppercase">PROJECTS</span>
                         </div>
@@ -295,9 +329,10 @@
                     </div>
                 </div>
 
-                <div id="winnings-card" onclick="triggerAnchorAction('#winnings-card')" class="perspective-container h-32 w-full active:scale-95 duration-200">
+                <div id="winnings-card" onclick="triggerAnchorAction('#winnings-card')" class="perspective-container h-32 w-full active:scale-95 duration-200 group">
                     <div class="rotating-card-3d w-full h-full relative">
                         <div class="card-front absolute inset-0 glass-ui-refractive rounded-2xl flex flex-col items-center justify-center border shadow-2xl overflow-hidden">
+                            <div class="absolute inset-0 sheen-overlay w-[200%] h-full opacity-0 group-hover:opacity-100 animate-sheen-flow pointer-events-none"></div>
                             <div class="text-xl mb-1 opacity-60">🏆</div>
                             <span id="domTxtCard4" class="text-[11px] font-mono font-black tracking-widest uppercase">WINNINGS</span>
                         </div>
@@ -307,9 +342,10 @@
                     </div>
                 </div>
 
-                <div id="contact-card" onclick="triggerAnchorAction('#contact-card')" class="perspective-container h-32 w-full active:scale-95 duration-200">
+                <div id="contact-card" onclick="triggerAnchorAction('#contact-card')" class="perspective-container h-32 w-full active:scale-95 duration-200 group">
                     <div class="rotating-card-3d w-full h-full relative">
                         <div class="card-front absolute inset-0 glass-ui-refractive rounded-2xl flex flex-col items-center justify-center border shadow-2xl overflow-hidden">
+                            <div class="absolute inset-0 sheen-overlay w-[200%] h-full opacity-0 group-hover:opacity-100 animate-sheen-flow pointer-events-none"></div>
                             <div class="text-xl mb-1 opacity-60">📞</div>
                             <span id="domTxtCard5" class="text-[11px] font-mono font-black tracking-widest uppercase">CONTACT</span>
                         </div>
@@ -341,7 +377,7 @@
             </div>
         </section>
 
-        <footer class="w-full text-center font-mono text-[9px] opacity-30 py-12 tracking-[0.4em]" style="color: var(--text-main);">
+        <footer class="w-full text-center font-mono text-[9px] opacity-40 py-12 tracking-[0.4em]" style="color: var(--text-main);">
             ENGINE OPERATIONAL MASTER CONFIGURATION FRAMEWORK // RANVEER • 2026
         </footer>
     </main>
@@ -353,32 +389,38 @@
                 <button onclick="closePortalModal()" class="text-rose-400 font-bold text-sm">&times;</button>
             </div>
             <div class="p-6 font-mono text-xs space-y-4">
-                <p class="leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5 opacity-80">Dynamic route verification complete. Parameters mapped via console cache records.</p>
+                <p class="leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5 opacity-80">Dynamic route verification complete. Redirection parameters resolved via console cache records.</p>
                 <a id="modalActionLink" href="#" target="_blank" class="block w-full bg-white text-black text-center font-bold py-3 rounded-xl hover:bg-slate-100 transition-all uppercase tracking-wider text-[11px]">RESOLVE PIPELINE</a>
             </div>
         </div>
     </div>
 
     <script>
-        // 1. ADVANCED KINETIC TRACKING & MAGNETIC DOCK COMPUTATION
+        // 1. KINETIC ARCHITECTURE MOUSE INTERACTION MATRICES
         const pointerNode = document.getElementById('mountainCursor');
         const kineticBlock = document.getElementById('kineticHeroBlock');
         const magneticIcons = document.querySelectorAll('.magnetic-icon');
+        const progressLine = document.getElementById('scrollProgressBar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (window.pageYOffset / scrollTotal) * 100;
+            progressLine.style.width = `${scrollPercent}%`;
+        });
 
         window.addEventListener('mousemove', (e) => {
-            // Coordinate tracking translation
             pointerNode.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
             document.getElementById('pointerTelemetry').innerText = `X:${e.clientX} Y:${e.clientY}`;
 
-            // Micro Kinetic Text tilt transformation calculation
+            // Hero panel micro kinetic alignment calculations
             const boxBounding = kineticBlock.getBoundingClientRect();
             const centerCoordinateX = boxBounding.left + (boxBounding.width / 2);
             const centerCoordinateY = boxBounding.top + (boxBounding.height / 2);
-            const relativeOffsetX = (e.clientX - centerCoordinateX) / 35;
-            const relativeOffsetY = (e.clientY - centerCoordinateY) / 22;
+            const relativeOffsetX = (e.clientX - centerCoordinateX) / 38;
+            const relativeOffsetY = (e.clientY - centerCoordinateY) / 24;
             kineticBlock.style.transform = `rotateX(${-relativeOffsetY}deg) rotateY(${relativeOffsetX}deg)`;
 
-            // Micro Magnetic Button Pull execution loops
+            // Bounded magnetic dock calculations loops
             magneticIcons.forEach(btn => {
                 const btnBounds = btn.getBoundingClientRect();
                 const iconCenterX = btnBounds.left + (btnBounds.width / 2);
@@ -387,21 +429,19 @@
                 const deltaY = e.clientY - iconCenterY;
                 const totalDistance = Math.hypot(deltaX, deltaY);
 
-                if(totalDistance < 70) {
-                    // Pull element slightly toward target coordinates vector parameters
-                    btn.style.transform = `translate3d(${deltaX * 0.35}px, ${deltaY * 0.35}px, 0) scale(1.1)`;
+                if(totalDistance < 72) {
+                    btn.style.transform = `translate3d(${deltaX * 0.35}px, ${deltaY * 0.35}px, 0) scale(1.12)`;
                 } else {
                     btn.style.transform = `translate3d(0,0,0) scale(1)`;
                 }
             });
         });
 
-        // Revert typography transformations cleanly when cursor leaves boundary tracks
         kineticBlock.addEventListener('mouseleave', () => {
             kineticBlock.style.transform = `rotateX(0deg) rotateY(0deg)`;
         });
 
-        // 2. RADIAL ARC NAV CONTROLLER HUD ENGINE
+        // 2. RADIAL DEPLOYMENT SECTOR MATRIX
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -431,7 +471,7 @@
             }
         });
 
-        // 3. THEME MUTATOR LIFECYCLES
+        // 3. ENIVRONMENT TOGGLE MATRIX (DARK VS LIGHT GRAPHIC SHIFTS)
         function toggleThemeState() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -453,7 +493,7 @@
             }
         }
 
-        // 4. SECURE ADMINISTRATIVE PORTAL ACCESS PIPELINES
+        // 4. SECURITY PORTAL CONTROL MATRIX
         const authModalFrame = document.getElementById('authModalFrame');
         const adminPanelSuite = document.getElementById('adminPanelSuite');
 
@@ -480,11 +520,11 @@
                 document.getElementById('secUserIn').value = "";
                 document.getElementById('secPassIn').value = "";
             } else {
-                alert("ERR // SIGNATURE REFUSED. DISCONNECTED.");
+                alert("ERR // VALIDATION REFUSED.");
             }
         }
 
-        // 5. COMPREHENSIVE OVERRIDE SYNC SCHEMAS (ADMIN CONTROL MODULE)
+        // 5. DATA SYNC SCHEMAS MATRIX (ADMIN STORAGE HANDLER)
         function populateAdminFields() {
             document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
             document.getElementById('admMenu0').value = document.getElementById('menuLabel0').innerText;
@@ -508,16 +548,22 @@
             document.getElementById('admCard5B').value = document.getElementById('domTxtCard5B').innerText;
         }
 
-        document.getElementById('admFilePhoto').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    document.getElementById('admInpPhoto').value = event.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
+        // Setup File Transfer Trackers for Device Access Links
+        function setupNativeFileTracker(elementId, targetInputId) {
+            document.getElementById(elementId).addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        document.getElementById(targetInputId).value = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+        setupNativeFileTracker('admFilePhoto', 'admInpPhoto');
+        setupNativeFileTracker('admFileBgDark', 'admInpBgDark');
+        setupNativeFileTracker('admFileBgLight', 'admInpBgLight');
 
         function commitAdminModifications() {
             document.getElementById('domBrandLogoText').innerText = document.getElementById('admInpBrand').value;
@@ -552,7 +598,7 @@
         }
 
         function saveSystemStateToLocalStorage() {
-            const configObj = {
+            const state = {
                 brand: document.getElementById('domBrandLogoText').innerText,
                 m0: document.getElementById('menuLabel0').innerText,
                 m1: document.getElementById('menuLabel1').innerText,
@@ -572,7 +618,7 @@
                 heroColor: document.getElementById('domHeroHeading').style.color,
                 paraColor: document.getElementById('domDescriptionPara').style.color
             };
-            localStorage.setItem('nomad_cache_scroll_v6', JSON.stringify(configObj));
+            localStorage.setItem('nomad_cache_scroll_v6', JSON.stringify(state));
         }
 
         function loadSystemStateFromCache() {
@@ -602,7 +648,7 @@
             }
         }
 
-        // 6. ON-SCROLL DYNAMIC REVEAL SYSTEMS
+        // 6. SCROLL TIMELINE GLIDE DETECTOR
         const revealNodes = document.querySelectorAll('.scroll-reveal-node');
         function evalScrollMetrics() {
             const triggerLine = window.innerHeight * 0.92;
@@ -614,13 +660,13 @@
         }
         window.addEventListener('scroll', evalScrollMetrics);
 
-        // 7. LIGHTBOX DICTIONARY HANDSHAKES
+        // 7. EXTERNAL MODAL HANDSHAKES
         const portalModal = document.getElementById('portalModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalActionLink = document.getElementById('modalActionLink');
 
         function fireModalUrlStream(platform, url) {
-            modalTitle.innerText = `EXTERNAL LINK // ${platform.toUpperCase()}`;
+            modalTitle.innerText = `EXTERNAL HANDSHAKE // ${platform.toUpperCase()}`;
             modalActionLink.href = url;
             portalModal.classList.remove('hidden');
             setTimeout(() => { portalModal.classList.remove('opacity-0'); }, 50);
@@ -635,7 +681,7 @@
             else { window.location.hash = id; }
         }
 
-        // 8. TELEMETRY PULSE CLOCK
+        // 8. TELEMETRY PULSE CLOCK TICK
         function runChronosTick() {
             const now = new Date();
             document.getElementById('liveTime').innerText = now.toLocaleTimeString();
@@ -650,7 +696,7 @@
             localStorage.setItem('config-lang', lang);
         }
 
-        // LIFE SEQUENCE RUNTIME OVERLOAD ENGINE
+        // LOAD COMPILATION INITIALIZATION
         window.addEventListener('DOMContentLoaded', () => {
             runChronosTick();
             loadSystemStateFromCache();
