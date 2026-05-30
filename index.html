@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranveer Rajesh | Ultimate Glassmorphic Hub</title>
+    <title>Ranveer Rajesh | Clear Horizon Matrix</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,24 +21,24 @@
         }
     </script>
     <style>
-        /* High-Contrast Light & Dark Glassmorphic Theme Engine */
+        /* Light & Dark Glassmorphic Styling Configurations */
         html[data-theme="dark"] {
-            --bg-overlay: rgba(4, 7, 12, 0.5);
-            --glass-bg: rgba(10, 16, 26, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.16);
+            --bg-overlay: rgba(4, 7, 12, 0.35);
+            --glass-bg: rgba(10, 16, 26, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.18);
             --text-main: #f8fafc;
             --text-muted: #cbd5e1;
-            --card-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
-            --bg-default-img: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80');
+            --card-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.7);
+            --bg-default-img: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Stars over Mountains */
         }
         html[data-theme="light"] {
-            --bg-overlay: rgba(255, 255, 255, 0.3);
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(15, 23, 42, 0.14);
+            --bg-overlay: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(15, 23, 42, 0.16);
             --text-main: #0f172a;
             --text-muted: #334155;
-            --card-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15);
-            --bg-default-img: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+            --card-shadow: 0 30px 70px -15px rgba(15, 23, 42, 0.15);
+            --bg-default-img: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Day Sunny Mountain Landscape */
         }
 
         /* 3D Rotating Card Engine Setup */
@@ -60,25 +60,27 @@
             transform: rotateY(180deg);
         }
 
-        /* Precision Desktop Targeting Mountain Pointer */
+        /* Desktop Target Pointer */
         @media (pointer: fine) {
             html, body, a, button, input, select { cursor: none !important; }
             #mountainCursor { display: block; }
         }
 
-        /* Refractive High-Contrast Glassmorphism Structure */
+        /* Refractive Frosting applied EXCLUSIVELY to UI Elements, leaving Background Crisp */
         .glass-ui-refractive {
             background: var(--glass-bg);
+            backdrop-filter: blur(24px) saturate(140%);
+            -webkit-backdrop-filter: blur(24px) saturate(140%);
             border: 1px solid var(--glass-border);
             box-shadow: var(--card-shadow);
             color: var(--text-main);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        /* Custom Travel Scenery Floating Animation Keyframes */
+        /* Travel Parallax Drift Loop */
         @keyframes driftLoop {
             0%, 100% { transform: scale(1) translate(0px, 0px); }
-            50% { transform: scale(1.04) translate(-12px, -6px); }
+            50% { transform: scale(1.03) translate(-10px, -5px); }
         }
         @keyframes fadeGlideUp {
             0% { opacity: 0; transform: translateY(35px); }
@@ -126,6 +128,7 @@
                     <path d="M8 12h8v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4z" fill="rgba(255,255,255,0.05)"/>
                 </svg>
             </button>
+            
             <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[340px] h-[340px]">
                 <a href="#hero-section" id="menuLabel0" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">HOME</a>
                 <a href="#resume-card" id="menuLabel1" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">RESUME</a>
@@ -138,7 +141,7 @@
         </div>
 
         <div class="pointer-events-auto glass-ui-refractive px-10 md:px-16 h-14 flex items-center justify-center rounded-2xl shadow-2xl max-w-xs md:max-w-md overflow-hidden">
-            <span id="domBrandLogoText" class="text-base md:text-lg font-black premium-text-spacing text-center uppercase whitespace-nowrap">RANVEER</span>
+            <span id="domBrandLogoText" class="text-base md:text-lg font-black tracking-[0.35em] text-center uppercase whitespace-nowrap">RANVEER</span>
         </div>
 
         <div class="pointer-events-auto flex items-center gap-3">
@@ -146,7 +149,7 @@
                 <span id="liveTime">00:00:00 PM</span> // <span id="liveDate">30-05.2026</span>
             </div>
 
-            <button onclick="toggleThemeState()" id="themeSunBtn" class="w-12 h-12 glass-ui-refractive flex items-center justify-center rounded-xl hover:bg-white/10 shadow-2xl text-lg transition-transform active:scale-90" title="Switch Landscape Environment">
+            <button onclick="toggleThemeState()" id="themeSunBtn" class="w-12 h-12 glass-ui-refractive flex items-center justify-center rounded-xl hover:bg-white/10 shadow-2xl text-lg transition-transform active:scale-90">
                 ☀️
             </button>
 
@@ -163,7 +166,7 @@
     <div id="authModalFrame" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-all duration-300">
         <div class="glass-ui-refractive w-80 p-6 rounded-2xl font-mono text-xs space-y-4">
             <div class="flex justify-between items-center border-b border-white/10 pb-2">
-                <span class="font-bold tracking-widest uppercase">UNLOCK CONTROL PORTS</span>
+                <span class="font-bold tracking-widest uppercase">UNLOCK CONTROL SUITE</span>
                 <button onclick="closeAdminModal()" class="text-rose-400 font-bold text-sm">&times;</button>
             </div>
             <div class="space-y-3">
@@ -204,16 +207,16 @@
                 <textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea>
             </div>
             <div>
-                <label class="block text-white/40 mb-1">AVATAR CENTER GRAPHIC SOURCE (PHONE IMAGE / LINK)</label>
+                <label class="block text-white/40 mb-1">AVATAR DATA SOURCE (PHONE IMAGE / LINK)</label>
                 <input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1">
                 <input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
             </div>
             <div>
-                <label class="block text-white/40 mb-1">DARK THEME (NIGHT STARRY MOUNTAIN IMAGE URL)</label>
+                <label class="block text-white/40 mb-1">DARK THEME BACKGROUND (IMAGE URL)</label>
                 <input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
             </div>
             <div>
-                <label class="block text-white/40 mb-1">LIGHT THEME (DAY SUNNY MOUNTAIN IMAGE URL)</label>
+                <label class="block text-white/40 mb-1">LIGHT THEME BACKGROUND (IMAGE URL)</label>
                 <input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
             </div>
             
@@ -254,7 +257,7 @@
                 <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
                 <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border">
                     <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
-                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub Picture" class="w-full h-full object-cover">
+                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -266,11 +269,11 @@
                 </div>
                 <div class="space-y-4">
                     <h2 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase transition-colors" style="color: var(--text-main);">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
-                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">Traversing dynamic code realities. Every structural block down this trail page is configured via high-contrast glassmorphic panels to guarantee text visibility without needing background blur masks.</p>
+                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">Traversing dynamic code realities. Every structural block down this trail page is configured via high-contrast frosted panels to guarantee text visibility while leaving your landscape completely neat and clear.</p>
                 </div>
                 <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-50">
                     <span class="uppercase block tracking-widest mb-1">ROTATION CHRONO INSIGHT DECK</span>
-                    <p id="domDailyThought" class="italic font-light">"Clear environment views make alignment layers completely visible."</p>
+                    <p id="domDailyThought" class="italic font-light">"Internal element frosting leaves layout assets entirely legible over clear scenes."</p>
                 </div>
             </div>
         </section>
@@ -387,7 +390,7 @@
     </div>
 
     <script>
-        // 1. HARDWARE VECTOR MOVEMENT CAPTURE
+        // 1. HARDWARE MOVEMENT CAPTURE
         const pointerNode = document.getElementById('mountainCursor');
         window.addEventListener('mousemove', (e) => {
             pointerNode.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
@@ -423,7 +426,7 @@
             }
         });
 
-        // 3. THEME MUTATION ENGINE (STARFIELD NIGHT VS MOUNTAIN DAY)
+        // 3. THEME STATE CONFIGURATIONS
         function toggleThemeState() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -445,7 +448,7 @@
             }
         }
 
-        // 4. ADMINISTRATIVE SECURITY ENVELOPE HANDSHAKES
+        // 4. ADMINISTRATIVE SECURITY HANDSHAKES
         const authModalFrame = document.getElementById('authModalFrame');
         const adminPanelSuite = document.getElementById('adminPanelSuite');
 
@@ -476,7 +479,7 @@
             }
         }
 
-        // 5. DATA SYNC MANAGER MODULE
+        // 5. DATA SYNC MANAGER SUITE FIELD POPULATOR
         function populateAdminFields() {
             document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
             document.getElementById('admMenu0').value = document.getElementById('menuLabel0').innerText;
@@ -500,7 +503,6 @@
             document.getElementById('admCard5B').value = document.getElementById('domTxtCard5B').innerText;
         }
 
-        // Read Local Phone Assets Binary link Streams
         document.getElementById('admFilePhoto').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
@@ -595,7 +597,7 @@
             }
         }
 
-        // 6. SCROLL DETECTOR AND GLIDE HANDLERS
+        // 6. SCROLL DETECTOR AND INTERACTION MONITOR
         const revealNodes = document.querySelectorAll('.scroll-reveal-node');
         function evalScrollMetrics() {
             const triggerLine = window.innerHeight * 0.92;
@@ -607,7 +609,7 @@
         }
         window.addEventListener('scroll', evalScrollMetrics);
 
-        // 7. LIGHTBOX CONTROLLER HANDSHAKES
+        // 7. LIGHTBOX REDIRECTION INTERFACES
         const portalModal = document.getElementById('portalModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalActionLink = document.getElementById('modalActionLink');
@@ -628,7 +630,7 @@
             else { window.location.hash = id; }
         }
 
-        // 8. DATA STREAM TIMER TICK
+        // 8. DATA STREAM CHRONOS TIMER
         function runChronosTick() {
             const now = new Date();
             document.getElementById('liveTime').innerText = now.toLocaleTimeString();
@@ -643,7 +645,7 @@
             localStorage.setItem('config-lang', lang);
         }
 
-        // COMPILE LIFECYCLES INITS
+        // LIFECYCLE RUNTIME INIT SEQUENCES
         window.addEventListener('DOMContentLoaded', () => {
             runChronosTick();
             loadSystemStateFromCache();
