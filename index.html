@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranveer Amilkanthwar | Kinetic Nomad Hub</title>
+    <title>Ranveer Amilkanthwar | Nomad Exploration Space</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -123,7 +123,7 @@
     <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 via-pink-500 to-indigo-500 z-50 transition-all duration-100" style="width: 0%"></div>
 
     <div id="mountainCursor" class="fixed top-0 left-0 w-8 h-8 pointer-events-none z-50 hidden -translate-x-[16px] -translate-y-[2px]">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_12px_rgba(255,255,255,0.4)]">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_12px_rgba(90,228,255,0.4)]">
             <polygon points="16,2 30,28 2,28" fill="rgba(10, 16, 26, 0.5)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
             <polygon points="16,2 22,14 17,12 14,15 11,11" fill="none" stroke="#5ae4ff" stroke-width="1.25"/>
         </svg>
@@ -245,7 +245,7 @@
             
             <div class="flex-shrink-0 relative group">
                 <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
-                <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale-[1.01] duration-300 opacity-75 backdrop-blur-none">
+                <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale Cane-101 duration-300 opacity-75 backdrop-blur-none">
                     <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
                         <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
                     </div>
@@ -258,9 +258,10 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
                 </div>
                 <div class="space-y-4">
-                    <h2 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase transition-colors" style="color: var(--text-main);">
-                        <span onclick="openAdminAuth()" class="hover:text-cyan-400 active:scale-95 transition-all inline-block select-none">R</span>ANVEER AMILKANTHWAR<br>
-                        <span id="domHeroSubheading" class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1 text-white">ENGINE // NOMAD EXPLORER</span>
+                    <h2 id="domHeroHeading" class="text-4xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase transition-colors" style="color: var(--text-main);">
+                        <span onclick="openAdminAuth()" class="hover:text-cyan-400 active:scale-95 transition-all inline-block select-none">R</span>ANVEER<br>
+                        <span class="opacity-80 font-semibold block mt-0.5">AMILKANTHWAR</span>
+                        <span id="domHeroSubheading" class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-2 text-white">ENGINE // NOMAD EXPLORER</span>
                     </h2>
                     <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">
                         <span data-translation-engine="true">Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework.</span>
@@ -315,7 +316,7 @@
                             <span id="domTxtCard3" class="text-[11px] font-mono font-black tracking-widest uppercase">PROJECTS</span>
                         </div>
                         <div class="card-back absolute inset-0 bg-white text-black rounded-2xl flex items-center justify-center border p-3 text-center text-[10px] font-mono font-bold shadow-2xl">
-                            <span id="domTxtCard3B">DEPLOY LOG &rarr;</span>
+                            <span id="domTxtCard3B">DEPLOY CORE &rarr;</span>
                         </div>
                     </div>
                 </div>
@@ -390,27 +391,27 @@
         // GLOBAL TRANSLATION ENGINE DICTIONARY MATRIX
         const dictLanguagesMatrix = {
             en: { 
-                brand: "RANVEER", home: "HOME", resume: "RESUME", origins: "ORIGINS", projects: "PROJECTS", winnings: "WINNINGS", contact: "CONTACT", subtitle: "ENGINE // NOMAD EXPLORER", telemetry: "DAILY TIME TELEMETRY RECORD",
+                home: "HOME", resume: "RESUME", origins: "ORIGINS", projects: "PROJECTS", winnings: "WINNINGS", contact: "CONTACT", subtitle: "ENGINE // NOMAD EXPLORER", telemetry: "DAILY TIME TELEMETRY RECORD",
                 description: "Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework." 
             },
             hi: { 
-                brand: "रणवीर", home: "होम", resume: "बायोडाटा", origins: "मूल_स्थान", projects: "परियोजनाएं", winnings: "उपलब्धियां", contact: "संपर्क", subtitle: "इंजन // खानाबदोश खोजकर्ता", telemetry: "दैनिक समय टेलीमेट्री रिकॉर्ड",
+                home: "होम", resume: "बायोडाटा", origins: "मूल_स्थान", projects: "परियोजनाएं", winnings: "उपलब्धियां", contact: "संपर्क", subtitle: "इंजन // खानाबदोश खोजकर्ता", telemetry: "दैनिक समय टेलीमेट्री रिकॉर्ड",
                 description: "संरचित लेआउट को गतिशील घटकों के साथ जोड़कर कार्यात्मक वेब स्थानों का निर्माण। संपूर्ण पृष्ठ ट्रेल टाइमलाइन ढांचे में पृष्ठभूमि दृश्य पूरी तरह से स्पष्ट रहते हैं।" 
             },
             es: { 
-                brand: "RANVEER", home: "INICIO", resume: "RESUMEN", origins: "ORÍGENES", projects: "PROYECTOS", winnings: "PREMIOS", contact: "CONTACTO", subtitle: "MOTOR // EXPLORADOR NÓMADA", telemetry: "REGISTRO DIARIO DE TELEMETRÍA",
+                home: "INICIO", resume: "RESUMEN", origins: "ORÍGENES", projects: "PROYECTOS", winnings: "PREMIOS", contact: "CONTACTO", subtitle: "MOTOR // EXPLORADOR NÓMADA", telemetry: "REGISTRO DIARIO DE TELEMETRÍA",
                 description: "Arquitectura de espacios web funcionales combinando diseños estructurados con componentes dinámicos. Las vistas de fondo permanecen perfectamente claras a lo largo de todo el marco de la línea de tiempo." 
             },
             fr: { 
-                brand: "RANVEER", home: "ACCUEIL", resume: "CV", origins: "ORIGINES", projects: "PROJETS", winnings: "PRIX", contact: "CONTACT", subtitle: "MOTEUR // EXPLORATEUR NOMADE", telemetry: "ENREGISTREMENT TÉLÉMÉTRIQUE QUOTIDIEN",
-                description: "Architecture d'espaces web fonctionnels combinant des mises en page structurées avec des composants dynamiques. Les vues d'arrière-plan restent parfaitement claires sur l'ensemble de la chronologie." 
+                home: "ACCUEIL", resume: "CV", origins: "ORIGINES", projects: "PROJETS", winnings: "PRIX", contact: "CONTACT", subtitle: "MOTEUR // EXPLORATEUR NOMADE", telemetry: "ENREGISTREMENT TÉLÉMÉTRIQUE QUOTIDIEN",
+                description: "Architecture d'espaces web fonctionnels combinant des mises en page structurées avec des composants dynamiques. Les vues d'arrière-plan restent pfaitement claires sur l'ensemble de la chronologie." 
             },
             zh: { 
-                brand: "兰维尔", home: "首页", resume: "简历", origins: "起源", projects: "项目", winnings: "奖项", contact: "联系方式", subtitle: "引擎 // 游牧探险家", telemetry: "每日时间遥测记录",
+                home: "首页", resume: "简历", origins: "起源", projects: "项目", winnings: "奖项", contact: "联系方式", subtitle: "引擎 // 游牧探险家", telemetry: "每日时间遥测记录",
                 description: "构建将结构化布局与动态组件相结合的功能性 Web 空间。在整个页面轨迹时间线框架中，背景视图保持非常清晰。" 
             },
             ar: { 
-                brand: "رانفير", home: "الرئيسية", resume: "السيرة", origins: "الأصول", projects: "المشاريع", winnings: "الجوائز", contact: "الاتصال", subtitle: "محرك // المستكشف البدو", telemetry: "سجل القياس عن بعد اليومي",
+                home: "الرئيسية", resume: "السيرة", origins: "الأصول", projects: "المشاريع", winnings: "الجوائز", contact: "الاتصال", subtitle: "محرك // المستكشف البدو", telemetry: "سجل القياس عن بعد اليومي",
                 description: "بناء مساحات ويب وظيفية تجمع بين المخططات الهيكلية والمكونات الديناميكية. تظل مناظر الخلفية واضحة تمامًا طوال إطار الجدول الزمني للمسار." 
             }
         };
@@ -419,11 +420,9 @@
             document.documentElement.setAttribute('data-lang', langId);
             localStorage.setItem('config-lang', langId);
             
-            // Comprehensive Global Selector Multi-Language Engine Translation Refix Mapping Logic
             if(dictLanguagesMatrix[langId]) {
                 const targetDict = dictLanguagesMatrix[langId];
                 document.querySelector('[data-translation-engine="true"]').innerText = targetDict.description;
-                document.getElementById('domBrandLogoText').innerText = targetDict.brand;
                 document.getElementById('menuLabel0').innerText = targetDict.home;
                 document.getElementById('menuLabel1').innerText = targetDict.resume;
                 document.getElementById('menuLabel2').innerText = targetDict.origins;
@@ -493,7 +492,7 @@
             kineticBlock.style.transform = `rotateX(0deg) rotateY(0deg)`;
         });
 
-        // 2. RADIAL DEPLOYMENT SECTOR MATRIX - COLLISION SAFE DISTANCE (175px)
+        // 2. RADIAL DEPLOYMENT SECTOR MATRIX - WIDE LAYOUT REFIX SPACING (175px)
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -501,7 +500,7 @@
         let isMenuOpen = false;
 
         backpackBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Halt bubbling track layers to prevent instant closure fires
+            e.stopPropagation(); // Block closing bubbling cycles instantly
             isMenuOpen = !isMenuOpen;
             executeBackpackStateShift(isMenuOpen);
         });
@@ -529,12 +528,12 @@
             }
         }
 
-        // GLOBAL CLICK-OUTSIDE DISMISSAL TRACK ENGINE PIPELINES
+        // DISMISS RADIAL OVERLAYS AUTOMATICALLY WHEN SCROLLER BACKGROUND TAPPED
         window.addEventListener('click', () => {
             if(isMenuOpen) executeBackpackStateShift(false);
         });
 
-        // 3. THEME STATE ENGINE
+        // 3. THEME SELECTION MATRIX STATE ENGINE
         function toggleThemeState() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -616,7 +615,6 @@
             document.getElementById('admSocLink4').value = globalSocialRoutes.GitHub;
         }
 
-        // Read Local Storage Binary File Objects natively from Device
         function setupNativeFileTracker(elementId, targetInputId) {
             document.getElementById(elementId).addEventListener('change', function(e) {
                 const file = e.target.files[0];
@@ -724,7 +722,7 @@
             }
         }
 
-        // 6. SCROLL DETECTOR AND INTERACTION MONITOR
+        // 6. SCROLL DETECTOR MATRIX
         const revealNodes = document.querySelectorAll('.scroll-reveal-node');
         function evalScrollMetrics() {
             const triggerLine = window.innerHeight * 0.92;
@@ -736,7 +734,7 @@
         }
         window.addEventListener('scroll', evalScrollMetrics);
 
-        // 7. LIGHTBOX DICTIONARY HANDSHAKES
+        // 7. LIGHTBOX LINK HANDSHAKES
         const portalModal = document.getElementById('portalModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalActionLink = document.getElementById('modalActionLink');
@@ -753,7 +751,7 @@
             setTimeout(() => { portalModal.classList.add('hidden'); }, 300);
         }
         function triggerAnchorAction(id) {
-            if(isMenuOpen) executeBackpackStateShift(false); // Force menu shut upon active click navigation event
+            if(isMenuOpen) executeBackpackStateShift(false); // Force menu shut cleanly upon active link tap events
             const el = document.querySelector(id);
             if (el) { el.scrollIntoView({ behavior: 'smooth' }); }
             else { window.location.hash = id; }
