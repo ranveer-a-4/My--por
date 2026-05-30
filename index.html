@@ -3,55 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranveer Rajesh | Ultimate Motion Hub</title>
+    <title>Ranveer Rajesh | Kinetic Horizon Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        glassBorder: 'rgba(255, 255, 255, 0.22)'
+                        glassBorder: 'rgba(255, 255, 255, 0.25)'
                     },
                     animation: {
                         'scenery-drift': 'driftLoop 36s ease-in-out infinite',
                         'fade-glide': 'fadeGlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'sheen-flow': 'sheenEffect 4s linear infinite',
-                        'cosmic-pulse': 'cosmicGlow 8s ease-in-out infinite'
+                        'sheen-flow': 'sheenEffect 4s linear infinite'
                     }
                 }
             }
         }
     </script>
     <style>
-        /* CSS Variable Tokens for Dynamic Thematic Scenery Backdrops */
+        /* High-Contrast Aesthetic Color Palettes matching Mountain Nomadic Realities */
         html[data-theme="dark"] {
-            --bg-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Starfield */
-            --glass-bg: rgba(10, 16, 26, 0.68);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --text-main: #ff9ebb;
-            --text-muted: #cbd5e1;
-            --card-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85);
+            --bg-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Stars */
+            --glass-bg: rgba(10, 16, 26, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --text-hero: transparent; /* Gradient controlled text */
+            --text-para: #cbd5e1;
+            --card-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.8);
         }
         html[data-theme="light"] {
-            --bg-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Alpine Day Landscape */
-            --glass-bg: rgba(255, 255, 255, 0.82);
-            --glass-border: rgba(15, 23, 42, 0.2);
-            --text-main: #0f172a;
-            --text-muted: #334155;
+            --bg-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Day Mountain Sunny */
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(15, 23, 42, 0.16);
+            --text-hero: transparent;
+            --text-para: #334155;
             --card-shadow: 0 30px 70px -15px rgba(15, 23, 42, 0.15);
         }
 
-        /* Mountain Peak Active Desktop Cursor (Hidden on touch screens) */
-        @media (pointer: fine) {
-            html, body, a, button, input, select, textarea {
-                cursor: none !important;
-            }
-            #mountainCursor {
-                display: block !important;
-            }
-        }
-
-        /* 3D Refractive Interactive Cards Deck Setup */
+        /* 3D Perspective Flip Engine for Cards Setup */
         .perspective-container {
             perspective: 1500px;
         }
@@ -60,7 +49,7 @@
             transform-style: preserve-3d;
         }
         .perspective-container:hover .rotating-card-3d {
-            transform: rotateY(180deg) scale(1.04);
+            transform: rotateY(180deg) scale(1.05);
         }
         .card-front, .card-back {
             backface-visibility: hidden;
@@ -70,29 +59,44 @@
             transform: rotateY(180deg);
         }
 
-        /* Laser Light Sheen Overlay Effects Loop */
+        /* Laser Light Sheen Overlay Loop Animation */
         @keyframes sheenEffect {
             0% { transform: translateX(-150%) rotate(25deg); }
             100% { transform: translateX(150%) rotate(25deg); }
         }
         .sheen-overlay {
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         }
 
-        /* Refractive Frosting applied STRICTLY within panels to preserve completely crisp backdrop viewports */
+        /* Custom Mountain Mouse Cursor Setup (Active on fine pointer displays) */
+        @media (pointer: fine) {
+            html, body, a, button, input, select, textarea {
+                cursor: none !important;
+            }
+            #mountainCursor {
+                display: block !important;
+            }
+        }
+
+        /* Frosted Blur Effect Applied STRICTLY Inside Cards and Components, Background remains clear */
         .glass-ui-refractive {
             background: var(--glass-bg);
-            backdrop-filter: blur(28px) saturate(150%);
-            -webkit-backdrop-filter: blur(28px) saturate(150%);
+            backdrop-filter: blur(24px) saturate(150%);
+            -webkit-backdrop-filter: blur(24px) saturate(150%);
             border: 1px solid var(--glass-border);
             box-shadow: var(--card-shadow);
-            color: var(--text-main);
-            transition: background 0.4s ease, border 0.4s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Ambient Parallax Loop */
+        /* Fluid Gradient Text Coloring Rule */
+        .aesthetic-gradient-text {
+            background: linear-gradient(135deg, #ff9ebb 0%, #ff7ebb 50%, #5ae4ff 100%);
+            -webkit-bg-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Background Terrain Motion loop */
         @keyframes driftLoop {
-            0%, 100% { transform: scale(1.01) translate(0px, 0px); }
+            0%, 100% { transform: scale(1) translate(0px, 0px); }
             50% { transform: scale(1.04) translate(-10px, -5px); }
         }
         @keyframes fadeGlideUp {
@@ -100,7 +104,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scroll Presentation Trigger Logic Classes */
+        /* Dynamic On-Scroll Entrance Glide Matrix */
         .scroll-reveal-node {
             opacity: 0;
             transform: translateY(40px) scale(0.97);
@@ -129,8 +133,8 @@
     </div>
 
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute inset-0 z-10 transition-colors duration-500" style="background: rgba(0,0,0,0.25);"></div>
-        <div id="dynamicLandscapeBg" class="w-full h-full bg-cover bg-center transition-all duration-700 animate-scenery-drift" style="background-image: var(--bg-image);"></div>
+        <div class="absolute inset-0 z-10 transition-colors duration-500" style="background: rgba(0, 0, 0, 0.22);"></div>
+        <div id="dynamicLandscapeBg" class="w-full h-full bg-cover bg-center transition-all duration-700 animate-scenery-drift" style="background-image: var(--bg-image); filter: none;"></div>
     </div>
 
     <header class="fixed top-0 left-0 w-full z-40 p-6 flex items-center justify-between pointer-events-none gap-6">
@@ -144,17 +148,17 @@
                 </svg>
             </button>
             <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[340px] h-[340px]">
-                <a href="#hero-section" id="menuLabel0" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">HOME</a>
-                <a href="#resume-card" id="menuLabel1" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">RESUME</a>
-                <a href="#origins-card" id="menuLabel2" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">ORIGINS</a>
-                <a href="#projects-card" id="menuLabel3" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">PROJECTS</a>
-                <a href="#winnings-card" id="menuLabel4" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">WINNINGS</a>
-                <a href="#contact-card" id="menuLabel5" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">CONTACT</a>
+                <button onclick="triggerAnchorAction('#hero-section')" id="menuLabel0" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">HOME</button>
+                <button onclick="triggerAnchorAction('#resume-card')" id="menuLabel1" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">RESUME</button>
+                <button onclick="triggerAnchorAction('#origins-card')" id="menuLabel2" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">ORIGINS</button>
+                <button onclick="triggerAnchorAction('#projects-card')" id="menuLabel3" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">PROJECTS</button>
+                <button onclick="triggerAnchorAction('#winnings-card')" id="menuLabel4" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">WINNINGS</button>
+                <button onclick="triggerAnchorAction('#contact-card')" id="menuLabel5" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">CONTACT</button>
                 <button onclick="openAdminAuth()" id="menuLabel6" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl text-emerald-400 border-emerald-500/20 transition-all">ADMIN</button>
             </div>
         </div>
 
-        <div class="pointer-events-auto glass-ui-refractive px-10 md:px-16 h-14 flex items-center justify-center rounded-2xl shadow-2xl max-w-xs md:max-w-md overflow-hidden hover:scale-[1.02]">
+        <div class="pointer-events-auto glass-ui-refractive px-10 md:px-16 h-14 flex items-center justify-center rounded-2xl shadow-2xl max-w-xs md:max-w-md overflow-hidden">
             <span id="domBrandLogoText" class="text-base md:text-lg font-black premium-text-spacing text-center uppercase whitespace-nowrap">RANVEER</span>
         </div>
 
@@ -169,74 +173,55 @@
 
             <div class="relative group">
                 <button class="w-12 h-12 glass-ui-refractive flex items-center justify-center rounded-xl text-sm shadow-xl">🌐</button>
-                <div class="absolute top-14 right-0 w-16 glass-ui-refractive rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[10px] font-bold gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                    <button onclick="setLang('en')" class="py-1 rounded hover:bg-white/10">EN</button>
-                    <button onclick="setLang('hi')" class="py-1 rounded hover:bg-white/10">HI</button>
+                <div class="absolute top-14 right-0 w-20 glass-ui-refractive rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[9px] font-black tracking-widest gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50 max-h-48 overflow-y-auto">
+                    <button onclick="setGlobalTranslation('en')" class="py-1 rounded hover:bg-white/10">ENGLISH</button>
+                    <button onclick="setGlobalTranslation('hi')" class="py-1 rounded hover:bg-white/10">हिंदी</button>
+                    <button onclick="setGlobalTranslation('es')" class="py-1 rounded hover:bg-white/10">ESPAÑOL</button>
+                    <button onclick="setGlobalTranslation('fr')" class="py-1 rounded hover:bg-white/10">FRANÇAIS</button>
+                    <button onclick="setGlobalTranslation('de')" class="py-1 rounded hover:bg-white/10">DEUTSCH</button>
+                    <button onclick="setGlobalTranslation('zh')" class="py-1 rounded hover:bg-white/10">中文</button>
+                    <button onclick="setGlobalTranslation('ar')" class="py-1 rounded hover:bg-white/10">العربية</button>
+                    <button onclick="setGlobalTranslation('ru')" class="py-1 rounded hover:bg-white/10">РУССКИЙ</button>
+                    <button onclick="setGlobalTranslation('ja')" class="py-1 rounded hover:bg-white/10">日本語</button>
                 </div>
             </div>
         </div>
     </header>
 
     <div id="authModalFrame" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-all duration-300">
-        <div class="glass-ui-refractive w-80 p-6 rounded-2xl font-mono text-xs space-y-4">
+        <div class="glass-ui-refractive w-80 p-6 rounded-2xl font-mono text-xs space-y-4 border">
             <div class="flex justify-between items-center border-b border-white/10 pb-2">
                 <span class="font-bold tracking-widest uppercase text-white">ACCESS SECURE PORTS</span>
                 <button onclick="closeAdminModal()" class="text-rose-400 font-bold text-sm">&times;</button>
             </div>
             <div class="space-y-3">
                 <input type="text" id="secUserIn" placeholder="IDENTITY SIGNATURE" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
-                <input type="password" id="secPassIn" placeholder="MASTER REVISION PASSWORD" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
+                <input type="password" id="secPassIn" placeholder="MASTER CONTROL PASSWORD" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
             </div>
-            <button onclick="executePortalAuthorization()" class="w-full bg-white/5 hover:bg-white hover:text-black font-bold py-2.5 rounded-lg border border-white/10 tracking-widest transition-colors uppercase">UNLOCK ENGINE</button>
+            <button onclick="executePortalAuthorization()" class="w-full bg-white/5 hover:bg-white hover:text-black font-bold py-2.5 rounded-lg border border-white/10 tracking-widest transition-colors uppercase">UNLOCK PORTS</button>
         </div>
     </div>
 
     <div id="adminPanelSuite" class="fixed inset-y-4 right-4 w-[430px] bg-slate-950/98 border border-white/10 rounded-3xl z-50 p-5 font-mono text-xs text-slate-300 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-[470px]">
         <div class="flex justify-between items-center border-b border-white/10 pb-3">
-            <span class="text-emerald-400 font-bold tracking-widest">⚙️ TOTAL CONTROL ENGINE MODULE</span>
+            <span class="text-emerald-400 font-bold tracking-widest">⚙️ ADVANCED REVISION CONTROL</span>
             <button onclick="closeAdminSuite()" class="text-rose-400 text-xs font-bold">[ DISCONNECT ]</button>
         </div>
 
         <div class="flex-1 overflow-y-auto my-4 pr-1 space-y-4 text-[11px]">
-            <div>
-                <label class="block text-white/40 mb-1">CENTRAL BRAND HUD TEXT</label>
-                <input type="text" id="admInpBrand" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-            </div>
+            <div><label class="block text-white/40 mb-1">CENTRAL BRAND LOGO TEXT</label><input type="text" id="admInpBrand" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             <div class="grid grid-cols-2 gap-2">
-                <div>
-                    <label class="block text-white/40 mb-1">MENU HOME STRING</label>
-                    <input type="text" id="admMenu0" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-                </div>
-                <div>
-                    <label class="block text-white/40 mb-1">MENU RESUME STRING</label>
-                    <input type="text" id="admMenu1" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-                </div>
+                <div><label class="block text-white/40 mb-1">MENU HOME LABEL</label><input type="text" id="admMenu0" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+                <div><label class="block text-white/40 mb-1">MENU RESUME LABEL</label><input type="text" id="admMenu1" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             </div>
-            <div>
-                <label class="block text-white/40 mb-1">MAIN LANDING HERO TITLE</label>
-                <input type="text" id="admInpHero" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-            </div>
-            <div>
-                <label class="block text-white/40 mb-1">PROFILE DESCRIPTION SYNOPSIS LOG</label>
-                <textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea>
-            </div>
-            <div>
-                <label class="block text-white/40 mb-1">AVATAR PICTURE SOURCE (CHOOSE PHONE FILE / URL)</label>
-                <input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1">
-                <input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-            </div>
-            <div>
-                <label class="block text-white/40 mb-1">DARK MODE BACKDROP IMAGE SOURCE (CHOOSE PHONE FILE)</label>
-                <input type="file" id="admFileBgDark" accept="image/*" class="w-full text-white/50 mb-1">
-                <input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-            </div>
-            <div>
-                <label class="block text-white/40 mb-1">LIGHT MODE BACKDROP IMAGE SOURCE (CHOOSE PHONE FILE)</label>
-                <input type="file" id="admFileBgLight" accept="image/*" class="w-full text-white/50 mb-1">
-                <input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-            </div>
+            <div><label class="block text-white/40 mb-1">MAIN TRAIL HERO TITLE text</label><input type="text" id="admInpHero" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">BIOMETRIC FIELD SUMMARY LOG</label><textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea></div>
+            <div><label class="block text-white/40 mb-1">AVATAR CELL FILE (CHOOSE PHONE GALLERY SOURCE)</label><input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">DARK THEME (NIGHT STARRY BACKGROUND IMAGE URL)</label><input type="file" id="admFileBgDark" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">LIGHT THEME (DAY SUNNY BACKGROUND IMAGE URL)</label><input type="file" id="admFileBgLight" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            
             <div class="border-t border-white/5 pt-3">
-                <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">3D Rotating Card Label Modifiers</span>
+                <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">3D Dual-Sided Cards Labels Configurator</span>
                 <div class="grid grid-cols-2 gap-2">
                     <input type="text" id="admCard1" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard1B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
                     <input type="text" id="admCard2" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none"><input type="text" id="admCard2B" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
@@ -246,20 +231,20 @@
                 </div>
             </div>
             <div class="border-t border-white/5 pt-3">
-                <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">Footer Redirect Routes Configuration Matrix</span>
+                <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">Social Platforms Redirection Paths Engine</span>
                 <div class="grid grid-cols-1 gap-2">
-                    <input type="text" id="admSocLink1" placeholder="Instagram Redirect Link" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-                    <input type="text" id="admSocLink2" placeholder="Facebook Redirect Link" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-                    <input type="text" id="admSocLink3" placeholder="LinkedIn Redirect Link" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
-                    <input type="text" id="admSocLink4" placeholder="GitHub Redirect Link" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admSocLink1" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admSocLink2" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admSocLink3" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admSocLink4" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
                 </div>
             </div>
             <div class="border-t border-white/5 pt-2 grid grid-cols-2 gap-2">
-                <div><label class="block text-white/40 mb-1">MAIN HERO TEXT COLOR</label><input type="color" id="admColorHero" class="w-full h-8 bg-transparent border-0 outline-none"></div>
-                <div><label class="block text-white/40 mb-1">PARAGRAPH TEXT COLOR</label><input type="color" id="admColorPara" class="w-full h-8 bg-transparent border-0 outline-none"></div>
+                <div><label class="block text-white/40 mb-1">MAIN HERO OVERRIDE HUE</label><input type="color" id="admColorHero" class="w-full h-8 bg-transparent border-0 outline-none"></div>
+                <div><label class="block text-white/40 mb-1">PARAGRAPH OVERRIDE HUE</label><input type="color" id="admColorPara" class="w-full h-8 bg-transparent border-0 outline-none"></div>
             </div>
         </div>
-        <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-2xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE ENGINE MODIFICATIONS</button>
+        <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-2xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE CONSOLE REVISIONS</button>
     </div>
 
     <main class="relative z-10 w-full flex flex-col items-center px-6">
@@ -268,9 +253,9 @@
             
             <div class="flex-shrink-0 relative group">
                 <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
-                <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale-[1.01] duration-300 opacity-80 backdrop-blur-sm">
+                <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border transition-all duration-500 hover:scale-[1.01] opacity-75 backdrop-blur-none">
                     <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10">
-                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Center Identification Profile" class="w-full h-full object-cover">
+                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub Identification" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -281,24 +266,21 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
                 </div>
                 <div class="space-y-4">
-                    <h2 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase transition-colors" style="color: var(--text-main);">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
-                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">Traversing dynamic realities. Every structural layout down this trail page utilizes frosted panel structures to guarantee absolute text clarity while leaving your backdrop scenery completely crisp and unblurred.</p>
+                    <h1 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase aesthetic-gradient-text">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1 text-white">ENGINE // RANVEER RAJESH</span></h1>
+                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-bold tracking-wide opacity-95" id="translatableBodyText">
+                        <span data-translation-engine="true">Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework.</span>
+                    </p>
                 </div>
-                <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-40">
-                    <span class="uppercase block tracking-widest mb-1">DAILY TIME TELEMETRY RECORD</span>
-                    <p id="domDailyThought" class="italic font-light">"Isolated element frosting keeps variables legible over sharp sceneries."</p>
+                <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-50">
+                    <span class="uppercase block tracking-widest mb-1">ROTATION MATRIX DATA INSIGHT</span>
+                    <p id="domDailyThought" class="italic font-light">"Isolated panel frosting leaves content fully visible over completely neat sceneries."</p>
                 </div>
             </div>
         </section>
 
-        <div class="h-44 md:h-64 w-full flex items-center justify-center pointer-events-none opacity-25 font-mono text-[9px] tracking-[0.5em] text-center uppercase text-white drop-shadow-md">
-            [ Scrolling Terrain Sector Buffer Layer // Clear Landscape View ]
-        </div>
+        <div class="h-44 md:h-64 w-full flex items-center justify-center pointer-events-none"></div>
 
         <section id="deck-section" class="w-full max-w-5xl py-20 flex flex-col gap-10 scroll-reveal-node">
-            <div class="text-center md:text-left border-b border-white/10 pb-4 mb-4">
-                <span class="font-mono text-[10px] opacity-50 uppercase tracking-[0.3em]" style="color: var(--text-main);">EXPLORATION TIERS // SYMMETRICAL 3D DECK STRIPS</span>
-            </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 
@@ -336,7 +318,7 @@
                             <span id="domTxtCard3" class="text-[11px] font-mono font-black tracking-widest uppercase">PROJECTS</span>
                         </div>
                         <div class="card-back absolute inset-0 bg-white text-black rounded-2xl flex items-center justify-center border p-3 text-center text-[10px] font-mono font-bold shadow-2xl">
-                            <span id="domTxtCard3B">DEPLOY LOG &rarr;</span>
+                            <span id="domTxtCard3B">DEPLOY CORE &rarr;</span>
                         </div>
                     </div>
                 </div>
@@ -374,16 +356,16 @@
 
         <section class="w-full max-w-xl py-12 scroll-reveal-node">
             <div class="glass-ui-refractive h-20 rounded-[2.2rem] flex items-center justify-around px-8 border shadow-2xl magnetic-dock-container">
-                <button id="socButton1" onclick="fireModalUrlStream('Instagram')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
+                <button onclick="fireModalUrlStream('Instagram')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
                     <svg class="w-5 h-5 fill-current opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </button>
-                <button id="socButton2" onclick="fireModalUrlStream('Facebook')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
+                <button onclick="fireModalUrlStream('Facebook')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
                     <svg class="w-5 h-5 fill-current opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </button>
-                <button id="socButton3" onclick="fireModalUrlStream('LinkedIn')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
+                <button onclick="fireModalUrlStream('LinkedIn')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
                     <svg class="w-5 h-5 fill-current opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </button>
-                <button id="socButton4" onclick="fireModalUrlStream('GitHub')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
+                <button onclick="fireModalUrlStream('GitHub')" class="magnetic-icon group p-2.5 transform transition-transform duration-200">
                     <svg class="w-5 h-5 fill-current opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </button>
             </div>
@@ -401,20 +383,42 @@
                 <button onclick="closePortalModal()" class="text-rose-400 font-bold text-sm">&times;</button>
             </div>
             <div class="p-6 font-mono text-xs space-y-4">
-                <p class="leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5 opacity-80">Dynamic route verification complete. Parameters mapped via console cache records.</p>
+                <p class="leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5 opacity-80">Dynamic route verification complete. Redirection parameters resolved via console cache records.</p>
                 <a id="modalActionLink" href="#" target="_blank" class="block w-full bg-white text-black text-center font-bold py-3 rounded-xl hover:bg-slate-100 transition-all uppercase tracking-wider text-[11px]">RESOLVE PIPELINE</a>
             </div>
         </div>
     </div>
 
     <script>
-        // 1. KINETIC TRACKING & MAGNETIC DOCK COMPUTATION
+        // GLOBAL TRANSLATION ENGINE MATRIX ARRAY
+        const dictLanguagesMatrix = {
+            en: { description: "Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework." },
+            hi: { description: "संरचित लेआउट को गतिशील घटकों के साथ जोड़कर कार्यात्मक वेब स्थानों का निर्माण। संपूर्ण पृष्ठ ट्रेल टाइमलाइन ढांचे में पृष्ठभूमि दृश्य पूरी तरह से स्पष्ट रहते हैं।" },
+            es: { description: "Arquitectura de espacios web funcionales combinando diseños estructurados con componentes dinámicos. Las vistas de fondo permanecen perfectamente claras a lo largo de todo el marco de la línea de tiempo." },
+            fr: { description: "Architecture d'espaces web fonctionnels combinant des mises en page structurées avec des composants dynamiques. Les vues d'arrière-plan restent parfaitement claires sur l'ensemble de la chronologie." },
+            de: { description: "Architektur funktionaler Webräume durch die Kombination strukturierter Layouts mit dynamischen Komponenten. Die Hintergrundansichten bleiben über den gesamten Zeitachsenrahmen hinweg absolut klar." },
+            zh: { description: "构建将结构化布局与动态组件相结合的功能性 Web 空间。在整个页面轨迹时间线框架中，背景视图保持非常清晰。" },
+            ar: { description: "بناء مساحات ويب وظيفية تجمع بين المخططات الهيكلية والمكونات الديناميكية. تظل مناظر الخلفية واضحة تمامًا طوال إطار الجدول الزمني للمسار." },
+            ru: { description: "Проектирование функциональных веб-пространств, сочетающих структурированные макеты с динамическими компонентами. Фоновые виды остаются абсолютно четкими на протяжении всей временной шкалы." },
+            ja: { description: "構造化されたレイアウトと動的なコンポーネントを組み合わせた機能的なWeb空間を構築。ページトレイルのタイムラインフレームワーク全体で背景が完全にクリアに保たれます。" }
+        };
+
+        function setGlobalTranslation(langId) {
+            document.documentElement.setAttribute('data-lang', langId);
+            localStorage.setItem('config-lang', langId);
+            
+            // Rewrite layout elements natively to support selected languages engine rules
+            if(dictLanguagesMatrix[langId]) {
+                document.querySelector('[data-translation-engine="true"]').innerText = dictLanguagesMatrix[langId].description;
+            }
+        }
+
+        // 1. HARDWARE VECTOR MOVEMENT CAPTURE
         const pointerNode = document.getElementById('mountainCursor');
         const kineticBlock = document.getElementById('kineticHeroBlock');
         const magneticIcons = document.querySelectorAll('.magnetic-icon');
         const progressLine = document.getElementById('scrollProgressBar');
 
-        // Global Variable Map for Social Destinations Mapped natively to Admin Module inputs
         let globalSocialRoutes = {
             Instagram: 'https://instagram.com',
             Facebook: 'https://facebook.com',
@@ -429,20 +433,17 @@
         });
 
         window.addEventListener('mousemove', (e) => {
-            // Mountain peak offset targeting calculations
             pointerNode.style.left = `${e.clientX}px`;
             pointerNode.style.top = `${e.clientY}px`;
             document.getElementById('pointerTelemetry').innerText = `X:${e.clientX} Y:${e.clientY}`;
 
-            // Micro Kinetic Text tilt transformation calculation
             const boxBounding = kineticBlock.getBoundingClientRect();
             const centerCoordinateX = boxBounding.left + (boxBounding.width / 2);
             const centerCoordinateY = boxBounding.top + (boxBounding.height / 2);
-            const relativeOffsetX = (e.clientX - centerCoordinateX) / 38;
-            const relativeOffsetY = (e.clientY - centerCoordinateY) / 24;
+            const relativeOffsetX = (e.clientX - centerCoordinateX) / 40;
+            const relativeOffsetY = (e.clientY - centerCoordinateY) / 25;
             kineticBlock.style.transform = `rotateX(${-relativeOffsetY}deg) rotateY(${relativeOffsetX}deg)`;
 
-            // Micro Magnetic Button Pull execution loops
             magneticIcons.forEach(btn => {
                 const btnBounds = btn.getBoundingClientRect();
                 const iconCenterX = btnBounds.left + (btnBounds.width / 2);
@@ -463,7 +464,7 @@
             kineticBlock.style.transform = `rotateX(0deg) rotateY(0deg)`;
         });
 
-        // 2. RADIAL DEPLOYMENT SECTOR MATRIX
+        // 2. BACKPACK RADIAL EXPANSION TRIGGER
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -493,7 +494,7 @@
             }
         });
 
-        // 3. ENIVRONMENT TOGGLE MATRIX (DARK VS LIGHT GRAPHIC SHIFTS)
+        // 3. THEME STATE MUTATION
         function toggleThemeState() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -515,7 +516,7 @@
             }
         }
 
-        // 4. SECURITY PORTAL CONTROL MATRIX
+        // 4. SECURE ADMINISTRATIVE AUTHORIZATION ROUTINES
         const authModalFrame = document.getElementById('authModalFrame');
         const adminPanelSuite = document.getElementById('adminPanelSuite');
 
@@ -542,11 +543,11 @@
                 document.getElementById('secUserIn').value = "";
                 document.getElementById('secPassIn').value = "";
             } else {
-                alert("ERR // VALIDATION REFUSED.");
+                alert("ERR // SIGNATURE REFUSED. DISCONNECTED.");
             }
         }
 
-        // 5. DATA SYNC SCHEMAS MATRIX (ADMIN STORAGE HANDLER)
+        // 5. MASTER VALUE OVERRIDE SYNCHRONIZER (ADMIN WORKSTATION ENGINE)
         function populateAdminFields() {
             document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
             document.getElementById('admMenu0').value = document.getElementById('menuLabel0').innerText;
@@ -575,7 +576,6 @@
             document.getElementById('admSocLink4').value = globalSocialRoutes.GitHub;
         }
 
-        // Setup File Transfer Trackers for Device Access Links
         function setupNativeFileTracker(elementId, targetInputId) {
             document.getElementById(elementId).addEventListener('change', function(e) {
                 const file = e.target.files[0];
@@ -630,7 +630,7 @@
         }
 
         function saveSystemStateToLocalStorage() {
-            const state = {
+            const configObj = {
                 brand: document.getElementById('domBrandLogoText').innerText,
                 m0: document.getElementById('menuLabel0').innerText,
                 m1: document.getElementById('menuLabel1').innerText,
@@ -651,7 +651,7 @@
                 heroColor: document.getElementById('domHeroHeading').style.color,
                 paraColor: document.getElementById('domDescriptionPara').style.color
             };
-            localStorage.setItem('nomad_cache_scroll_v7', JSON.stringify(state));
+            localStorage.setItem('nomad_cache_scroll_v7', JSON.stringify(configObj));
         }
 
         function loadSystemStateFromCache() {
@@ -683,7 +683,7 @@
             }
         }
 
-        // 6. ON-SCROLL DYNAMIC REVEAL SYSTEMS
+        // 6. SCROLL DETECTOR AND INTERACTION MONITOR
         const revealNodes = document.querySelectorAll('.scroll-reveal-node');
         function evalScrollMetrics() {
             const triggerLine = window.innerHeight * 0.92;
@@ -701,8 +701,8 @@
         const modalActionLink = document.getElementById('modalActionLink');
 
         function fireModalUrlStream(platform) {
-            const targetUrl = globalSocialRoutes[platform] || 'https://google.com';
-            modalTitle.innerText = `EXTERNAL LINK // ${platform.toUpperCase()}`;
+            const targetUrl = globalSocialRoutes[platform] || 'https://instagram.com';
+            modalTitle.innerText = `EXTERNAL DATA LINK // ${platform.toUpperCase()}`;
             modalActionLink.href = targetUrl;
             portalModal.classList.remove('hidden');
             setTimeout(() => { portalModal.classList.remove('opacity-0'); }, 50);
@@ -717,7 +717,7 @@
             else { window.location.hash = id; }
         }
 
-        // 8. TELEMETRY PULSE CLOCK TICK
+        // 8. DATA STREAM CHRONOS TIMER
         function runChronosTick() {
             const now = new Date();
             document.getElementById('liveTime').innerText = now.toLocaleTimeString();
@@ -727,20 +727,16 @@
         }
         setInterval(runChronosTick, 1000);
 
-        function setLang(lang) {
-            document.documentElement.setAttribute('data-lang', lang);
-            localStorage.setItem('config-lang', lang);
-        }
-
-        // LIFE SEQUENCE RUNTIME OVERLOAD ENGINE
+        // INITIALIZE lifecycles sequences
         window.addEventListener('DOMContentLoaded', () => {
             runChronosTick();
+            const activeLang = localStorage.getItem('config-lang') || 'en';
+            setGlobalTranslation(activeLang);
             loadSystemStateFromCache();
             evalScrollMetrics();
             const activeTheme = localStorage.getItem('config-theme') || 'dark';
             document.documentElement.setAttribute('data-theme', activeTheme);
             updateThematicImages(activeTheme);
-            setLang(localStorage.getItem('config-lang') || 'en');
         });
     </script>
 </body>
