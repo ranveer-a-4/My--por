@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranveer Rajesh | Ultimate Motion Hub</title>
+    <title>Ranveer Rajesh | Ultimate Nomadic Matrix</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,17 +22,17 @@
         }
     </script>
     <style>
-        /* CSS Variable Tokens for Dynamic Thematic Scenery Backdrops */
+        /* CSS Variable Tokens for Interactive Scenery Backdrops */
         html[data-theme="dark"] {
-            --bg-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Starfield */
-            --glass-bg: rgba(10, 16, 26, 0.68);
+            --bg-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Starfield Over Mountains */
+            --glass-bg: rgba(10, 16, 26, 0.72);
             --glass-border: rgba(255, 255, 255, 0.2);
-            --text-main: #ff9ebb;
+            --text-main: #f8fafc;
             --text-muted: #cbd5e1;
             --card-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85);
         }
         html[data-theme="light"] {
-            --bg-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Alpine Day Landscape */
+            --bg-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Day Sunny Alpine Terrain */
             --glass-bg: rgba(255, 255, 255, 0.82);
             --glass-border: rgba(15, 23, 42, 0.2);
             --text-main: #0f172a;
@@ -50,7 +50,7 @@
             }
         }
 
-        /* 3D Refractive Interactive Cards Deck Setup */
+        /* 3D Perspective Flip Card Layout Parameters */
         .perspective-container {
             perspective: 1500px;
         }
@@ -59,7 +59,7 @@
             transform-style: preserve-3d;
         }
         .perspective-container:hover .rotating-card-3d {
-            transform: rotateY(180deg) scale(1.04);
+            transform: rotateY(180deg) scale(1.05);
         }
         .card-front, .card-back {
             backface-visibility: hidden;
@@ -75,10 +75,10 @@
             100% { transform: translateX(150%) rotate(25deg); }
         }
         .sheen-overlay {
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
         }
 
-        /* Refractive Frosting applied STRICTLY within panels to preserve completely crisp backdrop viewports */
+        /* Premium Refractive Glass UI frosting rules (Locked away from background backdrop) */
         .glass-ui-refractive {
             background: var(--glass-bg);
             backdrop-filter: blur(28px) saturate(150%);
@@ -99,7 +99,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Advanced Scroll Presentation Trigger Logic Classes */
+        /* Advanced On-Scroll Presentation Entrance Classes */
         .scroll-reveal-node {
             opacity: 0;
             transform: translateY(40px) scale(0.97);
@@ -121,7 +121,7 @@
     <div id="scrollProgressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 via-pink-500 to-indigo-500 z-50 transition-all duration-100" style="width: 0%"></div>
 
     <div id="mountainCursor" class="fixed top-0 left-0 w-8 h-8 pointer-events-none z-50 hidden -translate-x-[16px] -translate-y-[2px]">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_12px_rgba(255,255,255,0.4)]">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_12px_rgba(90,228,255,0.4)]">
             <polygon points="16,2 30,28 2,28" fill="rgba(10, 16, 26, 0.5)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
             <polygon points="16,2 22,14 17,12 14,15 11,11" fill="none" stroke="#5ae4ff" stroke-width="1.25"/>
         </svg>
@@ -168,7 +168,7 @@
 
             <div class="relative group">
                 <button class="w-12 h-12 glass-ui-refractive flex items-center justify-center rounded-xl text-sm shadow-xl">🌐</button>
-                <div class="absolute top-14 right-0 w-20 glass-ui-refractive rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[9px] font-black tracking-widest gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50 max-h-48 overflow-y-auto">
+                <div class="absolute top-14 right-0 w-24 glass-ui-refractive rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[9px] font-black tracking-widest gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50 max-h-48 overflow-y-auto shadow-2xl">
                     <button onclick="setGlobalTranslation('en')" class="py-1 rounded hover:bg-white/10">ENGLISH</button>
                     <button onclick="setGlobalTranslation('hi')" class="py-1 rounded hover:bg-white/10">हिंदी</button>
                     <button onclick="setGlobalTranslation('es')" class="py-1 rounded hover:bg-white/10">ESPAÑOL</button>
@@ -187,8 +187,8 @@
                 <button onclick="closeAdminModal()" class="text-rose-400 font-bold text-sm">&times;</button>
             </div>
             <div class="space-y-3">
-                <input type="text" id="secUserIn" placeholder="IDENTITY SIGNATURE" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white focus:border-cyan-500/50">
-                <input type="password" id="secPassIn" placeholder="MASTER REVISION PASSWORD" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white focus:border-cyan-500/50">
+                <input type="text" id="secUserIn" placeholder="IDENTITY SIGNATURE" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white focus:border-cyan-400/40">
+                <input type="password" id="secPassIn" placeholder="MASTER REVISION PASSWORD" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white focus:border-cyan-400/40">
             </div>
             <button onclick="executePortalAuthorization()" class="w-full bg-white/5 hover:bg-white hover:text-black font-bold py-2.5 rounded-lg border border-white/10 tracking-widest transition-colors uppercase">UNLOCK ENGINE</button>
         </div>
@@ -240,13 +240,13 @@
 
     <main class="relative z-10 w-full flex flex-col items-center px-6">
         
-        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center gap-12 pt-32 pb-20">
+        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center gap-12 pt-32 pb-20 animate-fade-glide">
             
             <div class="flex-shrink-0 relative group">
                 <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
                 <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale-[1.01] duration-300 opacity-75 backdrop-blur-none">
-                    <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
-                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
+                    <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10">
+                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub Identification" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -258,7 +258,9 @@
                 </div>
                 <div class="space-y-4">
                     <h2 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase transition-colors" style="color: var(--text-main);">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1 text-white">ENGINE // RANVEER RAJESH</span></h2>
-                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">Traversing dynamic realities. Every structural layout down this trail page utilizes frosted panel structures to guarantee absolute text clarity while leaving your backdrop scenery completely crisp and unblurred.</p>
+                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-bold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">
+                        <span data-translation-engine="true">Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework.</span>
+                    </p>
                 </div>
                 <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-40">
                     <span class="uppercase block tracking-widest mb-1">DAILY TIME TELEMETRY RECORD</span>
@@ -267,9 +269,7 @@
             </div>
         </section>
 
-        <div class="h-44 md:h-64 w-full flex items-center justify-center pointer-events-none opacity-25 font-mono text-[9px] tracking-[0.5em] text-center uppercase text-white drop-shadow-md">
-            [ Scrolling Terrain Sector Buffer Layer // Clear Landscape View ]
-        </div>
+        <div class="h-44 md:h-64 w-full flex items-center justify-center pointer-events-none"></div>
 
         <section id="deck-section" class="w-full max-w-5xl py-20 flex flex-col gap-10 scroll-reveal-node">
             
@@ -381,7 +381,7 @@
     </div>
 
     <script>
-        // GLOBAL TRANSLATION ENGINE MATRIX ARRAY
+        // GLOBAL TRANSLATION ENGINE DICTIONARY MATRIX
         const dictLanguagesMatrix = {
             en: { description: "Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework." },
             hi: { description: "संरचित लेआउट को गतिशील घटकों के साथ जोड़कर कार्यात्मक वेब स्थानों का निर्माण। संपूर्ण पृष्ठ ट्रेल टाइमलाइन ढांचे में पृष्ठभूमि दृश्य पूरी तरह से स्पष्ट रहते हैं।" },
@@ -399,7 +399,7 @@
             }
         }
 
-        // 1. HARDWARE MOUSE MONITOR & EXTENDED RADIAL TRACK SPACING
+        // 1. HARDWARE MOUSE MONITOR & EXTENDED RADIAL TRACK SPACING (175px)
         const pointerNode = document.getElementById('mountainCursor');
         const kineticBlock = document.getElementById('kineticHeroBlock');
         const magneticIcons = document.querySelectorAll('.magnetic-icon');
@@ -450,7 +450,7 @@
             kineticBlock.style.transform = `rotateX(0deg) rotateY(0deg)`;
         });
 
-        // 2. RADIAL DEPLOYMENT SECTOR MATRIX - WIDE COLLISION ADJUSTMENT (175px)
+        // 2. RADIAL DEPLOYMENT SECTOR MATRIX - COLLISION SAFE OVERLAP REFIX (175px)
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -463,7 +463,7 @@
                 backpackTop.setAttribute('d', 'M7 6V3a2 2 0 0 1 4 0v3m2 0V2a2 2 0 0 1 4 0v4'); 
                 arcMenu.classList.remove('pointer-events-none');
                 
-                // Increased to 175 for safe separation matrix spacing
+                // Mapped securely to a 175 coordinates trajectory arc context
                 const radius = 175; 
                 menuItems.forEach((item, index) => {
                     const angle = (index * (90 / (menuItems.length - 1))) * (Math.PI / 180);
@@ -482,7 +482,7 @@
             }
         });
 
-        // 3. THEME MUTATION STATE ENGINE
+        // 3. THEME DYNAMIC IMAGE VARIABLE OVERRIDES
         function toggleThemeState() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -496,15 +496,15 @@
             if(theme === 'light') {
                 sunBtn.innerText = '🌙';
                 const lightImg = localStorage.getItem('cache-img-light') || 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80';
-                document.documentElement.style.setProperty('--bg-default-img', `url('${lightImg}')`);
+                document.documentElement.style.setProperty('--bg-image', `url('${lightImg}')`);
             } else {
                 sunBtn.innerText = '☀️';
                 const darkImg = localStorage.getItem('cache-img-dark') || 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80';
-                document.documentElement.style.setProperty('--bg-default-img', `url('${darkImg}')`);
+                document.documentElement.style.setProperty('--bg-image', `url('${darkImg}')`);
             }
         }
 
-        // 4. SECURE PORTAL AUTHENTICATION GATEWAYS
+        // 4. SECURE ADMINISTRATIVE AUTHORIZATION ROUTINES
         const authModalFrame = document.getElementById('authModalFrame');
         const adminPanelSuite = document.getElementById('adminPanelSuite');
 
@@ -535,7 +535,7 @@
             }
         }
 
-        // 5. MASTER SYNC SUITE CONTROLLER
+        // 5. DATA MANAGEMENT CONFIGURATION SYNC PIPELINES
         function populateAdminFields() {
             document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
             document.getElementById('admMenu0').value = document.getElementById('menuLabel0').innerText;
@@ -726,4 +726,11 @@
             loadSystemStateFromCache();
             evalScrollMetrics();
             const activeTheme = localStorage.getItem('config-theme') || 'dark';
-            document.documentElement.setAttribute('
+            document.documentElement.setAttribute('data-theme', activeTheme);
+            updateThematicImages(activeTheme);
+            const activeLang = localStorage.getItem('config-lang') || 'en';
+            setGlobalTranslation(activeLang);
+        });
+    </script>
+</body>
+</html>
