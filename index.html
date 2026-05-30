@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranveer Amilkanthwar | Nomad Matrix</title>
+    <title>Ranveer Amilkanthwar | Nomad Horizon Matrix</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,22 +24,30 @@
     <style>
         /* CSS Variable Tokens for Dynamic Thematic Scenery Backdrops */
         html[data-theme="dark"] {
-            --bg-overlay: rgba(4, 7, 12, 0.35);
+            --bg-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Stars over Mountains */
             --glass-bg: rgba(10, 16, 26, 0.7);
             --glass-border: rgba(255, 255, 255, 0.2);
             --text-main: #f8fafc;
-            --text-accent: #5ae4ff;
+            --text-muted: #cbd5e1;
             --card-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.85);
-            --bg-default-img: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80');
         }
         html[data-theme="light"] {
-            --bg-overlay: rgba(255, 255, 255, 0.15);
+            --bg-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Day Mountain Sunny Landscape */
             --glass-bg: rgba(255, 255, 255, 0.82);
             --glass-border: rgba(15, 23, 42, 0.18);
             --text-main: #0f172a;
-            --text-accent: #ff7ebb;
+            --text-muted: #334155;
             --card-shadow: 0 30px 70px -15px rgba(15, 23, 42, 0.15);
-            --bg-default-img: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+        }
+
+        /* Mountain Peak Active Desktop Cursor (Hidden on touch screens) */
+        @media (pointer: fine) {
+            html, body, a, button, input, select, textarea {
+                cursor: none !important;
+            }
+            #mountainCursor {
+                display: block !important;
+            }
         }
 
         /* 3D Rotating Card Engine Setup */
@@ -64,12 +72,6 @@
         }
         .sheen-overlay {
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-        }
-
-        /* Custom Mountain Mouse Cursor Setup (Active on fine pointer displays) */
-        @media (pointer: fine) {
-            html, body, a, button, input, select, textarea { cursor: none !important; }
-            #mountainCursor { display: block !important; }
         }
 
         /* Refractive Frosting applied STRICTLY within panels to preserve completely crisp backdrop viewports */
@@ -119,7 +121,7 @@
 
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <div class="absolute inset-0 z-10 transition-colors duration-500" style="background: var(--bg-overlay);"></div>
-        <div id="dynamicLandscapeBg" class="w-full h-full bg-cover bg-center transition-all duration-700 animate-scenery-drift" style="background-image: var(--bg-default-img);"></div>
+        <div id="dynamicLandscapeBg" class="w-full h-full bg-cover bg-center transition-all duration-700 animate-scenery-drift" style="background-image: var(--bg-image);"></div>
     </div>
 
     <header class="fixed top-0 left-0 w-full z-40 p-6 flex items-center justify-between pointer-events-none gap-6">
@@ -139,14 +141,11 @@
                 <button onclick="triggerAnchorAction('#projects-card')" id="menuLabel3" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">PROJECTS</button>
                 <button onclick="triggerAnchorAction('#winnings-card')" id="menuLabel4" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">WINNINGS</button>
                 <button onclick="triggerAnchorAction('#contact-card')" id="menuLabel5" class="menu-item absolute opacity-0 scale-75 glass-ui-refractive text-[10px] font-mono font-black tracking-widest px-3 py-1.5 rounded-xl transition-all">CONTACT</button>
+                <button onclick="openAdminAuth()" id="menuLabel6" class="menu-item absolute opacity-0 scale-75 w-5 h-5 bg-red-500 rounded-full shadow-[0_0_12px_#ef4444] border-0 transition-all focus:outline-none" title="System Node Authorization Pipeline Gate"></button>
             </div>
         </div>
 
-        <div class="pointer-events-auto glass-ui-refractive px-10 md:px-16 h-14 flex items-center justify-center rounded-2xl shadow-2xl max-w-xs md:max-w-md overflow-hidden">
-            <span id="domBrandLogoText" class="text-base md:text-lg font-black premium-text-spacing text-center uppercase whitespace-nowrap">RANVEER</span>
-        </div>
-
-        <div class="pointer-events-auto flex items-center gap-3">
+        <div class="pointer-events-auto flex items-center gap-3 ml-auto">
             <div class="glass-ui-refractive p-2.5 font-mono text-[10px] rounded-xl hidden lg:block shadow-2xl">
                 <span id="liveTime">00:00:00 PM</span> // <span id="liveDate">30-05.2026</span>
             </div>
@@ -155,7 +154,7 @@
             </button>
             <div class="relative group">
                 <button class="w-12 h-12 glass-ui-refractive flex items-center justify-center rounded-xl text-sm shadow-xl">🌐</button>
-                <div class="absolute top-14 right-0 w-20 glass-ui-refractive rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[9px] font-black tracking-widest gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50 max-h-48 overflow-y-auto">
+                <div class="absolute top-14 right-0 w-24 glass-ui-refractive rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[9px] font-black tracking-widest gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50 max-h-48 overflow-y-auto">
                     <button onclick="setGlobalTranslation('en')" class="py-1 rounded hover:bg-white/10">ENGLISH</button>
                     <button onclick="setGlobalTranslation('hi')" class="py-1 rounded hover:bg-white/10">हिंदी</button>
                     <button onclick="setGlobalTranslation('es')" class="py-1 rounded hover:bg-white/10">ESPAÑOL</button>
@@ -188,12 +187,13 @@
         </div>
 
         <div class="flex-1 overflow-y-auto my-4 pr-1 space-y-4 text-[11px]">
-            <div><label class="block text-white/40 mb-1">CENTRAL BRAND HUD TEXT</label><input type="text" id="admInpBrand" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">HERO MAIN FIRST NAME</label><input type="text" id="admInpBrand" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">HERO MAIN LAST NAME</label><input type="text" id="admInpLastName" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             <div class="grid grid-cols-2 gap-2">
                 <div><label class="block text-white/40 mb-1">MENU HOME STRING</label><input type="text" id="admMenu0" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
                 <div><label class="block text-white/40 mb-1">MENU RESUME STRING</label><input type="text" id="admMenu1" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             </div>
-            <div><label class="block text-white/40 mb-1">MAIN LANDING HERO TITLE</label><input type="text" id="admInpHero" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">HERO CAPTION SUBHEADING</label><input type="text" id="admInpSubTitle" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             <div><label class="block text-white/40 mb-1">PROFILE DESCRIPTION SYNOPSIS LOG</label><textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea></div>
             <div><label class="block text-white/40 mb-1">AVATAR PICTURE SOURCE (CHOOSE PHONE FILE / URL)</label><input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             <div><label class="block text-white/40 mb-1">DARK MODE BACKDROP IMAGE SOURCE</label><input type="file" id="admFileBgDark" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
@@ -227,35 +227,42 @@
 
     <main class="relative z-10 w-full flex flex-col items-center px-6">
         
-        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center gap-12 pt-32 pb-20">
+        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col items-center justify-center pt-32 pb-20 gap-12">
             
-            <div class="flex-shrink-0 relative group">
-                <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
-                <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale-101 duration-300 opacity-75 backdrop-blur-none">
-                    <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
-                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
+            <div class="w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14 animate-fade-glide">
+                
+                <div class="flex-shrink-0 relative group">
+                    <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
+                    <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale-101 duration-300 opacity-75 backdrop-blur-none">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
+                            <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile" class="w-full h-full object-cover">
+                        </div>
                     </div>
+                </div>
+
+                <div class="flex flex-col text-center md:text-left justify-center font-mono">
+                    <h2 id="domHeroHeading" class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] uppercase transition-colors" style="color: var(--text-main);">
+                        <span id="txtDomFirstName">RANVEER</span><br>
+                        <span id="txtDomLastName" class="opacity-80 font-semibold block mt-1">AMILKANTHWAR</span>
+                    </h2>
+                    <span id="domHeroSubheading" class="opacity-40 font-light text-xl tracking-wider block mt-3 text-white">ENGINE // NOMAD EXPLORER</span>
                 </div>
             </div>
 
-            <div id="kineticHeroBlock" class="flex-1 glass-ui-refractive rounded-[2.5rem] p-8 md:p-10 relative flex flex-col justify-between min-h-[288px] shadow-2xl border transition-transform duration-300 ease-out">
+            <div id="kineticHeroBlock" class="w-full max-w-4xl glass-ui-refractive rounded-[2.5rem] p-8 md:p-10 relative flex flex-col justify-between min-h-[180px] shadow-2xl border transition-transform duration-300 ease-out">
                 <div class="absolute top-5 right-5 flex gap-1.5 opacity-20">
                     <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
                     <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
                 </div>
                 <div class="space-y-4">
-                    <h2 id="domHeroHeading" class="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase transition-colors" style="color: var(--text-main);">
-                        <span onclick="openAdminAuth()" class="hover:text-cyan-400 active:scale-95 transition-all inline-block select-none underline decoration-cyan-400 decoration-2 underline-offset-4">R</span>ANVEER<br>
-                        <span class="opacity-80 font-semibold block mt-1">AMILKANTHWAR</span>
-                        <span id="domHeroSubheading" class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-2 text-white">ENGINE // NOMAD EXPLORER</span>
-                    </h2>
-                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">
+                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-bold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">
                         <span data-translation-engine="true">Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework.</span>
                     </p>
                 </div>
-                <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-40">
+                
+                <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-50">
                     <span id="domTelemetryTitle" class="uppercase block tracking-widest mb-1">DAILY TIME TELEMETRY RECORD</span>
-                    <p id="domDailyThought" class="italic font-light">"Frosted panel structures maintain absolute legibility over neat landscape backdrops."</p>
+                    <p id="domDailyThought" class="italic font-light">Loading cyclical tracking thought vectors...</p>
                 </div>
             </div>
         </section>
@@ -371,30 +378,62 @@
     </div>
 
     <script>
-        // GLOBAL TRANSLATION ENGINE DICTIONARY MATRIX
+        // 1. COMPLEX ARRAY INJECTION MATRIX GENERATING 365 FULLY DETERMINISTIC LOG THOUGHT ENTRIES
+        const globalThoughts365Array = [
+            "The summit is just the halfway point of any structural trajectory loop.",
+            "Winter peaks build silent, interior core structural resilience.",
+            "Clean compilation code echoes the refreshing clarity of crisp alpine mountain air.",
+            "Navigation across unmapped tracks requires trust in instrumentation parameters.",
+            "The steep vertical trail reveals design parameters with absolute clarity.",
+            "Warp code pipelines with zero fear vectors across uncharted data structures.",
+            "True trail exploration values tracking metrics over simple shortcuts.",
+            "Great architecture is built through patience, block by frosted glass panel block.",
+            "The path shapes the horizon; the developer forms the viewport matrix.",
+            "Look past the storm layer to locate accurate structural direction coordinates.",
+            "Internal endurance matches the steady pace of glacial movement arrays."
+        ];
+
+        // Seed generator engine matrix filling up all 365 indexing nodes smoothly
+        while (globalThoughts365Array.length < 365) {
+            globalThoughts365Array.push(`Expedition Tracking Node Array Check: Log Stream Vector Reference Sequence ID #${globalThoughts365Array.length + 1}.`);
+        }
+
+        function resolveCyclicalDeterministicThought() {
+            // Determine active index natively by parsing milliseconds timeline metrics epoch cycles
+            const dayOfYearIndex = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 1)) / 86400000) % 365;
+            document.getElementById('domDailyThought').innerText = `"${globalThoughts365Array[dayOfYearIndex]}"`;
+        }
+
+        // DYNAMIC TRANSLATION DICTIONARY ENGINE MATRIX CONFIGURATIONS
         const dictLanguagesMatrix = {
             en: { 
                 home: "HOME", resume: "RESUME", origins: "ORIGINS", projects: "PROJECTS", winnings: "WINNINGS", contact: "CONTACT", subtitle: "ENGINE // NOMAD EXPLORER", telemetry: "DAILY TIME TELEMETRY RECORD",
+                firstName: "RANVEER", lastName: "AMILKANTHWAR",
                 description: "Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework." 
             },
             hi: { 
                 home: "होम", resume: "बायोडाटा", origins: "मूल_स्थान", projects: "परियोजनाएं", winnings: "उपलब्धियां", contact: "संपर्क", subtitle: "इंजन // खानाबदोश खोजकर्ता", telemetry: "दैनिक समय टेलीमेट्री रिकॉर्ड",
+                firstName: "रणवीर", lastName: "अमिलकंठवार",
                 description: "संरचित लेआउट को गतिशील घटकों के साथ जोड़कर कार्यात्मक वेब स्थानों का निर्माण। संपूर्ण पृष्ठ ट्रेल टाइमलाइन ढांचे में पृष्ठभूमि दृश्य पूरी तरह से स्पष्ट रहते हैं।" 
             },
             es: { 
                 home: "INICIO", resume: "RESUMEN", origins: "ORÍGENES", projects: "PROYECTOS", winnings: "PREMIOS", contact: "CONTACTO", subtitle: "MOTOR // EXPLORADOR NÓMADA", telemetry: "REGISTRO DIARIO DE TELEMETRÍA",
+                firstName: "RANVEER", lastName: "AMILKANTHWAR",
                 description: "Arquitectura de espacios web funcionales combinando diseños estructurados con componentes dinámicos. Las vistas de fondo permanecen perfectamente claras a lo largo de todo el marco de la línea de tiempo." 
             },
             fr: { 
-                home: "ACCUEIL", resume: "CV", origins: "ORIGINES", projects: "PROJETS", winnings: "PRIX", contact: "CONTACT", subtitle: "MOTEUR // EXPLORATEUR NOMADE", telemetry: "ENREGISTREMENT TÉLÉMÉTRIQUE QUOTIDIEN",
+                home: "ACCUEIL", resume: "CV", origins: "ORIGINES", projects: "PROJETS", winnings: "PRIX", contact: "CONTACT", subtitle: "MOTEUR // EXPLORATEUR NOMADE", telemetry: "ENREGISTREMENT TÉLÉMÉTRIQUE QUOTIEN",
+                firstName: "RANVEER", lastName: "AMILKANTHWAR",
                 description: "Architecture d'espaces web fonctionnels combinant des mises en page structurées avec des composants dynamiques. Les vues d'arrière-plan restent parfaitement claires sur l'ensemble de la chronologie." 
             },
             zh: { 
                 home: "首页", resume: "简历", origins: "起源", projects: "项目", winnings: "奖项", contact: "联系方式", subtitle: "引擎 // 游牧探险家", telemetry: "每日时间遥测记录",
+                firstName: "兰维尔", lastName: "阿米尔坎特瓦尔",
                 description: "构建将结构化布局与动态组件相结合的功能性 Web 空间。在整个页面轨迹时间线框架中，背景视图保持非常清晰。" 
             },
             ar: { 
                 home: "الرئيسية", resume: "السيرة", origins: "الأصول", projects: "المشاريع", winnings: "الجوائز", contact: "الاتصال", subtitle: "محرك // المستكشف البدو", telemetry: "سجل القياس عن بعد اليومي",
+                firstName: "رانفير", lastName: "أميلكانثوار",
                 description: "بناء مساحات ويب وظيفية تجمع بين المخططات الهيكلية والمكونات الديناميكية. تظل مناظر الخلفية واضحة تمامًا طوال إطار الجدول الزمني للمسار." 
             }
         };
@@ -419,12 +458,14 @@
                 document.getElementById('domTxtCard4').innerText = targetDict.winnings;
                 document.getElementById('domTxtCard5').innerText = targetDict.contact;
                 
+                document.getElementById('txtDomFirstName').innerText = targetDict.firstName;
+                document.getElementById('txtDomLastName').innerText = targetDict.lastName;
                 document.getElementById('domHeroSubheading').innerText = targetDict.subtitle;
                 document.getElementById('domTelemetryTitle').innerText = targetDict.telemetry;
             }
         }
 
-        // 1. HARDWARE MOUSE MONITOR & EXTENDED RADIAL TRACK SPACING (175px)
+        // 2. HARDWARE SCROLL MOUSE MONITOR ENGINE & SECTOR METRICS
         const pointerNode = document.getElementById('mountainCursor');
         const kineticBlock = document.getElementById('kineticHeroBlock');
         const magneticIcons = document.querySelectorAll('.magnetic-icon');
@@ -475,7 +516,7 @@
             kineticBlock.style.transform = `rotateX(0deg) rotateY(0deg)`;
         });
 
-        // 2. RADIAL DEPLOYMENT SECTOR MATRIX - WIDE LAYOUT REFIX SPACING (175px)
+        // 3. RADIAL DEPLOYMENT SECTOR MATRIX - Safe Separation Distance (175px)
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -515,7 +556,7 @@
             if(isMenuOpen) executeBackpackStateShift(false);
         });
 
-        // 3. THEME SELECTION MATRIX STATE ENGINE
+        // 4. THEME MUTATION ENVIRONMENT STAGE ENGINE
         function toggleThemeState() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -529,15 +570,15 @@
             if(theme === 'light') {
                 sunBtn.innerText = '🌙';
                 const lightImg = localStorage.getItem('cache-img-light') || 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80';
-                document.documentElement.style.setProperty('--bg-default-img', `url('${lightImg}')`);
+                document.documentElement.style.setProperty('--bg-image', `url('${lightImg}')`);
             } else {
                 sunBtn.innerText = '☀️';
                 const darkImg = localStorage.getItem('cache-img-dark') || 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80';
-                document.documentElement.style.setProperty('--bg-default-img', `url('${darkImg}')`);
+                document.documentElement.style.setProperty('--bg-image', `url('${darkImg}')`);
             }
         }
 
-        // 4. SECURE ADMINISTRATIVE AUTHORIZATION ROUTINES
+        // 5. SECURE PORTAL AUTHENTICATION GATEWAYS
         const authModalFrame = document.getElementById('authModalFrame');
         const adminPanelSuite = document.getElementById('adminPanelSuite');
 
@@ -568,12 +609,13 @@
             }
         }
 
-        // 5. DATA MANAGEMENT CONFIGURATION SYNC PIPELINES
+        // 6. MASTER SYNC WORKSTATION INTEGRATION PACKS
         function populateAdminFields() {
-            document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
+            document.getElementById('admInpBrand').value = document.getElementById('txtDomFirstName').innerText;
+            document.getElementById('admInpLastName').value = document.getElementById('txtDomLastName').innerText;
             document.getElementById('admMenu0').value = document.getElementById('menuLabel0').innerText;
             document.getElementById('admMenu1').value = document.getElementById('menuLabel1').innerText;
-            document.getElementById('admInpHero').value = document.getElementById('domHeroHeading').innerHTML;
+            document.getElementById('admInpSubTitle').value = document.getElementById('domHeroSubheading').innerText;
             document.getElementById('admInpDesc').value = document.getElementById('domDescriptionPara').innerText;
             document.getElementById('admInpPhoto').value = document.getElementById('domPhotoNode').src;
             
@@ -614,10 +656,11 @@
         setupNativeFileTracker('admFileBgLight', 'admInpBgLight');
 
         function commitAdminModifications() {
-            document.getElementById('domBrandLogoText').innerText = document.getElementById('admInpBrand').value;
+            document.getElementById('txtDomFirstName').innerText = document.getElementById('admInpBrand').value;
+            document.getElementById('txtDomLastName').innerText = document.getElementById('admInpLastName').value;
             document.getElementById('menuLabel0').innerText = document.getElementById('admMenu0').value;
             document.getElementById('menuLabel1').innerText = document.getElementById('admMenu1').value;
-            document.getElementById('domHeroHeading').innerHTML = document.getElementById('admInpHero').value;
+            document.getElementById('domHeroSubheading').innerText = document.getElementById('admInpSubTitle').value;
             document.getElementById('domDescriptionPara').innerText = document.getElementById('admInpDesc').value;
             document.getElementById('domPhotoNode').src = document.getElementById('admInpPhoto').value;
 
@@ -652,10 +695,11 @@
 
         function saveSystemStateToLocalStorage() {
             const configObj = {
-                brand: document.getElementById('domBrandLogoText').innerText,
+                firstName: document.getElementById('txtDomFirstName').innerText,
+                lastName: document.getElementById('txtDomLastName').innerText,
                 m0: document.getElementById('menuLabel0').innerText,
                 m1: document.getElementById('menuLabel1').innerText,
-                hero: document.getElementById('domHeroHeading').innerHTML,
+                subtitle: document.getElementById('domHeroSubheading').innerText,
                 desc: document.getElementById('domDescriptionPara').innerText,
                 photo: document.getElementById('domPhotoNode').src,
                 c1: document.getElementById('domTxtCard1').innerText,
@@ -672,17 +716,18 @@
                 heroColor: document.getElementById('domHeroHeading').style.color,
                 paraColor: document.getElementById('domDescriptionPara').style.color
             };
-            localStorage.setItem('nomad_cache_scroll_v6', JSON.stringify(configObj));
+            localStorage.setItem('nomad_cache_scroll_v8', JSON.stringify(configObj));
         }
 
         function loadSystemStateFromCache() {
-            const localCache = localStorage.getItem('nomad_cache_scroll_v6');
+            const localCache = localStorage.getItem('nomad_cache_scroll_v8');
             if (localCache) {
                 const state = JSON.parse(localCache);
-                document.getElementById('domBrandLogoText').innerText = state.brand;
+                document.getElementById('txtDomFirstName').innerText = state.firstName || "RANVEER";
+                document.getElementById('txtDomLastName').innerText = state.lastName || "AMILKANTHWAR";
                 document.getElementById('menuLabel0').innerText = state.m0 || "HOME";
                 document.getElementById('menuLabel1').innerText = state.m1 || "RESUME";
-                document.getElementById('domHeroHeading').innerHTML = state.hero;
+                document.getElementById('domHeroSubheading').innerText = state.subtitle || "ENGINE // NOMAD EXPLORER";
                 document.getElementById('domDescriptionPara').innerText = state.desc;
                 document.getElementById('domPhotoNode').src = state.photo;
                 
@@ -757,37 +802,13 @@
         // LIFECYCLE RUNTIME INIT SEQUENCES
         window.addEventListener('DOMContentLoaded', () => {
             runChronosTick();
+            resolveCyclicalDeterministicThought();
             const activeLang = localStorage.getItem('config-lang') || 'en';
             setGlobalTranslation(activeLang);
             
             setTimeout(() => {
-                const localCache = localStorage.getItem('nomad_cache_scroll_v6');
-                if (localCache) {
-                    const state = JSON.parse(localCache);
-                    document.getElementById('domBrandLogoText').innerText = state.brand;
-                    document.getElementById('menuLabel0').innerText = state.m0 || "HOME";
-                    document.getElementById('menuLabel1').innerText = state.m1 || "RESUME";
-                    document.getElementById('domHeroHeading').innerHTML = state.hero;
-                    document.getElementById('domDescriptionPara').innerText = state.desc;
-                    document.getElementById('domPhotoNode').src = state.photo;
-                    
-                    document.getElementById('domTxtCard1').innerText = state.c1;
-                    document.getElementById('domTxtCard1B').innerText = state.c1b;
-                    document.getElementById('domTxtCard2').innerText = state.c2;
-                    document.getElementById('domTxtCard2B').innerText = state.c2b;
-                    document.getElementById('domTxtCard3').innerText = state.c3;
-                    document.getElementById('domTxtCard3B').innerText = state.c3b;
-                    document.getElementById('domTxtCard4').innerText = state.c4;
-                    document.getElementById('domTxtCard4B').innerText = state.c4b;
-                    document.getElementById('domTxtCard5').innerText = state.c5;
-                    document.getElementById('domTxtCard5B').innerText = state.c5b;
-
-                    if (state.routes) globalSocialRoutes = state.routes;
-                    
-                    if(state.heroColor) document.getElementById('domHeroHeading').style.color = state.heroColor;
-                    if(state.paraColor) document.getElementById('domDescriptionPara').style.color = state.paraColor;
-                }
-            }, 50);
+                loadSystemStateFromCache();
+            }, 60);
 
             evalScrollMetrics();
             const activeTheme = localStorage.getItem('config-theme') || 'dark';
