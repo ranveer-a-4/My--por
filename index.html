@@ -10,16 +10,19 @@
             theme: {
                 extend: {
                     colors: {
-                        glassBg: 'rgba(255, 255, 255, 0.04)',
-                        glassBorder: 'rgba(255, 255, 255, 0.09)',
-                        glassCardBg: 'rgba(15, 23, 42, 0.3)'
+                        glassPanelBg: 'rgba(255, 255, 255, 0.03)',
+                        glassBorder: 'rgba(255, 255, 255, 0.08)',
+                        glassCardBg: 'rgba(10, 15, 26, 0.25)',
+                    },
+                    boxShadow: {
+                        premiumIce: 'inset 0 0 16px rgba(255, 255, 255, 0.03), 0 20px 50px rgba(0, 0, 0, 0.4)'
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Precision Mountain Pointer Configuration */
+        /* Immersive Desktop Mountain Pointer Matrix */
         @media (pointer: fine) {
             html, body, a, button, input, select {
                 cursor: none !important;
@@ -29,29 +32,38 @@
             }
         }
 
-        /* Glassmorphism Refractive Filter Engine */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(16px) saturate(120%);
-            -webkit-backdrop-filter: blur(16px) saturate(120%);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+        /* Ultimate Glassmorphic Specification Rules */
+        .glass-panel-spec {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px) saturate(140%);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .glass-card {
-            background: rgba(15, 23, 42, 0.25);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.02), 0 12px 24px rgba(0,0,0,0.3);
+        .glass-card-spec {
+            background: rgba(10, 15, 26, 0.2);
+            backdrop-filter: blur(25px) saturate(130%);
+            -webkit-backdrop-filter: blur(25px) saturate(130%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 25px 60px rgba(0, 0, 0, 0.45);
         }
 
-        /* Typography Configuration Matrices */
+        /* Background Terrain Drifting Animation Loop */
+        @keyframes landscapeDrift {
+            0% { transform: scale(1) translate(0px, 0px); }
+            50% { transform: scale(1.04) translate(-10px, -5px); }
+            100% { transform: scale(1) translate(0px, 0px); }
+        }
+        .animate-drift {
+            animation: landscapeDrift 24s ease-in-out infinite;
+        }
+
+        /* Typography Override Rules */
         html[data-font="sans"] { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
         html[data-font="serif"] { font-family: Georgia, Cambria, serif; }
-        html[data-font="mono"] { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+        html[data-font="mono"] { font-family: ui-monospace, SFMono-Regular, monospace; }
 
-        /* Multilingual State Layer Filters */
+        /* Multilingual Filter Engine */
         [data-translation] { display: none; }
         html[data-lang="en"] [data-translation="en"] { display: inline; }
         html[data-lang="fr"] [data-translation="fr"] { display: inline; }
@@ -59,33 +71,31 @@
         html[data-lang="ar"] [data-translation="ar"] { display: inline; }
         html[data-lang="zh"] [data-translation="zh"] { display: inline; }
         html[data-lang="hi"] [data-translation="hi"] { display: inline; }
-
-        /* Smooth Hide/Reveal Core Classes */
-        .hidden-system { display: none !important; }
     </style>
 </head>
-<body class="text-slate-100 min-h-screen relative overflow-x-hidden antialiased bg-[#070b12]">
+<body class="text-slate-100 min-h-screen relative overflow-x-hidden antialiased bg-[#05080f]">
 
     <div id="mountainCursor" class="fixed w-8 h-8 pointer-events-none z-50 hidden -translate-x-1/2 transition-transform duration-75 ease-out">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)]">
-            <polygon points="16,2 30,28 2,28" fill="rgba(11, 16, 27, 0.5)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linejoin="round"/>
-            <polygon points="16,2 22,14 17,12 14,15 11,11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]">
+            <polygon points="16,2 30,28 2,28" fill="rgba(5, 8, 15, 0.6)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon points="16,2 22,14 17,12 14,15 11,11" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
         </svg>
     </div>
 
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-black/20 z-10"></div>
-        <video id="bgVideoAsset" autoplay loop muted playsinline class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#05080f]/90 z-10"></div>
+        <div class="absolute inset-0 bg-[#05080f]/10 backdrop-blur-[1px] z-10"></div>
+        <video id="bgVideoAsset" autoplay loop muted playsinline class="w-full h-full object-cover animate-drift">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-snowy-mountain-peaks-under-a-blue-sky-42998-large.mp4" type="video/mp4">
         </video>
     </div>
 
-    <div class="relative z-10 min-h-screen flex flex-col justify-between p-6">
+    <div class="relative z-10 min-h-screen flex flex-col justify-between p-6 gap-8">
         
-        <header class="w-full flex justify-between items-start z-30 pointer-events-none">
+        <header class="w-full flex justify-between items-start z-40 pointer-events-none">
             
             <div class="relative pointer-events-auto" id="backpackContainer">
-                <button id="backpackBtn" class="w-14 h-14 glass-panel rounded-2xl flex items-center justify-center group transition-all duration-300 hover:bg-white/5">
+                <button id="backpackBtn" class="w-14 h-14 glass-panel-spec rounded-2xl flex items-center justify-center group transition-all duration-300 hover:bg-white/5 shadow-xl">
                     <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.75" class="w-7 h-7 transition-all duration-500 group-hover:stroke-white">
                         <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
                         <path d="M9 6V4a3 3 0 0 1 6 0v2" id="backpackTop"/>
@@ -93,28 +103,28 @@
                     </svg>
                 </button>
                 
-                <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[300px] h-[300px]">
-                    <a href="#resume" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">RESUME MATRIX</a>
-                    <a href="#background" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">ORIGINS MAP</a>
-                    <a href="#projects" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">PROJECT SECTORS</a>
-                    <a href="#winnings" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">ACHIEVEMENTS HUB</a>
-                    <a href="#contact" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-white/70 hover:bg-white hover:text-black transition-all">COMM TERMINAL</a>
-                    <button onclick="openAdminModal()" class="menu-item absolute opacity-0 scale-75 glass-panel text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-lg text-emerald-400 border-emerald-500/30 hover:bg-emerald-500 hover:text-black transition-all">PORTAL GATE</button>
+                <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[320px] h-[320px]">
+                    <a href="#resume" class="menu-item absolute opacity-0 scale-75 glass-panel-spec text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-white/70 hover:bg-white hover:text-black transition-all">RESUME MATRIX</a>
+                    <a href="#background" class="menu-item absolute opacity-0 scale-75 glass-panel-spec text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-white/70 hover:bg-white hover:text-black transition-all">ORIGINS MAP</a>
+                    <a href="#projects" class="menu-item absolute opacity-0 scale-75 glass-panel-spec text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-white/70 hover:bg-white hover:text-black transition-all">PROJECT SECTORS</a>
+                    <a href="#winnings" class="menu-item absolute opacity-0 scale-75 glass-panel-spec text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-white/70 hover:bg-white hover:text-black transition-all">ACHIEVEMENTS HUB</a>
+                    <a href="#contact" class="menu-item absolute opacity-0 scale-75 glass-panel-spec text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-white/70 hover:bg-white hover:text-black transition-all">COMM TERMINAL</a>
+                    <button onclick="openAdminModal()" class="menu-item absolute opacity-0 scale-75 glass-panel-spec text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-emerald-400 border-emerald-500/20 hover:bg-emerald-500 hover:text-black transition-all">ADMIN PORTAL</button>
                 </div>
             </div>
 
-            <div class="pointer-events-auto glass-panel px-16 h-14 flex items-center justify-center rounded-2xl">
-                <span id="domBrandLogoText" class="text-xl font-bold tracking-[0.25em] text-white/90 uppercase">RANVEER</span>
+            <div class="pointer-events-auto glass-panel-spec px-20 h-14 flex items-center justify-center rounded-2xl shadow-xl">
+                <span id="domBrandLogoText" class="text-xl font-bold tracking-[0.35em] text-white/90 bg-gradient-to-r from-white via-white/80 to-white/50 bg-clip-text text-transparent uppercase">RANVEER</span>
             </div>
 
-            <div class="pointer-events-auto flex gap-3 z-30">
-                <div class="glass-panel p-3 font-mono text-[11px] text-right space-y-0.5 min-w-[160px]">
-                    <div class="text-white/90 font-bold flex justify-between"><span class="opacity-40">TIME:</span> <span id="liveTime">00:00:00 PM</span></div>
-                    <div class="text-white/60 flex justify-between"><span class="opacity-40">DATE:</span> <span id="liveDate">00-00.2026</span></div>
-                    <div class="text-white/40 text-[9px] tracking-wider pt-1 border-t border-white/5 flex justify-between"><span>ALT: 113.79M'km</span><span id="pointerTelemetry">X:0 Y:0</span></div>
+            <div class="pointer-events-auto flex gap-3">
+                <div class="glass-panel-spec p-3 font-mono text-[11px] rounded-2xl min-w-[170px] space-y-0.5 shadow-xl">
+                    <div class="text-white/90 font-bold flex justify-between"><span class="opacity-30 font-light">TIME —</span> <span id="liveTime">00:00:00 PM</span></div>
+                    <div class="text-white/60 flex justify-between"><span class="opacity-30 font-light">DATE —</span> <span id="liveDate">00-00.2026</span></div>
+                    <div class="text-white/40 text-[9px] tracking-wider pt-1 border-t border-white/5 flex justify-between mt-1"><span>ALT: 113.79M'km</span><span id="pointerTelemetry">X:0 Y:0</span></div>
                 </div>
 
-                <div class="glass-panel w-12 h-11 flex items-center justify-center rounded-xl relative">
+                <div class="glass-panel-spec w-12 h-12 flex items-center justify-center rounded-xl relative hover:bg-white/5 shadow-xl">
                     <select onchange="setLang(this.value)" id="langDropdownSelect" class="absolute inset-0 opacity-0 cursor-none z-10">
                         <option value="en">EN</option>
                         <option value="fr">FR</option>
@@ -123,28 +133,28 @@
                         <option value="zh">ZH</option>
                         <option value="hi">HI</option>
                     </select>
-                    <span class="text-sm">🌐</span>
+                    <span class="text-sm opacity-70">🌐</span>
                 </div>
             </div>
         </header>
 
-        <div id="authModalFrame" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-all duration-300">
-            <div class="glass-card w-80 p-6 rounded-2xl font-mono text-xs space-y-4 border border-white/10">
+        <div id="authModalFrame" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-all duration-300">
+            <div class="glass-card-spec w-80 p-6 rounded-2xl font-mono text-xs space-y-4">
                 <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                    <span class="text-white/80 font-bold tracking-widest">ADMIN PORTAL LOGIN</span>
+                    <span class="text-white/80 font-bold tracking-widest uppercase">ADMIN LOGIN ACCESS</span>
                     <button onclick="closeAdminModal()" class="text-white/40 hover:text-white text-base">&times;</button>
                 </div>
                 <div class="space-y-3">
-                    <input type="text" id="secUserIn" placeholder="USER SIGNATURE" class="w-full bg-black/30 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-white/30">
-                    <input type="password" id="secPassIn" placeholder="SECURITY KEY" class="w-full bg-black/30 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-white/30">
+                    <input type="text" id="secUserIn" placeholder="IDENTITY SIGNATURE" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-white/30">
+                    <input type="password" id="secPassIn" placeholder="MASTER PASSKEY" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-white/30">
                 </div>
-                <button onclick="executePortalAuthorization()" class="w-full bg-white/10 hover:bg-white text-white hover:text-black font-bold py-2.5 rounded-lg transition-all border border-white/10">CONNECT STREAM</button>
+                <button onclick="executePortalAuthorization()" class="w-full bg-white/5 hover:bg-white text-white hover:text-black font-bold py-2.5 rounded-lg transition-all border border-white/10 uppercase tracking-widest">CONNECT CONSOLE</button>
             </div>
         </div>
 
         <div id="adminPanelSuite" class="fixed inset-y-6 right-6 w-[380px] bg-slate-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl z-50 p-5 font-mono text-xs text-slate-300 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-[420px]">
             <div class="flex justify-between items-center border-b border-white/10 pb-3">
-                <span class="text-emerald-400 font-bold tracking-widest">⚙️ CORE CONTROL STATION</span>
+                <span class="text-emerald-400 font-bold tracking-widest">⚙️ CORE SYSTEM OVERRIDE</span>
                 <button onclick="closeAdminSuite()" class="text-rose-400 text-sm font-bold">[ CLOSE ]</button>
             </div>
 
@@ -154,166 +164,170 @@
                     <input type="text" id="admInpBrand" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
                 </div>
                 <div>
-                    <label class="block text-white/50 mb-1">HEADER HERO TITLE text</label>
+                    <label class="block text-white/50 mb-1">HEADER HERO TITLE</label>
                     <input type="text" id="admInpHero" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
                 </div>
                 <div>
-                    <label class="block text-white/50 mb-1">DESCRIPTION LOG SUMMARY</label>
+                    <label class="block text-white/50 mb-1">DESCRIPTION SUMMARY LOG</label>
                     <textarea id="admInpDesc" rows="3" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea>
                 </div>
                 <div>
-                    <label class="block text-white/50 mb-1">PROFILE PHOTO FILE SOURCE (PHONE FILE / URL)</label>
-                    <input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/60 mb-2">
-                    <input type="text" id="admInpPhoto" placeholder="Or paste web link directly" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
+                    <label class="block text-white/50 mb-1">PROFILE SOURCE IMAGE (CHOOSE FILE FROM PHONE)</label>
+                    <input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/60 mb-1">
+                    <input type="text" id="admInpPhoto" placeholder="Or project web address directly" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
                 </div>
                 <div>
-                    <label class="block text-white/50 mb-1">BACKGROUND LOOPER STREAM SOURCE URL</label>
+                    <label class="block text-white/50 mb-1">BACKGROUND VIDEO URL LAYER</label>
                     <input type="text" id="admInpBgVideo" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
                 </div>
                 <div class="border-t border-white/5 pt-3">
-                    <span class="text-white/40 uppercase block mb-2">Card Node Mappings (Single Terms)</span>
+                    <span class="text-white/40 uppercase block mb-2">Card Node Configuration (Single Terms)</span>
                     <div class="grid grid-cols-2 gap-2">
-                        <input type="text" id="admCard1" placeholder="Card 1" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
-                        <input type="text" id="admCard2" placeholder="Card 2" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
-                        <input type="text" id="admCard3" placeholder="Card 3" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
-                        <input type="text" id="admCard4" placeholder="Card 4" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
-                        <input type="text" id="admCard5" placeholder="Card 5" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard1" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard2" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard3" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard4" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                        <input type="text" id="admCard5" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-white/50 mb-1">FONT FAMILY ENGINE</label>
+                    <label class="block text-white/50 mb-1">TYPOGRAPHY ENGINE FONT</label>
                     <select id="admInpFont" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none">
                         <option value="sans">Clean System Sans</option>
-                        <option value="serif">Classic Serif Grid</option>
-                        <option value="mono">Data Monospace Screen</option>
+                        <option value="serif">Classic Serif</option>
+                        <option value="mono">Tech Monospace</option>
                     </select>
                 </div>
                 <div class="grid grid-cols-2 gap-2">
                     <div>
-                        <label class="block text-white/50 mb-1">TEXT HUE COLOR</label>
+                        <label class="block text-white/50 mb-1">GLOBAL TEXT COLOR</label>
                         <input type="color" id="admInpColorText" class="w-full h-8 bg-transparent border-0 outline-none">
                     </div>
                     <div>
-                        <label class="block text-white/50 mb-1">CARD COLOR MIX</label>
+                        <label class="block text-white/50 mb-1">GLASS CARD BLEND</label>
                         <input type="color" id="admInpColorCard" class="w-full h-8 bg-transparent border-0 outline-none">
                     </div>
                 </div>
             </div>
 
-            <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE SYSTEM REVISIONS</button>
+            <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE CONSOLE REVISIONS</button>
         </div>
 
-        <section class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-auto z-10">
+        <section class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-auto z-10">
             
-            <div class="lg:col-span-4 h-64 glass-card rounded-2xl p-4 flex flex-col justify-between overflow-hidden relative group">
+            <div class="lg:col-span-4 h-72 glass-card-spec rounded-3xl p-5 flex flex-col justify-between overflow-hidden relative">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-white/[0.01] pointer-events-none rounded-bl-full border-b border-l border-white/5"></div>
-                <div class="text-[10px] font-mono opacity-40 tracking-widest flex justify-between"><span>LOG ENTRIES: 124</span><span>FLIGHT_STREAM</span></div>
-                <svg viewBox="0 0 400 200" class="w-full h-36 stroke-white/20 fill-none mt-2 opacity-60">
-                    <path d="M20,100 C100,20 200,180 300,50 L380,120" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="4"/>
-                    <circle cx="300" cy="50" r="3" fill="#ffffff"/>
+                <div class="text-[10px] font-mono opacity-40 tracking-[0.2em] flex justify-between"><span>LOG ENTRIES: 124</span><span>B&G ENTRY LOG</span></div>
+                
+                <svg viewBox="0 0 400 200" class="w-full h-40 stroke-white/20 fill-none mt-2 opacity-50">
+                    <path d="M10,120 Q80,40 150,130 T300,60 T390,100" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="3"/>
+                    <circle cx="150" cy="130" r="2.5" fill="#ffffff"/>
+                    <circle cx="300" cy="60" r="2.5" fill="#ffffff"/>
                 </svg>
-                <div class="text-[9px] font-mono opacity-30 mt-1 uppercase tracking-wider">Active satellite track mapped globally.</div>
+                <div class="text-[9px] font-mono opacity-30 uppercase tracking-widest">Active flight telemetry track stream confirmed.</div>
             </div>
 
             <div class="lg:col-span-4 flex justify-center">
                 <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-tr from-white/10 to-transparent rounded-3xl blur opacity-20"></div>
-                    <div class="relative w-64 h-64 glass-panel p-2.5 rounded-3xl flex flex-col items-center justify-center shadow-2xl">
-                        <div class="w-full h-full rounded-2xl overflow-hidden relative border border-white/5">
-                            <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-white/20 via-white/5 to-transparent rounded-[2rem] blur opacity-25"></div>
+                    <div class="relative w-64 h-64 glass-panel-spec p-3 rounded-[2rem] flex flex-col items-center justify-center shadow-2xl">
+                        <div class="w-full h-full rounded-2xl overflow-hidden relative border border-white/10">
+                            <img id="domPhotoNode" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Explorer Center Profile" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="lg:col-span-4 glass-card rounded-2xl p-6 relative flex flex-col justify-between min-h-[240px]">
-                <div class="absolute top-4 right-4 flex gap-1.5 opacity-30">
+            <div class="lg:col-span-4 glass-card-spec rounded-3xl p-6 relative flex flex-col justify-between min-h-[288px]">
+                <div class="absolute top-4 right-4 flex gap-1.5 opacity-20">
                     <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
                     <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
                 </div>
                 
-                <div class="space-y-3">
-                    <h2 id="domHeroHeading" class="text-3xl font-black tracking-tight text-white/90 leading-tight uppercase">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
-                    <p id="domDescriptionPara" class="text-white/70 text-xs leading-relaxed font-medium">Architecting functional web landscapes without heavy runtime pipelines. Open the secure admin console interface within the navigation backpack configuration menu options to instantly alter variable layouts.</p>
+                <div class="space-y-4">
+                    <h2 id="domHeroHeading" class="text-3xl font-black tracking-tight text-white/90 leading-tight uppercase custom-text">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
+                    <p id="domDescriptionPara" class="text-white/70 text-xs leading-relaxed font-medium tracking-wide custom-text">Architecting production code realties combining functional layout web frameworks with cinematic UI assets. Open the secure admin portal console framework inside the navigation backpack block configuration to dynamically update values.</p>
                 </div>
 
-                <div class="border-t border-white/5 pt-3 mt-3 font-mono text-[10px]">
-                    <span class="opacity-40 uppercase block mb-0.5">DYNAMIC ROTATIONAL TELEMETRY LOG</span>
-                    <p id="domDailyThought" class="text-white/50 italic font-light">"The mountain dictates the path, the developer shapes the view."</p>
+                <div class="border-t border-white/5 pt-3 mt-4 font-mono text-[10px]">
+                    <span class="opacity-30 uppercase block tracking-widest mb-0.5">DYNAMIC ROTATION METRIC INSIGHT</span>
+                    <p id="domDailyThought" class="text-white/40 italic font-light custom-text">"The path reveals itself to those who traverse code with clarity."</p>
                 </div>
             </div>
         </section>
 
-        <footer class="w-full space-y-6 z-10 pt-4">
+        <footer class="w-full space-y-6 z-10 pt-2">
             
             <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div onclick="triggerAnchorAction('#resume')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
-                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📄</div>
-                    <span id="domTxtCard1" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">RESUME</span>
+                <div onclick="triggerAnchorAction('#resume')" class="glass-card-spec h-24 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-2 border border-white/5 group active:scale-95">
+                    <div class="text-xl mb-1 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">📄</div>
+                    <span id="domTxtCard1" class="text-[11px] font-mono font-black tracking-[0.2em] text-white/70 uppercase group-hover:text-white transition-colors custom-text">RESUME</span>
                 </div>
-                <div onclick="triggerAnchorAction('#background')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
-                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📍</div>
-                    <span id="domTxtCard2" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">ORIGINS</span>
+                <div onclick="triggerAnchorAction('#background')" class="glass-card-spec h-24 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-2 border border-white/5 group active:scale-95">
+                    <div class="text-xl mb-1 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">📍</div>
+                    <span id="domTxtCard2" class="text-[11px] font-mono font-black tracking-[0.2em] text-white/70 uppercase group-hover:text-white transition-colors custom-text">ORIGINS</span>
                 </div>
-                <div onclick="triggerAnchorAction('#projects')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
-                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📦</div>
-                    <span id="domTxtCard3" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">PROJECTS</span>
+                <div onclick="triggerAnchorAction('#projects')" class="glass-card-spec h-24 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-2 border border-white/5 group active:scale-95">
+                    <div class="text-xl mb-1 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">📦</div>
+                    <span id="domTxtCard3" class="text-[11px] font-mono font-black tracking-[0.2em] text-white/70 uppercase group-hover:text-white transition-colors custom-text">PROJECTS</span>
                 </div>
-                <div onclick="triggerAnchorAction('#winnings')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
-                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">🏆</div>
-                    <span id="domTxtCard4" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">WINNINGS</span>
+                <div onclick="triggerAnchorAction('#winnings')" class="glass-card-spec h-24 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-2 border border-white/5 group active:scale-95">
+                    <div class="text-xl mb-1 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">🏆</div>
+                    <span id="domTxtCard4" class="text-[11px] font-mono font-black tracking-[0.2em] text-white/70 uppercase group-hover:text-white transition-colors custom-text">WINNINGS</span>
                 </div>
-                <div onclick="triggerAnchorAction('#contact')" class="dom-interactive-card glass-card h-24 rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-1.5 border border-white/5 group active:scale-95">
-                    <div class="text-lg mb-1 group-hover:scale-110 transition-transform">📞</div>
-                    <span id="domTxtCard5" class="text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase group-hover:text-white">CONTACT</span>
+                <div onclick="triggerAnchorAction('#contact')" class="glass-card-spec h-24 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-2 border border-white/5 group active:scale-95">
+                    <div class="text-xl mb-1 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">📞</div>
+                    <span id="domTxtCard5" class="text-[11px] font-mono font-black tracking-[0.2em] text-white/70 uppercase group-hover:text-white transition-colors custom-text">CONTACT</span>
                 </div>
             </div>
 
-            <div class="max-w-2xl mx-auto glass-panel h-16 rounded-2xl flex items-center justify-around px-6 shadow-xl border border-white/10">
+            <div class="max-w-2xl mx-auto glass-panel-spec h-16 rounded-2xl flex items-center justify-around px-8 shadow-2xl border border-white/10">
                 <button onclick="fireModalUrlStream('Instagram', 'https://instagram.com')" class="group p-2 transform hover:scale-115 transition-transform">
-                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    <svg class="w-5 h-5 fill-white/30 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </button>
                 <button onclick="fireModalUrlStream('Facebook', 'https://facebook.com')" class="group p-2 transform hover:scale-115 transition-transform">
-                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <svg class="w-5 h-5 fill-white/30 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </button>
                 <button onclick="fireModalUrlStream('LinkedIn', 'https://linkedin.com')" class="group p-2 transform hover:scale-115 transition-transform">
-                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <svg class="w-5 h-5 fill-white/30 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </button>
                 <button onclick="fireModalUrlStream('GitHub', 'https://github.com')" class="group p-2 transform hover:scale-115 transition-transform">
-                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    <svg class="w-5 h-5 fill-white/30 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </button>
                 <button onclick="fireModalUrlStream('Reddit', 'https://reddit.com')" class="group p-2 transform hover:scale-115 transition-transform">
-                    <svg class="w-5 h-5 fill-white/40 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.64-6.24-1.72l1.37-4.31 3.71.82c.03.88.76 1.58 1.65 1.58 1.1 0 2-1 2-2s-1-2-2-2c-.84 0-1.54.52-1.82 1.24l-4.12-.91c-.23-.05-.47.09-.54.31l-1.6 5c-2.45.04-4.7.67-6.38 1.69-.53-.73-1.41-1.19-2.39-1.19-1.65 0-3 1.35-3 3 0 1 .5 1.9 1.23 2.47-.03.21-.05.43-.05.66 0 3.86 4.48 7 10 7s10-3.14 10-7c0-.23-.02-.45-.05-.66.78-.57 1.28-1.47 1.28-2.47zM6.5 14c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm11 2.5c-1.79 1.79-5.17 1.79-6.96 0-.2-.2-.2-.51 0-.71.2-.2.51-.2.71 0 1.41 1.41 4.13 1.41 5.54 0 .2-.2.51-.2.71 0 .19.2.19.51.01.71zm-.5-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                    <svg class="w-5 h-5 fill-white/30 group-hover:fill-white/90 transition-colors" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.64-6.24-1.72l1.37-4.31 3.71.82c.03.88.76 1.58 1.65 1.58 1.1 0 2-1 2-2s-1-2-2-2c-.84 0-1.54.52-1.82 1.24l-4.12-.91c-.23-.05-.47.09-.54.31l-1.6 5c-2.45.04-4.7.67-6.38 1.69-.53-.73-1.41-1.19-2.39-1.19-1.65 0-3 1.35-3 3 0 1 .5 1.9 1.23 2.47-.03.21-.05.43-.05.66 0 3.86 4.48 7 10 7s10-3.14 10-7c0-.23-.02-.45-.05-.66.78-.57 1.28-1.47 1.28-2.47zM6.5 14c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm11 2.5c-1.79 1.79-5.17 1.79-6.96 0-.2-.2-.2-.51 0-.71.2-.2.51-.2.71 0 1.41 1.41 4.13 1.41 5.54 0 .2-.2.51-.2.71 0 .19.2.19.51.01.71zm-.5-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
                 </button>
+            </div>
+            
+            <div class="text-center font-mono text-[9px] text-slate-500 tracking-[0.4em] uppercase">
+                ENGINE OPERATIONAL CONFIGURATION FRAMEWORK // RANVEER • 2026
             </div>
         </footer>
     </div>
 
     <div id="portalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
-        <div class="glass-card w-full max-w-md overflow-hidden rounded-2xl border border-white/10 transform scale-95 transition-all duration-300 relative">
+        <div class="glass-card-spec w-full max-w-md overflow-hidden rounded-2xl relative transform scale-95 transition-all">
             <div class="bg-white/5 border-b border-white/10 p-4 flex justify-between items-center font-mono text-[11px]">
-                <span id="modalTitle" class="text-white font-bold tracking-widest">STREAM HANDSHAKE INITIALIZED</span>
-                <button onclick="closePortalModal()" class="text-white/50 hover:text-white text-lg font-bold">&times;</button>
+                <span id="modalTitle" class="text-white font-bold tracking-widest">STREAM ROUTE HANDSHAKE</span>
+                <button onclick="closePortalModal()" class="text-white/40 hover:text-white text-lg font-bold">&times;</button>
             </div>
             <div class="p-6 font-mono text-xs space-y-4">
-                <p class="text-slate-300 leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5">Dynamic configuration route validation handshake check complete. Route targeting executed securely via container profile logs.</p>
-                <div class="flex gap-4">
-                    <a id="modalActionLink" href="#" target="_blank" class="flex-1 bg-white text-black text-center font-bold py-3 rounded-xl hover:bg-slate-200 transition-colors uppercase tracking-wider">PROCEED TO STREAM</a>
-                </div>
+                <p class="text-slate-300 leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5">Dynamic configuration route validation check resolved. Path mapping target executed successfully via console cache records.</p>
+                <a id="modalActionLink" href="#" target="_blank" class="block w-full bg-white text-black text-center font-bold py-3 rounded-xl hover:bg-slate-200 transition-all uppercase tracking-wider">PROCEED TO TARGET</a>
             </div>
         </div>
     </div>
 
     <script>
-        // 1. PRECISION MOUSE MOVEMENT CAPTURE
+        // 1. PRECISION TARGET POINTER MONITOR
         const cursorInstance = document.getElementById('mountainCursor');
         window.addEventListener('mousemove', (e) => {
             cursorInstance.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
             document.getElementById('pointerTelemetry').innerText = `X:${e.clientX} Y:${e.clientY}`;
         });
 
-        // 2. BACKPACK ARC NAV CONTROLLER 
+        // 2. BACKPACK ARC EXPANSION ENGINE
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -326,7 +340,7 @@
                 backpackTop.setAttribute('d', 'M7 6V3a2 2 0 0 1 4 0v3m2 0V2a2 2 0 0 1 4 0v4'); 
                 arcMenu.classList.remove('pointer-events-none');
                 
-                const distance = 130; 
+                const distance = 135; 
                 const totalItems = menuItems.length;
                 
                 menuItems.forEach((item, index) => {
@@ -346,7 +360,7 @@
             }
         });
 
-        // 3. SECURE AUTH VALIDATION MECHANISMS
+        // 3. SECURE AUTH PORTAL ACCESSIBILITY KEYS
         const authModalFrame = document.getElementById('authModalFrame');
         const adminPanelSuite = document.getElementById('adminPanelSuite');
 
@@ -366,16 +380,17 @@
             const u = document.getElementById('secUserIn').value;
             const p = document.getElementById('secPassIn').value;
 
+            // Strict matching validation assignment
             if (u === "1245678912" && p === "1245678912") {
                 closeAdminModal();
                 populateAdminFields();
                 adminPanelSuite.classList.remove('translate-x-[420px]');
             } else {
-                alert("ERR // SIGNATURE INVALID. ACCESS REJECTED.");
+                alert("ERR // SIGNATURE INVALID. SECURITY ENVELOPE SHUTDOWN.");
             }
         }
 
-        // 4. ADMIN PERSISTENT REVISION CORE VALUES
+        // 4. MANAGEMENT CONSOLE CONTROLLER
         function populateAdminFields() {
             document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
             document.getElementById('admInpHero').value = document.getElementById('domHeroHeading').innerHTML.replace('<br>', '\n');
@@ -384,13 +399,13 @@
             document.getElementById('admInpBgVideo').value = document.getElementById('bgVideoAsset').querySelector('source').src;
             
             document.getElementById('admCard1').value = document.getElementById('domTxtCard1').innerText;
-            document.getElementById('admCard2').value = document.getElementById('domTxtCard2').innerText;
-            document.getElementById('admCard3').value = document.getElementById('domTxtCard3').innerText;
-            document.getElementById('admCard4').value = document.getElementById('domTxtCard4').innerText;
-            document.getElementById('admCard5').value = document.getElementById('domTxtCard5').innerText;
+            document.getElementById('admCard2').value = document.getElementById('admCard2').innerText;
+            document.getElementById('admCard3').value = document.getElementById('admCard3').innerText;
+            document.getElementById('admCard4').value = document.getElementById('admCard4').innerText;
+            document.getElementById('admCard5').value = document.getElementById('admCard5').innerText;
         }
 
-        // Handle Image Input via Mobile Native Camera/Gallery File Upload
+        // Read Local Phone Assets via Data Streams File Loader
         document.getElementById('admFilePhoto').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
@@ -403,14 +418,11 @@
         });
 
         function commitAdminModifications() {
-            // Apply Text Elements
             document.getElementById('domBrandLogoText').innerText = document.getElementById('admInpBrand').value;
             document.getElementById('domHeroHeading').innerHTML = document.getElementById('admInpHero').value.replace('\n', '<br>');
             document.getElementById('domDescriptionPara').innerText = document.getElementById('admInpDesc').value;
             
-            // Apply Media Assets
-            const newPhotoSrc = document.getElementById('admInpPhoto').value;
-            document.getElementById('domPhotoNode').src = newPhotoSrc;
+            document.getElementById('domPhotoNode').src = document.getElementById('admInpPhoto').value;
             
             const newVideoSrc = document.getElementById('admInpBgVideo').value;
             const videoElement = document.getElementById('bgVideoAsset');
@@ -418,16 +430,13 @@
             videoElement.load();
             videoElement.play();
 
-            // Apply Card Labels
             document.getElementById('domTxtCard1').innerText = document.getElementById('admCard1').value;
             document.getElementById('domTxtCard2').innerText = document.getElementById('admCard2').value;
             document.getElementById('domTxtCard3').innerText = document.getElementById('admCard3').value;
             document.getElementById('domTxtCard4').innerText = document.getElementById('admCard4').value;
             document.getElementById('domTxtCard5').innerText = document.getElementById('admCard5').value;
 
-            // Apply Theme Overrides
-            const selectedFont = document.getElementById('admInpFont').value;
-            document.documentElement.setAttribute('data-font', selectedFont);
+            document.documentElement.setAttribute('data-font', document.getElementById('admInpFont').value);
 
             const selectedTxtColor = document.getElementById('admInpColorText').value;
             document.querySelectorAll('.custom-text, h2, p, span, div').forEach(el => {
@@ -435,11 +444,10 @@
             });
 
             const selectedCardColor = document.getElementById('admInpColorCard').value;
-            document.querySelectorAll('.glass-card').forEach(el => {
-                el.style.backgroundColor = hexToRgba(selectedCardColor, 0.25);
+            document.querySelectorAll('.glass-card-spec').forEach(el => {
+                el.style.backgroundColor = hexToRgba(selectedCardColor, 0.22);
             });
 
-            // Write Matrix arrays to local storage records
             saveSystemStateToLocalStorage();
             closeAdminSuite();
         }
@@ -452,7 +460,7 @@
                 c= '0x'+c.join('');
                 return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+','+opacity+')';
             }
-            return rgba;
+            return 'rgba(255,255,255,0.05)';
         }
 
         function saveSystemStateToLocalStorage() {
@@ -469,11 +477,11 @@
                 c4: document.getElementById('domTxtCard4').innerText,
                 c5: document.getElementById('domTxtCard5').innerText
             };
-            localStorage.setItem('nomad_sys_cache', JSON.stringify(state));
+            localStorage.setItem('nomad_sys_cache_v2', JSON.stringify(state));
         }
 
         function loadSystemStateFromCache() {
-            const cache = localStorage.getItem('nomad_sys_cache');
+            const cache = localStorage.getItem('nomad_sys_cache_v2');
             if (cache) {
                 const state = JSON.parse(cache);
                 document.getElementById('domBrandLogoText').innerText = state.brand;
@@ -491,13 +499,13 @@
             }
         }
 
-        // 5. SOCIAL LINK HANDLING MODAL POPUPS
+        // 5. EXTERNAL HANDSHAKE LOGIC DOCKS
         const portalModal = document.getElementById('portalModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalActionLink = document.getElementById('modalActionLink');
 
         function fireModalUrlStream(platform, url) {
-            modalTitle.innerText = `HANDSHAKE REQUIRED // ${platform.toUpperCase()}`;
+            modalTitle.innerText = `HANDSHAKE STRATIFIED // ${platform.toUpperCase()}`;
             modalActionLink.href = url;
             portalModal.classList.remove('hidden');
             setTimeout(() => { portalModal.classList.remove('opacity-0'); }, 50);
@@ -510,7 +518,7 @@
             window.location.hash = id;
         }
 
-        // 6. DYNAMIC SYSTEM DATA CLOCK STREAM
+        // 6. RUNTIME DATA FEED TICK
         function runChronosTick() {
             const now = new Date();
             document.getElementById('liveTime').innerText = now.toLocaleTimeString();
@@ -527,7 +535,6 @@
             localStorage.setItem('config-lang', lang);
         }
 
-        // INITIALIZE RUNTIME LIFECYCLES
         window.addEventListener('DOMContentLoaded', () => {
             runChronosTick();
             loadSystemStateFromCache();
