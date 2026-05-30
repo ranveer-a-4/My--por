@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranveer Amilkanthwar | Nomad Exploration Space</title>
+    <title>Ranveer Amilkanthwar | Nomad Matrix</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,7 +22,7 @@
         }
     </script>
     <style>
-        /* Light & Dark High-Contrast Glassmorphic System Configurations */
+        /* CSS Variable Tokens for Dynamic Thematic Scenery Backdrops */
         html[data-theme="dark"] {
             --bg-overlay: rgba(4, 7, 12, 0.35);
             --glass-bg: rgba(10, 16, 26, 0.7);
@@ -43,9 +43,7 @@
         }
 
         /* 3D Rotating Card Engine Setup */
-        .perspective-container {
-            perspective: 1500px;
-        }
+        .perspective-container { perspective: 1500px; }
         .rotating-card-3d {
             transition: transform 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
             transform-style: preserve-3d;
@@ -57,9 +55,7 @@
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
-        .card-back {
-            transform: rotateY(180deg);
-        }
+        .card-back { transform: rotateY(180deg); }
 
         /* Laser Light Sheen Overlay Effects Loop */
         @keyframes sheenEffect {
@@ -70,14 +66,10 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
         }
 
-        /* Custom Mountain Mouse Cursor Setup (Active on desktop displays) */
+        /* Custom Mountain Mouse Cursor Setup (Active on desktop fine pointer displays) */
         @media (pointer: fine) {
-            html, body, a, button, input, select, textarea {
-                cursor: none !important;
-            }
-            #mountainCursor {
-                display: block !important;
-            }
+            html, body, a, button, input, select, textarea { cursor: none !important; }
+            #mountainCursor { display: block !important; }
         }
 
         /* Refractive Frosting applied STRICTLY within panels to preserve completely crisp backdrop viewports */
@@ -107,11 +99,7 @@
             transform: translateY(40px) scale(0.97);
             transition: all 0.9s cubic-bezier(0.1, 0.76, 0.55, 0.94);
         }
-        .scroll-reveal-node.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
+        .scroll-reveal-node.visible { opacity: 1; transform: translateY(0) scale(1); }
         .premium-text-spacing {
             font-family: 'Courier New', Courier, monospace;
             letter-spacing: 0.45em;
@@ -162,11 +150,9 @@
             <div class="glass-ui-refractive p-2.5 font-mono text-[10px] rounded-xl hidden lg:block shadow-2xl">
                 <span id="liveTime">00:00:00 PM</span> // <span id="liveDate">30-05.2026</span>
             </div>
-
             <button onclick="toggleThemeState()" id="themeSunBtn" class="w-12 h-12 glass-ui-refractive flex items-center justify-center rounded-xl hover:bg-white/10 shadow-2xl text-lg transition-transform active:scale-90">
                 ☀️
             </button>
-
             <div class="relative group">
                 <button class="w-12 h-12 glass-ui-refractive flex items-center justify-center rounded-xl text-sm shadow-xl">🌐</button>
                 <div class="absolute top-14 right-0 w-20 glass-ui-refractive rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[9px] font-black tracking-widest gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50 max-h-48 overflow-y-auto">
@@ -210,8 +196,8 @@
             <div><label class="block text-white/40 mb-1">MAIN LANDING HERO TITLE</label><input type="text" id="admInpHero" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             <div><label class="block text-white/40 mb-1">PROFILE DESCRIPTION SYNOPSIS LOG</label><textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea></div>
             <div><label class="block text-white/40 mb-1">AVATAR PICTURE SOURCE (CHOOSE PHONE FILE / URL)</label><input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/40 mb-1">DARK MODE BACKDROP IMAGE SOURCE (CHOOSE PHONE FILE)</label><input type="file" id="admFileBgDark" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/40 mb-1">LIGHT MODE BACKDROP IMAGE SOURCE (CHOOSE PHONE FILE)</label><input type="file" id="admFileBgLight" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">DARK MODE BACKDROP IMAGE SOURCE</label><input type="file" id="admFileBgDark" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div><label class="block text-white/40 mb-1">LIGHT MODE BACKDROP IMAGE SOURCE</label><input type="file" id="admFileBgLight" accept="image/*" class="w-full text-white/50 mb-1"><input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none"></div>
             <div class="border-t border-white/5 pt-3">
                 <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">3D Rotating Card Label Modifiers</span>
                 <div class="grid grid-cols-2 gap-2">
@@ -241,45 +227,40 @@
 
     <main class="relative z-10 w-full flex flex-col items-center px-6">
         
-        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center gap-12 pt-32 pb-20">
+        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col items-center justify-center gap-12 pt-32 pb-20">
             
-            <div class="flex-shrink-0 relative group">
-                <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
-                <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale Cane-101 duration-300 opacity-75 backdrop-blur-none">
-                    <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
-                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
+            <div class="flex flex-col items-center gap-6 text-center">
+                
+                <div class="relative group">
+                    <div class="absolute -inset-1.5 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
+                    <div class="relative w-72 h-72 glass-ui-refractive p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border hover:scale-101 duration-300 opacity-75 backdrop-blur-none">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
+                            <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </div>
+
+                <h2 id="domHeroHeading" class="text-4xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase transition-colors" style="color: var(--text-main);">
+                    <span onclick="openAdminAuth()" class="hover:text-cyan-400 active:scale-95 transition-all inline-block select-none underline decoration-cyan-400 decoration-2 underline-offset-4">R</span>ANVEER<br>
+                    <span class="opacity-80 font-semibold block mt-1">AMILKANTHWAR</span>
+                    <span id="domHeroSubheading" class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-2 text-white">ENGINE // NOMAD EXPLORER</span>
+                </h2>
             </div>
 
-            <div id="kineticHeroBlock" class="flex-1 glass-ui-refractive rounded-[2.5rem] p-8 md:p-10 relative flex flex-col justify-between min-h-[288px] shadow-2xl border transition-transform duration-300 ease-out">
-                <div class="absolute top-5 right-5 flex gap-1.5 opacity-20">
-                    <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
-                    <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
-                </div>
-                <div class="space-y-4">
-                    <h2 id="domHeroHeading" class="text-4xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase transition-colors" style="color: var(--text-main);">
-                        <span onclick="openAdminAuth()" class="hover:text-cyan-400 active:scale-95 transition-all inline-block select-none">R</span>ANVEER<br>
-                        <span class="opacity-80 font-semibold block mt-0.5">AMILKANTHWAR</span>
-                        <span id="domHeroSubheading" class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-2 text-white">ENGINE // NOMAD EXPLORER</span>
-                    </h2>
-                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-semibold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">
-                        <span data-translation-engine="true">Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework.</span>
-                    </p>
-                </div>
+            <div id="kineticHeroBlock" class="w-full max-w-2xl glass-ui-refractive rounded-[2.5rem] p-8 md:p-10 relative flex flex-col justify-between min-h-[160px] shadow-2xl border transition-transform duration-300 ease-out mt-4">
+                <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-bold tracking-wide opacity-95 transition-colors" style="color: var(--text-main);">
+                    <span data-translation-engine="true">Architecting functional web spaces combining structured layouts with dynamic components. Background views remain perfectly clear across the entire page trail timeline framework.</span>
+                </p>
                 <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-40">
                     <span id="domTelemetryTitle" class="uppercase block tracking-widest mb-1">DAILY TIME TELEMETRY RECORD</span>
-                    <p id="domDailyThought" class="italic font-light">"Isolated element frosting keeps variables legible over sharp sceneries."</p>
+                    <p id="domDailyThought" class="italic font-light">"Frosted panel structures maintain absolute legibility over neat landscape backdrops."</p>
                 </div>
             </div>
         </section>
 
-        <div class="h-44 md:h-64 w-full flex items-center justify-center pointer-events-none opacity-25 font-mono text-[9px] tracking-[0.5em] text-center uppercase text-white drop-shadow-md">
-            [ Scrolling Terrain Sector Buffer Layer // Clear Landscape View ]
-        </div>
+        <div class="h-44 md:h-64 w-full flex items-center justify-center pointer-events-none"></div>
 
         <section id="deck-section" class="w-full max-w-5xl py-20 flex flex-col gap-10 scroll-reveal-node">
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 
                 <div id="resume-card" onclick="triggerAnchorAction('#resume-card')" class="perspective-container h-32 w-full active:scale-95 duration-200 group">
@@ -404,11 +385,11 @@
             },
             fr: { 
                 home: "ACCUEIL", resume: "CV", origins: "ORIGINES", projects: "PROJETS", winnings: "PRIX", contact: "CONTACT", subtitle: "MOTEUR // EXPLORATEUR NOMADE", telemetry: "ENREGISTREMENT TÉLÉMÉTRIQUE QUOTIDIEN",
-                description: "Architecture d'espaces web fonctionnels combinant des mises en page structurées avec des composants dynamiques. Les vues d'arrière-plan restent pfaitement claires sur l'ensemble de la chronologie." 
+                description: "Architecture d'espaces web fonctionnels combinant des mises en page structurées avec des composants dynamiques. Les vues d'arrière-plan restent parfaitement claires sur l'ensemble de la chronologie." 
             },
             zh: { 
                 home: "首页", resume: "简历", origins: "起源", projects: "项目", winnings: "奖项", contact: "联系方式", subtitle: "引擎 // 游牧探险家", telemetry: "每日时间遥测记录",
-                description: "构建将结构化布局与动态组件相结合的功能性 Web 空间。在整个页面轨迹时间线框架中，背景视图保持非常清晰。" 
+                description: "构建将 structure 布局与动态组件相结合的功能性 Web 空间。在整个页面轨迹时间线框架中，背景视图保持非常清晰。" 
             },
             ar: { 
                 home: "الرئيسية", resume: "السيرة", origins: "الأصول", projects: "المشاريع", winnings: "الجوائز", contact: "الاتصال", subtitle: "محرك // المستكشف البدو", telemetry: "سجل القياس عن بعد اليومي",
@@ -492,7 +473,7 @@
             kineticBlock.style.transform = `rotateX(0deg) rotateY(0deg)`;
         });
 
-        // 2. RADIAL DEPLOYMENT SECTOR MATRIX - WIDE LAYOUT REFIX SPACING (175px)
+        // 2. RADIAL DEPLOYMENT SECTOR MATRIX - COLLISION SAFE OVERLAP REFIX (175px)
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -500,7 +481,7 @@
         let isMenuOpen = false;
 
         backpackBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Block closing bubbling cycles instantly
+            e.stopPropagation();
             isMenuOpen = !isMenuOpen;
             executeBackpackStateShift(isMenuOpen);
         });
@@ -528,7 +509,6 @@
             }
         }
 
-        // DISMISS RADIAL OVERLAYS AUTOMATICALLY WHEN SCROLLER BACKGROUND TAPPED
         window.addEventListener('click', () => {
             if(isMenuOpen) executeBackpackStateShift(false);
         });
@@ -586,12 +566,12 @@
             }
         }
 
-        // 5. MASTER VALUE OVERRIDE SYNCHRONIZER (ADMIN WORKSTATION ENGINE)
+        // 5. DATA MANAGEMENT CONFIGURATION SYNC PIPELINES
         function populateAdminFields() {
             document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
             document.getElementById('admMenu0').value = document.getElementById('menuLabel0').innerText;
             document.getElementById('admMenu1').value = document.getElementById('menuLabel1').innerText;
-            document.getElementById('admInpHero').value = document.getElementById('domHeroHeading').innerHTML.replace('<br>', '\n');
+            document.getElementById('admInpHero').value = document.getElementById('domHeroHeading').innerHTML;
             document.getElementById('admInpDesc').value = document.getElementById('domDescriptionPara').innerText;
             document.getElementById('admInpPhoto').value = document.getElementById('domPhotoNode').src;
             
@@ -635,7 +615,7 @@
             document.getElementById('domBrandLogoText').innerText = document.getElementById('admInpBrand').value;
             document.getElementById('menuLabel0').innerText = document.getElementById('admMenu0').value;
             document.getElementById('menuLabel1').innerText = document.getElementById('admMenu1').value;
-            document.getElementById('domHeroHeading').innerHTML = document.getElementById('admInpHero').value.replace('\n', '<br>');
+            document.getElementById('domHeroHeading').innerHTML = document.getElementById('admInpHero').value;
             document.getElementById('domDescriptionPara').innerText = document.getElementById('admInpDesc').value;
             document.getElementById('domPhotoNode').src = document.getElementById('admInpPhoto').value;
 
@@ -693,35 +673,6 @@
             localStorage.setItem('nomad_cache_scroll_v6', JSON.stringify(configObj));
         }
 
-        function loadSystemStateFromCache() {
-            const localCache = localStorage.getItem('nomad_cache_scroll_v6');
-            if (localCache) {
-                const state = JSON.parse(localCache);
-                document.getElementById('domBrandLogoText').innerText = state.brand;
-                document.getElementById('menuLabel0').innerText = state.m0 || "HOME";
-                document.getElementById('menuLabel1').innerText = state.m1 || "RESUME";
-                document.getElementById('domHeroHeading').innerHTML = state.hero;
-                document.getElementById('domDescriptionPara').innerText = state.desc;
-                document.getElementById('domPhotoNode').src = state.photo;
-                
-                document.getElementById('domTxtCard1').innerText = state.c1;
-                document.getElementById('domTxtCard1B').innerText = state.c1b;
-                document.getElementById('domTxtCard2').innerText = state.c2;
-                document.getElementById('domTxtCard2B').innerText = state.c2b;
-                document.getElementById('domTxtCard3').innerText = state.c3;
-                document.getElementById('domTxtCard3B').innerText = state.c3b;
-                document.getElementById('domTxtCard4').innerText = state.c4;
-                document.getElementById('domTxtCard4B').innerText = state.c4b;
-                document.getElementById('domTxtCard5').innerText = state.c5;
-                document.getElementById('domTxtCard5B').innerText = state.c5b;
-
-                if (state.routes) globalSocialRoutes = state.routes;
-                
-                if(state.heroColor) document.getElementById('domHeroHeading').style.color = state.heroColor;
-                if(state.paraColor) document.getElementById('domDescriptionPara').style.color = state.paraColor;
-            }
-        }
-
         // 6. SCROLL DETECTOR MATRIX
         const revealNodes = document.querySelectorAll('.scroll-reveal-node');
         function evalScrollMetrics() {
@@ -751,7 +702,7 @@
             setTimeout(() => { portalModal.classList.add('hidden'); }, 300);
         }
         function triggerAnchorAction(id) {
-            if(isMenuOpen) executeBackpackStateShift(false); // Force menu shut cleanly upon active link tap events
+            if(isMenuOpen) executeBackpackStateShift(false); 
             const el = document.querySelector(id);
             if (el) { el.scrollIntoView({ behavior: 'smooth' }); }
             else { window.location.hash = id; }
@@ -775,13 +726,43 @@
         // LIFECYCLE RUNTIME INIT SEQUENCES
         window.addEventListener('DOMContentLoaded', () => {
             runChronosTick();
-            loadSystemStateFromCache();
+            const activeLang = localStorage.getItem('config-lang') || 'en';
+            setGlobalTranslation(activeLang);
+            
+            // Wait for Translation matrix injection lifecycle prior to parsing structural local caches
+            setTimeout(() => {
+                const localCache = localStorage.getItem('nomad_cache_scroll_v6');
+                if (localCache) {
+                    const state = JSON.parse(localCache);
+                    document.getElementById('domBrandLogoText').innerText = state.brand;
+                    document.getElementById('menuLabel0').innerText = state.m0 || "HOME";
+                    document.getElementById('menuLabel1').innerText = state.m1 || "RESUME";
+                    document.getElementById('domHeroHeading').innerHTML = state.hero;
+                    document.getElementById('domDescriptionPara').innerText = state.desc;
+                    document.getElementById('domPhotoNode').src = state.photo;
+                    
+                    document.getElementById('domTxtCard1').innerText = state.c1;
+                    document.getElementById('domTxtCard1B').innerText = state.c1b;
+                    document.getElementById('domTxtCard2').innerText = state.c2;
+                    document.getElementById('domTxtCard2B').innerText = state.c2b;
+                    document.getElementById('domTxtCard3').innerText = state.c3;
+                    document.getElementById('domTxtCard3B').innerText = state.c3b;
+                    document.getElementById('domTxtCard4').innerText = state.c4;
+                    document.getElementById('domTxtCard4B').innerText = state.c4b;
+                    document.getElementById('domTxtCard5').innerText = state.c5;
+                    document.getElementById('domTxtCard5B').innerText = state.c5b;
+
+                    if (state.routes) globalSocialRoutes = state.routes;
+                    
+                    if(state.heroColor) document.getElementById('domHeroHeading').style.color = state.heroColor;
+                    if(state.paraColor) document.getElementById('domDescriptionPara').style.color = state.paraColor;
+                }
+            }, 50);
+
             evalScrollMetrics();
             const activeTheme = localStorage.getItem('config-theme') || 'dark';
             document.documentElement.setAttribute('data-theme', activeTheme);
             updateThematicImages(activeTheme);
-            const activeLang = localStorage.getItem('config-lang') || 'en';
-            setGlobalTranslation(activeLang);
         });
     </script>
 </body>
