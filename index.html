@@ -3,143 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranveer Rajesh | Nomad Scroll Matrix</title>
+    <title>Ranveer Rajesh | Advanced Exploration Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        glassBorder: 'rgba(255, 255, 255, 0.12)'
-                    },
-                    animation: {
-                        'scenery-drift': 'driftLoop 32s ease-in-out infinite',
-                        'fade-glide': 'fadeGlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                        glassBorder: 'rgba(255, 255, 255, 0.15)'
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Light/Dark Thematic Parameter State Rules */
+        /* Strict Design Tokens for Dark (Night Stars) and Light (Day Mountain) Themes */
         html[data-theme="dark"] {
-            --bg-overlay: rgba(5, 10, 20, 0.45);
-            --glass-bg: rgba(13, 22, 38, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --bg-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80'); /* Night Stars over Mountains */
+            --glass-bg: rgba(9, 15, 28, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.12);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --shadow-matrix: 0 30px 60px rgba(0, 0, 0, 0.5);
+            --shadow-matrix: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
         html[data-theme="light"] {
-            --bg-overlay: rgba(255, 255, 255, 0.25);
-            --glass-bg: rgba(255, 255, 255, 0.5);
-            --glass-border: rgba(0, 0, 0, 0.09);
+            --bg-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); /* Day Sunny Mountain Landscape */
+            --glass-bg: rgba(255, 255, 255, 0.55);
+            --glass-border: rgba(0, 0, 0, 0.12);
             --text-main: #0f172a;
             --text-muted: #475569;
-            --shadow-matrix: 0 30px 60px rgba(15, 23, 42, 0.12);
+            --shadow-matrix: 0 30px 60px rgba(15, 23, 42, 0.15);
         }
 
-        /* Precision Target Pointer Setup matching Mountain Peak Coordinates */
+        /* 3D Rotatable Card Engine Setup */
+        .perspective-container {
+            perspective: 1000px;
+        }
+        .rotating-card-3d {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .perspective-container:hover .rotating-card-3d {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Precision Desktop Targeting Mountain Cursor */
         @media (pointer: fine) {
             html, body, a, button, input, select { cursor: none !important; }
             #mountainCursor { display: block; }
         }
 
-        /* Pure Translucent Refractive Glass Rules */
-        .glass-ui-node {
+        /* Pure High-Transparency Glassmorphism Without Blurs */
+        .glass-ui-clean {
             background: var(--glass-bg);
-            backdrop-filter: blur(24px) saturate(140%);
-            -webkit-backdrop-filter: blur(24px) saturate(140%);
             border: 1px solid var(--glass-border);
             box-shadow: var(--shadow-matrix);
             color: var(--text-main);
         }
 
-        /* Smooth Traveling Animation Keyframes */
-        @keyframes driftLoop {
-            0%, 100% { transform: scale(1.02) translate(0px, 0px); }
-            50% { transform: scale(1.06) translate(-15px, -8px); }
+        /* Animated Travel Scenery Parallax Drift Loop */
+        @keyframes subtleDrift {
+            0%, 100% { transform: scale(1) translate(0px, 0px); }
+            50% { transform: scale(1.03) translate(-10px, -5px); }
         }
-        @keyframes fadeGlideUp {
-            0% { opacity: 0; transform: translateY(30px) scale(0.98); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+        .animate-bg-drift {
+            animation: subtleDrift 28s ease-in-out infinite;
         }
 
-        /* On-Scroll Presentation Class */
-        .scroll-reveal-active {
+        /* Scroll Reveal Effect Rules */
+        .scroll-glide-node {
             opacity: 0;
-            transform: translateY(25px);
-            transition: all 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .scroll-reveal-active.visible {
+        .scroll-glide-node.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .premium-mono-font {
-            font-family: 'Courier New', Courier, monospace;
-            letter-spacing: 0.4em;
-        }
-
         [data-translation] { display: none; }
         html[data-lang="en"] [data-translation="en"] { display: inline; }
-        html[data-lang="fr"] [data-translation="fr"] { display: inline; }
-        html[data-lang="es"] [data-translation="es"] { display: inline; }
         html[data-lang="hi"] [data-translation="hi"] { display: inline; }
     </style>
 </head>
-<body class="min-h-screen relative overflow-x-hidden transition-colors duration-700 font-sans" style="background-color: var(--bg-overlay);">
+<body class="min-h-screen relative overflow-x-hidden h-full transition-all duration-500 pb-20">
 
     <div id="mountainCursor" class="fixed w-8 h-8 pointer-events-none z-50 hidden -translate-x-1/2 transition-transform duration-700 ease-out">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)]">
-            <polygon points="16,2 30,28 2,28" fill="rgba(5, 10, 20, 0.3)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <polygon points="16,2 22,14 17,12 14,15 11,11" fill="none" stroke="#5ae4ff" stroke-width="1"/>
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]">
+            <polygon points="16,2 30,28 2,28" fill="rgba(0,0,0,0.2)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <polygon points="16,2 22,14 17,12 14,15 11,11" fill="none" stroke="#5ae4ff" stroke-width="1.25"/>
         </svg>
     </div>
 
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute inset-0 z-10 transition-colors duration-700" style="background: var(--bg-overlay);"></div>
-        <img id="bgLandscapeNode" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80" alt="Mountain Landscape background" class="w-full h-full object-cover scale-102 animate-scenery-drift">
+        <div id="dynamicLandscapeBg" class="w-full h-full bg-cover bg-center transition-all duration-700 scale-100 animate-bg-drift" style="background-image: var(--bg-image);"></div>
     </div>
 
-    <header class="fixed top-0 left-0 w-full z-40 p-6 flex flex-wrap justify-between items-center gap-4 pointer-events-none">
+    <header class="fixed top-0 left-0 w-full z-40 p-6 flex items-center justify-between pointer-events-none gap-6">
         
-        <div class="pointer-events-auto flex items-center gap-4">
-            <div class="relative" id="backpackContainer">
-                <button id="backpackBtn" class="w-14 h-14 glass-ui-node rounded-2xl flex items-center justify-center transition-all active:scale-95 shadow-xl">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7 transition-transform duration-500">
-                        <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
-                        <path d="M9 6V4a3 3 0 0 1 6 0v2" id="backpackTop"/>
-                        <path d="M8 12h8v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4z" fill="rgba(255,255,255,0.05)"/>
-                    </svg>
-                </button>
-                <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[340px] h-[340px]">
-                    <a href="#hero-section" class="menu-item absolute opacity-0 scale-75 glass-ui-node text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl transition-all">HOME_BASE</a>
-                    <a href="#deck-section" class="menu-item absolute opacity-0 scale-75 glass-ui-node text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl transition-all">TIER_DECKS</a>
-                    <button onclick="openAdminAuth()" class="menu-item absolute opacity-0 scale-75 glass-ui-node text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-emerald-400 border-emerald-500/20 transition-all">ADMIN_CORE</button>
-                </div>
+        <div class="pointer-events-auto relative" id="backpackContainer">
+            <button id="backpackBtn" class="w-14 h-14 glass-ui-clean rounded-2xl flex items-center justify-center transition-transform active:scale-90 shadow-2xl">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7 transition-transform duration-500">
+                    <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+                    <path d="M9 6V4a3 3 0 0 1 6 0v2" id="backpackTop"/>
+                    <path d="M8 12h8v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4z" fill="rgba(255,255,255,0.05)"/>
+                </svg>
+            </button>
+            <div id="arcMenu" class="absolute top-0 left-0 pointer-events-none w-[320px] h-[320px]">
+                <a href="#hero-section" id="menuLabel1" class="menu-item absolute opacity-0 scale-75 glass-ui-clean text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl transition-all">HOME</a>
+                <a href="#deck-section" id="menuLabel2" class="menu-item absolute opacity-0 scale-75 glass-ui-clean text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl transition-all">TIERS</a>
+                <button onclick="openAdminAuth()" id="menuLabel3" class="menu-item absolute opacity-0 scale-75 glass-ui-clean text-[10px] font-mono font-bold tracking-widest px-3 py-1.5 rounded-xl text-emerald-400 border-emerald-500/20 transition-all">ADMIN</button>
             </div>
         </div>
 
-        <div class="pointer-events-auto glass-ui-node px-12 md:px-20 h-14 flex items-center justify-center rounded-2xl mx-auto lg:mx-0 shadow-xl">
-            <span id="domBrandLogoText" class="text-lg md:text-xl font-black premium-mono-font uppercase tracking-[0.4em]">RANVEER</span>
+        <div class="pointer-events-auto glass-ui-clean px-10 md:px-16 h-14 flex items-center justify-center rounded-2xl shadow-xl max-w-xs md:max-w-md overflow-hidden">
+            <span id="domBrandLogoText" class="text-base md:text-lg font-black tracking-[0.35em] text-center uppercase whitespace-nowrap">RANVEER</span>
         </div>
 
-        <div class="pointer-events-auto flex items-center gap-3 ml-auto lg:ml-0">
-            <div class="glass-ui-node p-2.5 font-mono text-[10px] rounded-xl hidden sm:block shadow-xl">
-                <div class="flex justify-between gap-4"><span>TIME: <span id="liveTime">00:00:00</span></span><span>DATE: <span id="liveDate">00-00.2026</span></span></div>
+        <div class="pointer-events-auto flex items-center gap-3">
+            <div class="glass-ui-clean p-2.5 font-mono text-[10px] rounded-xl hidden md:block shadow-xl">
+                <span id="liveTime">00:00:00 PM</span> // <span id="liveDate">30-05.2026</span>
             </div>
 
-            <button onclick="toggleThemeState()" class="w-12 h-12 glass-ui-node flex items-center justify-center rounded-xl hover:bg-white/5 shadow-xl text-lg transition-transform active:scale-90" title="Toggle Alpine Light/Dark State">
+            <button onclick="toggleThemeState()" id="themeSunBtn" class="w-12 h-12 glass-ui-clean flex items-center justify-center rounded-xl hover:bg-white/5 shadow-xl text-lg transition-transform active:scale-90">
                 ☀️
             </button>
 
             <div class="relative group">
-                <button class="w-12 h-12 glass-ui-node flex items-center justify-center rounded-xl text-sm shadow-xl">🌐</button>
-                <div class="absolute top-14 right-0 w-16 glass-ui-node rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[10px] font-bold gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50 shadow-2xl">
+                <button class="w-12 h-12 glass-ui-clean flex items-center justify-center rounded-xl text-sm shadow-xl">🌐</button>
+                <div class="absolute top-14 right-0 w-16 glass-ui-clean rounded-xl overflow-hidden p-1 flex flex-col text-center font-mono text-[10px] font-bold gap-1 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
                     <button onclick="setLang('en')" class="py-1 rounded hover:bg-white/10">EN</button>
-                    <button onclick="setLang('fr')" class="py-1 rounded hover:bg-white/10">FR</button>
-                    <button onclick="setLang('es')" class="py-1 rounded hover:bg-white/10">ES</button>
                     <button onclick="setLang('hi')" class="py-1 rounded hover:bg-white/10">HI</button>
                 </div>
             </div>
@@ -147,105 +147,197 @@
     </header>
 
     <div id="authModalFrame" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-all duration-300">
-        <div class="glass-ui-node w-80 p-6 rounded-2xl font-mono text-xs space-y-4">
-            <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                <span class="font-bold tracking-widest">ADMIN HANDSHAKE REGISTRATION</span>
-                <button onclick="closeAdminModal()" class="text-rose-400 font-bold">&times;</button>
+        <div class="glass-ui-clean w-80 p-6 rounded-2xl font-mono text-xs space-y-4">
+            <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                <span class="font-bold tracking-widest uppercase text-white">ACCESS SECURE PORTS</span>
+                <button onclick="closeAdminModal()" class="text-rose-400 font-bold text-sm">&times;</button>
             </div>
             <div class="space-y-3">
-                <input type="text" id="secUserIn" placeholder="SIGNATURE" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
-                <input type="password" id="secPassIn" placeholder="PASSKEY" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
+                <input type="text" id="secUserIn" placeholder="IDENTITY SIGNATURE" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
+                <input type="password" id="secPassIn" placeholder="MASTER REVISION PASSWORD" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 outline-none text-center text-white">
             </div>
-            <button onclick="executePortalAuthorization()" class="w-full bg-white/5 hover:bg-white hover:text-black font-bold py-2.5 rounded-lg border border-white/10 tracking-widest transition-colors uppercase">INITIALIZE</button>
+            <button onclick="executePortalAuthorization()" class="w-full bg-white/5 hover:bg-white hover:text-black font-bold py-2.5 rounded-lg border border-white/10 tracking-widest transition-colors uppercase">UNLOCK ENGINE</button>
         </div>
     </div>
 
-    <div id="adminPanelSuite" class="fixed inset-y-6 right-6 w-[390px] bg-slate-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl z-50 p-5 font-mono text-xs text-slate-300 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-[450px]">
+    <div id="adminPanelSuite" class="fixed inset-y-4 right-4 w-[420px] bg-slate-950/98 border border-white/10 rounded-3xl z-50 p-5 font-mono text-xs text-slate-300 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-[460px]">
         <div class="flex justify-between items-center border-b border-white/10 pb-3">
-            <span class="text-emerald-400 font-bold tracking-widest">⚙️ ADMINISTRATIVE PANEL CORE</span>
-            <button onclick="closeAdminSuite()" class="text-rose-400 text-xs font-bold">[ CLOSE ]</button>
+            <span class="text-emerald-400 font-bold tracking-widest">⚙️ TOTAL CONTROL ENGINE MODULE</span>
+            <button onclick="closeAdminSuite()" class="text-rose-400 text-xs font-bold">[ DISCONNECT ]</button>
         </div>
+
         <div class="flex-1 overflow-y-auto my-4 pr-1 space-y-4 text-[11px]">
-            <div><label class="block text-white/50 mb-1">BRAND IDENTITY HEADER TEXT</label><input type="text" id="admInpBrand" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/50 mb-1">MAIN SUMMARY HEADING</label><input type="text" id="admInpHero" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/50 mb-1">DASHBOARD ARCHITECTURE SUMMARY</label><textarea id="admInpDesc" rows="3" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea></div>
-            <div><label class="block text-white/50 mb-1">AVATAR DATA ADDRESS (CHOOSE PHONE LOCAL FILE)</label><input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/60 mb-1"><input type="text" id="admInpPhoto" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none"></div>
-            <div><label class="block text-white/50 mb-1">TERRAIN BACKGROUND SCENERY IMAGE URL</label><input type="text" id="admInpBgVideo" class="w-full bg-black/40 border border-white/10 p-2 rounded text-white outline-none"></div>
+            <div>
+                <label class="block text-white/40 mb-1">CENTRAL BRAND HUD TEXT</label>
+                <input type="text" id="admInpBrand" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none focus:border-white/30">
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+                <div>
+                    <label class="block text-white/40 mb-1">MENU CAPTION 1</label>
+                    <input type="text" id="admMenu1" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-white/40 mb-1">MENU CAPTION 2</label>
+                    <input type="text" id="admMenu2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">MAIN LANDING HERO TITLE</label>
+                <input type="text" id="admInpHero" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">PROFILE DESCRIPTION SYNOPSIS LOG</label>
+                <textarea id="admInpDesc" rows="2" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none resize-none"></textarea>
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">AVATAR CENTER PICTURE SOURCE (CHOOSE PHONE FILE / URL)</label>
+                <input type="file" id="admFilePhoto" accept="image/*" class="w-full text-white/50 mb-1">
+                <input type="text" id="admInpPhoto" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">DARK THEME (STARFIELD BACKGROUND IMAGE URL)</label>
+                <input type="text" id="admInpBgDark" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
+            <div>
+                <label class="block text-white/40 mb-1">LIGHT THEME (SUNNY TERRAIN BACKGROUND IMAGE URL)</label>
+                <input type="text" id="admInpBgLight" class="w-full bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+            </div>
             <div class="border-t border-white/5 pt-3">
-                <span class="text-white/40 uppercase block mb-2">Lower Journey Strip Card Names</span>
+                <span class="text-white/40 uppercase block mb-2 font-bold text-[10px]">3D Rotating Card Label Modifiers</span>
                 <div class="grid grid-cols-2 gap-2">
-                    <input type="text" id="admCard1" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none"><input type="text" id="admCard2" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none"><input type="text" id="admCard3" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none"><input type="text" id="admCard4" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none"><input type="text" id="admCard5" class="bg-black/40 border border-white/10 p-1.5 rounded text-white outline-none">
+                    <input type="text" id="admCard1" placeholder="Card 1 Front" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard1B" placeholder="Card 1 Back text" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard2" placeholder="Card 2 Front" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard2B" placeholder="Card 2 Back text" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard3" placeholder="Card 3 Front" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard3B" placeholder="Card 3 Back text" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard4" placeholder="Card 4 Front" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard4B" placeholder="Card 4 Back text" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard5" placeholder="Card 5 Front" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                    <input type="text" id="admCard5B" placeholder="Card 5 Back text" class="bg-black/50 border border-white/10 p-2 rounded text-white outline-none">
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-2 grid grid-cols-2 gap-2">
+                <div>
+                    <label class="block text-white/40 mb-1">MAIN HERO TEXT COLOR</label>
+                    <input type="color" id="admColorHero" class="w-full h-8 bg-transparent border-0 outline-none">
+                </div>
+                <div>
+                    <label class="block text-white/40 mb-1">PARAGRAPH TEXT COLOR</label>
+                    <input type="color" id="admColorPara" class="w-full h-8 bg-transparent border-0 outline-none">
                 </div>
             </div>
         </div>
-        <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE CONSOLE REVISIONS</button>
+        <button onclick="commitAdminModifications()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-2xl hover:bg-emerald-400 transition-colors uppercase tracking-wider">SAVE ENGINE MODIFICATIONS</button>
     </div>
 
     <main class="relative z-10 w-full flex flex-col items-center px-6">
         
-        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col md:flex-row items-center justify-center gap-12 pt-32 pb-16 animate-fade-glide">
+        <section id="hero-section" class="min-h-screen w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center gap-12 pt-32 pb-20">
+            
             <div class="flex-shrink-0 relative group">
-                <div class="absolute -inset-1 bg-gradient-to-tr from-white/10 to-transparent rounded-[2.5rem] blur opacity-30"></div>
-                <div class="relative w-72 h-72 glass-ui-node p-3.5 rounded-[2.5rem] flex items-center justify-center shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]">
+                <div class="absolute -inset-1 bg-gradient-to-tr from-white/20 to-transparent rounded-[2.5rem] blur opacity-25"></div>
+                <div class="relative w-72 h-72 glass-ui-node p-3 rounded-[2.5rem] flex items-center justify-center shadow-2xl border">
                     <div class="w-full h-full rounded-3xl overflow-hidden relative border border-white/10 bg-black/10">
-                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Image" class="w-full h-full object-cover">
+                        <img id="domPhotoNode" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Explorer Profile Hub" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
 
-            <div class="flex-1 glass-ui-node rounded-[2.5rem] p-8 md:p-10 relative flex flex-col justify-between min-h-[288px] shadow-2xl">
+            <div class="flex-1 glass-ui-node rounded-[2.5rem] p-8 md:p-10 relative flex flex-col justify-between min-h-[288px] shadow-2xl border">
                 <div class="absolute top-5 right-5 flex gap-1.5 opacity-20">
                     <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
                     <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
                 </div>
                 <div class="space-y-4">
-                    <h2 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase transition-colors duration-500" style="color: var(--text-main);">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
-                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-medium tracking-wide opacity-80 transition-colors duration-500" style="color: var(--text-main);">Architecting fluid user experiences across layout channels. This entire space scroll matrix is separated cleanly to preserve complete landscape exposure. Open your navigation backpack link tracks to override configuration nodes.</p>
+                    <h2 id="domHeroHeading" class="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase transition-colors" style="color: var(--text-main);">NOMAD EXPLORER<br><span class="opacity-40 font-light text-xl md:text-2xl tracking-normal block mt-1">ENGINE // RANVEER RAJESH</span></h2>
+                    <p id="domDescriptionPara" class="text-xs md:text-sm leading-relaxed font-medium tracking-wide opacity-85 transition-colors" style="color: var(--text-main);">Traversing dynamic code realities. The system components down this trail page use deep layout buffers and crystal clear backgrounds to let the scenic landscape breathe fully without structural collision.</p>
                 </div>
-                <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-60">
-                    <span class="uppercase block tracking-widest mb-1">ROTATION TIME DISCOVERY FLUX</span>
-                    <p id="domDailyThought" class="italic font-light">"The horizontal route stretches naturally when vertical design assets breathe cleanly."</p>
+                <div class="border-t border-white/10 pt-4 mt-6 font-mono text-[10px] opacity-40">
+                    <span class="uppercase block tracking-widest mb-1">DAILY INTERNAL REVOLUTION RECORD</span>
+                    <p id="domDailyThought" class="italic font-light">"The clear background exposes alignment tracks with complete transparency."</p>
                 </div>
             </div>
         </section>
 
-        <div class="h-32 md:h-48 w-full flex items-center justify-center pointer-events-none opacity-20 font-mono text-[9px] tracking-[0.5em] text-center uppercase">
-            [ Scrolling Terrain Sector Buffer // Space for Landscape Scenery View ]
+        <div class="h-40 md:h-56 w-full flex items-center justify-center pointer-events-none opacity-20 font-mono text-[9px] tracking-[0.5em] text-center uppercase">
+            [ Scrolling Terrain Sector Buffer Layer // No Blur Background Exposure ]
         </div>
 
-        <section id="deck-section" class="w-full max-w-5xl py-24 flex flex-col gap-8 scroll-reveal-active">
-            <div class="text-center md:text-left border-b border-white/5 pb-4 mb-4">
-                <span class="font-mono text-[10px] opacity-40 uppercase tracking-[0.3em]">EXPLORATION TIERS // MINIMAL SINGLE TERMS</span>
+        <section id="deck-section" class="w-full max-w-5xl py-20 flex flex-col gap-8 scroll-glide-node">
+            <div class="text-center md:text-left border-b border-white/10 pb-3 mb-6">
+                <span class="font-mono text-[10px] opacity-40 uppercase tracking-[0.3em]">EXPLORATOR TIERS // INTERACTIVE 3D ROTATION DECKS</span>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                <div onclick="triggerAnchorAction('#resume')" class="glass-ui-node h-28 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 transform hover:-translate-y-2 group active:scale-95">
-                    <div class="text-2xl mb-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">📄</div>
-                    <span id="domTxtCard1" class="text-[11px] font-mono font-black tracking-[0.25em] opacity-70 group-hover:opacity-100 uppercase transition-colors">RESUME</span>
+                
+                <div onclick="triggerAnchorAction('#resume')" class="perspective-container h-32 w-full">
+                    <div class="rotating-card-3d w-full h-full relative">
+                        <div class="card-front absolute inset-0 glass-ui-node rounded-2xl flex flex-col items-center justify-center border shadow-xl">
+                            <div class="text-xl mb-1 opacity-50">📄</div>
+                            <span id="domTxtCard1" class="text-[11px] font-mono font-black tracking-widest uppercase opacity-80">RESUME</span>
+                        </div>
+                        <div class="card-back absolute inset-0 bg-white text-black rounded-2xl flex items-center justify-center border p-3 text-center text-[10px] font-mono font-bold shadow-xl">
+                            <span id="domTxtCard1B">OPEN RECORD &rarr;</span>
+                        </div>
+                    </div>
                 </div>
-                <div onclick="triggerAnchorAction('#background')" class="glass-ui-node h-28 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 transform hover:-translate-y-2 group active:scale-95">
-                    <div class="text-2xl mb-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">📍</div>
-                    <span id="domTxtCard2" class="text-[11px] font-mono font-black tracking-[0.25em] opacity-70 group-hover:opacity-100 uppercase transition-colors">ORIGINS</span>
+
+                <div onclick="triggerAnchorAction('#background')" class="perspective-container h-32 w-full">
+                    <div class="rotating-card-3d w-full h-full relative">
+                        <div class="card-front absolute inset-0 glass-ui-node rounded-2xl flex flex-col items-center justify-center border shadow-xl">
+                            <div class="text-xl mb-1 opacity-50">📍</div>
+                            <span id="domTxtCard2" class="text-[11px] font-mono font-black tracking-widest uppercase opacity-80">ORIGINS</span>
+                        </div>
+                        <div class="card-back absolute inset-0 bg-white text-black rounded-2xl flex items-center justify-center border p-3 text-center text-[10px] font-mono font-bold shadow-xl">
+                            <span id="domTxtCard2B">VIEW TRAIL &rarr;</span>
+                        </div>
+                    </div>
                 </div>
-                <div onclick="triggerAnchorAction('#projects')" class="glass-ui-node h-28 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 transform hover:-translate-y-2 group active:scale-95">
-                    <div class="text-2xl mb-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">📦</div>
-                    <span id="domTxtCard3" class="text-[11px] font-mono font-black tracking-[0.25em] opacity-70 group-hover:opacity-100 uppercase transition-colors">PROJECTS</span>
+
+                <div onclick="triggerAnchorAction('#projects')" class="perspective-container h-32 w-full">
+                    <div class="rotating-card-3d w-full h-full relative">
+                        <div class="card-front absolute inset-0 glass-ui-node rounded-2xl flex flex-col items-center justify-center border shadow-xl">
+                            <div class="text-xl mb-1 opacity-50">📦</div>
+                            <span id="domTxtCard3" class="text-[11px] font-mono font-black tracking-widest uppercase opacity-80">PROJECTS</span>
+                        </div>
+                        <div class="card-back absolute inset-0 bg-white text-black rounded-2xl flex items-center justify-center border p-3 text-center text-[10px] font-mono font-bold shadow-xl">
+                            <span id="domTxtCard3B">DEPLOY CORE &rarr;</span>
+                        </div>
+                    </div>
                 </div>
-                <div onclick="triggerAnchorAction('#winnings')" class="glass-ui-node h-28 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 transform hover:-translate-y-2 group active:scale-95">
-                    <div class="text-2xl mb-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">🏆</div>
-                    <span id="domTxtCard4" class="text-[11px] font-mono font-black tracking-[0.25em] opacity-70 group-hover:opacity-100 uppercase transition-colors">WINNINGS</span>
+
+                <div onclick="triggerAnchorAction('#winnings')" class="perspective-container h-32 w-full">
+                    <div class="rotating-card-3d w-full h-full relative">
+                        <div class="card-front absolute inset-0 glass-ui-node rounded-2xl flex flex-col items-center justify-center border shadow-xl">
+                            <div class="text-xl mb-1 opacity-50">🏆</div>
+                            <span id="domTxtCard4" class="text-[11px] font-mono font-black tracking-widest uppercase opacity-80">WINNINGS</span>
+                        </div>
+                        <div class="card-back absolute inset-0 bg-white text-black rounded-2xl flex items-center justify-center border p-3 text-center text-[10px] font-mono font-bold shadow-xl">
+                            <span id="domTxtCard4B">MEDAL LOG &rarr;</span>
+                        </div>
+                    </div>
                 </div>
-                <div onclick="triggerAnchorAction('#contact')" class="glass-ui-node h-28 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 transform hover:-translate-y-2 group active:scale-95">
-                    <div class="text-2xl mb-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">📞</div>
-                    <span id="domTxtCard5" class="text-[11px] font-mono font-black tracking-[0.25em] opacity-70 group-hover:opacity-100 uppercase transition-colors">CONTACT</span>
+
+                <div onclick="triggerAnchorAction('#contact')" class="perspective-container h-32 w-full">
+                    <div class="rotating-card-3d w-full h-full relative">
+                        <div class="card-front absolute inset-0 glass-ui-node rounded-2xl flex flex-col items-center justify-center border shadow-xl">
+                            <div class="text-xl mb-1 opacity-50">📞</div>
+                            <span id="domTxtCard5" class="text-[11px] font-mono font-black tracking-widest uppercase opacity-80">CONTACT</span>
+                        </div>
+                        <div class="card-back absolute inset-0 bg-white text-black rounded-2xl flex items-center justify-center border p-3 text-center text-[10px] font-mono font-bold shadow-xl">
+                            <span id="domTxtCard5B">HANDSHAKE &rarr;</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
-        <div class="h-24 w-full pointer-events-none"></div>
-        
-        <section class="w-full max-w-2xl py-12 scroll-reveal-active">
-            <div class="glass-ui-node h-20 rounded-2xl flex items-center justify-around px-8 border shadow-2xl">
+        <div class="h-32 w-full pointer-events-none"></div>
+
+        <section class="w-full max-w-xl py-12 scroll-glide-node">
+            <div class="glass-ui-node h-20 rounded-3xl flex items-center justify-around px-8 border shadow-2xl">
                 <button onclick="fireModalUrlStream('Instagram', 'https://instagram.com')" class="group p-2 transform hover:scale-120 transition-transform">
                     <svg class="w-5 h-5 fill-current opacity-50 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </button>
@@ -261,32 +353,32 @@
             </div>
         </section>
 
-        <footer class="w-full text-center font-mono text-[9px] opacity-40 py-12 tracking-[0.3em] uppercase">
-            OPERATIONAL LOG ENGINE FRAMEWORK // RANVEER RAJESH • 2026
+        <footer class="w-full text-center font-mono text-[9px] opacity-30 py-12 tracking-[0.4em]">
+            ENGINE OPERATIONAL DATA TRACK // RANVEER • 2026
         </footer>
     </main>
 
     <div id="portalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
-        <div class="glass-ui-node w-full max-w-md overflow-hidden rounded-2xl relative transform scale-95 transition-all">
+        <div class="glass-ui-node w-full max-w-md overflow-hidden rounded-3xl relative transform scale-95 transition-all border">
             <div class="bg-white/5 border-b border-white/10 p-4 flex justify-between items-center font-mono text-[10px]">
-                <span id="modalTitle" class="font-bold tracking-widest">STREAM PORTAL DIRECTORY</span>
+                <span id="modalTitle" class="font-bold tracking-widest">STREAM HANDSHAKE CHECK</span>
                 <button onclick="closePortalModal()" class="text-rose-400 font-bold text-sm">&times;</button>
             </div>
             <div class="p-6 font-mono text-xs space-y-4">
-                <p class="leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5 opacity-80">Dynamic route parameter handshake check resolved. Moving interface target securely via framework cache records.</p>
+                <p class="leading-relaxed bg-black/20 p-3 rounded-xl border border-white/5 opacity-80">Dynamic route verification check complete. Redirection handshake parameters mapped securely.</p>
                 <a id="modalActionLink" href="#" target="_blank" class="block w-full bg-white text-black text-center font-bold py-3 rounded-xl hover:bg-slate-200 transition-all uppercase tracking-wider text-[11px]">RESOLVE PIPELINE</a>
             </div>
         </div>
     </div>
 
     <script>
-        // 1. HARDWARE MOUSE MONITOR
+        // 1. DYNAMIC COMPASS CURSOR ENGINE
         const cursorInstance = document.getElementById('mountainCursor');
         window.addEventListener('mousemove', (e) => {
             cursorInstance.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
         });
 
-        // 2. BACKPACK ARC RADIAL LAYOUT
+        // 2. BACKPACK RADIAL EXPANSION MATRIX
         const backpackBtn = document.getElementById('backpackBtn');
         const backpackTop = document.getElementById('backpackTop');
         const arcMenu = document.getElementById('arcMenu');
@@ -316,15 +408,31 @@
             }
         });
 
-        // 3. SUN INTERACTIVE STATE TOGGLE (DARK / LIGHT SHIFT)
+        // 3. SUN INTERACTIVE TOGGLE SYSTEM (DARK STARS / LIGHT MOUNTAIN MODE)
         function toggleThemeState() {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', nextTheme);
             localStorage.setItem('config-theme', nextTheme);
+            updateThematicImages(nextTheme);
         }
 
-        // 4. SECURE ADMINISTRATIVE VALIDATION SYSTEM
+        function updateThematicImages(theme) {
+            const sunBtn = document.getElementById('themeSunBtn');
+            const bgNode = document.getElementById('dynamicLandscapeBg');
+            
+            if(theme === 'light') {
+                sunBtn.innerText = '🌙'; // Swap toggle item indicator natively
+                const cachedLightImg = localStorage.getItem('cache-bg-light') || 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80';
+                document.documentElement.style.setProperty('--bg-image', `url('${cachedLightImg}')`);
+            } else {
+                sunBtn.innerText = '☀️';
+                const cachedDarkImg = localStorage.getItem('cache-bg-dark') || 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80';
+                document.documentElement.style.setProperty('--bg-image', `url('${cachedDarkImg}')`);
+            }
+        }
+
+        // 4. SECURE ADMINISTRATIVE AUTHORIZATION ROUTINES
         const authModalFrame = document.getElementById('authModalFrame');
         const adminPanelSuite = document.getElementById('adminPanelSuite');
 
@@ -337,7 +445,7 @@
             setTimeout(() => { authModalFrame.classList.add('hidden'); }, 300);
         }
         function closeAdminSuite() {
-            adminPanelSuite.classList.add('translate-x-[450px]');
+            adminPanelSuite.classList.add('translate-x-[460px]');
         }
 
         function executePortalAuthorization() {
@@ -347,29 +455,40 @@
             if (u === "1245678912" && p === "1245678912") {
                 closeAdminModal();
                 populateAdminFields();
-                adminPanelSuite.classList.remove('translate-x-[450px]');
+                adminPanelSuite.classList.remove('translate-x-[460px]');
                 document.getElementById('secUserIn').value = "";
                 document.getElementById('secPassIn').value = "";
             } else {
-                alert("ERR // VALIDATION DISMATCH. GATEWAY DISCONNECTED.");
+                alert("ERR // KEY NOT RECOGNIZED. HANDSHAKE REJECTED.");
             }
         }
 
-        // 5. CORE FIELD DATA SYNC PIPELINES
+        // 5. MASTER VALUE OVERRIDE SYNCHRONIZER (ADMIN WORKSTATION ENGINE)
         function populateAdminFields() {
             document.getElementById('admInpBrand').value = document.getElementById('domBrandLogoText').innerText;
+            document.getElementById('admMenu1').value = document.getElementById('menuLabel1').innerText;
+            document.getElementById('admMenu2').value = document.getElementById('menuLabel2').innerText;
             document.getElementById('admInpHero').value = document.getElementById('domHeroHeading').innerHTML.replace('<br>', '\n');
             document.getElementById('admInpDesc').value = document.getElementById('domDescriptionPara').innerText;
             document.getElementById('admInpPhoto').value = document.getElementById('domPhotoNode').src;
-            document.getElementById('admInpBgVideo').value = document.getElementById('bgLandscapeNode').src;
+            
+            // Extract image definitions directly out of root styles mappings variables
+            document.getElementById('admInpBgDark').value = localStorage.getItem('cache-bg-dark') || 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80';
+            document.getElementById('admInpBgLight').value = localStorage.getItem('cache-bg-light') || 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80';
             
             document.getElementById('admCard1').value = document.getElementById('domTxtCard1').innerText;
+            document.getElementById('admCard1B').value = document.getElementById('domTxtCard1B').innerText;
             document.getElementById('admCard2').value = document.getElementById('domTxtCard2').innerText;
+            document.getElementById('admCard2B').value = document.getElementById('domTxtCard2B').innerText;
             document.getElementById('admCard3').value = document.getElementById('domTxtCard3').innerText;
+            document.getElementById('admCard3B').value = document.getElementById('domTxtCard3B').innerText;
             document.getElementById('admCard4').value = document.getElementById('domTxtCard4').innerText;
+            document.getElementById('admCard4B').value = document.getElementById('domTxtCard4B').innerText;
             document.getElementById('admCard5').value = document.getElementById('domTxtCard5').innerText;
+            document.getElementById('admCard5B').value = document.getElementById('domTxtCard5B').innerText;
         }
 
+        // Parse Mobile Local Storage Binary Object Streams natively
         document.getElementById('admFilePhoto').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
@@ -383,77 +502,115 @@
 
         function commitAdminModifications() {
             document.getElementById('domBrandLogoText').innerText = document.getElementById('admInpBrand').value;
+            document.getElementById('menuLabel1').innerText = document.getElementById('admMenu1').value;
+            document.getElementById('menuLabel2').innerText = document.getElementById('admMenu2').value;
             document.getElementById('domHeroHeading').innerHTML = document.getElementById('admInpHero').value.replace('\n', '<br>');
             document.getElementById('domDescriptionPara').innerText = document.getElementById('admInpDesc').value;
             document.getElementById('domPhotoNode').src = document.getElementById('admInpPhoto').value;
-            document.getElementById('bgLandscapeNode').src = document.getElementById('admInpBgVideo').value;
+
+            // Cache background links variables strings securely
+            localStorage.setItem('cache-bg-dark', document.getElementById('admInpBgDark').value);
+            localStorage.setItem('cache-bg-light', document.getElementById('admInpBgLight').value);
+            
+            // Refresh variables maps explicitly instantly
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            updateThematicImages(currentTheme);
 
             document.getElementById('domTxtCard1').innerText = document.getElementById('admCard1').value;
+            document.getElementById('domTxtCard1B').innerText = document.getElementById('admCard1B').value;
             document.getElementById('domTxtCard2').innerText = document.getElementById('admCard2').value;
+            document.getElementById('domTxtCard2B').innerText = document.getElementById('admCard2B').value;
             document.getElementById('domTxtCard3').innerText = document.getElementById('admCard3').value;
+            document.getElementById('domTxtCard3B').innerText = document.getElementById('admCard3B').value;
             document.getElementById('domTxtCard4').innerText = document.getElementById('admCard4').value;
+            document.getElementById('domTxtCard4B').innerText = document.getElementById('admCard4B').value;
             document.getElementById('domTxtCard5').innerText = document.getElementById('admCard5').value;
+            document.getElementById('domTxtCard5B').innerText = document.getElementById('admCard5B').value;
+
+            // Handle customized coloring variables dynamically
+            const heroColor = document.getElementById('admColorHero').value;
+            document.getElementById('domHeroHeading').style.color = heroColor;
+            
+            const paraColor = document.getElementById('admColorPara').value;
+            document.getElementById('domDescriptionPara').style.color = paraColor;
 
             saveSystemStateToLocalStorage();
             closeAdminSuite();
         }
 
         function saveSystemStateToLocalStorage() {
-            const cachePayload = {
+            const dynamicDataset = {
                 brand: document.getElementById('domBrandLogoText').innerText,
+                m1: document.getElementById('menuLabel1').innerText,
+                m2: document.getElementById('menuLabel2').innerText,
                 hero: document.getElementById('domHeroHeading').innerHTML,
                 desc: document.getElementById('domDescriptionPara').innerText,
                 photo: document.getElementById('domPhotoNode').src,
-                video: document.getElementById('bgLandscapeNode').src,
                 c1: document.getElementById('domTxtCard1').innerText,
+                c1b: document.getElementById('domTxtCard1B').innerText,
                 c2: document.getElementById('domTxtCard2').innerText,
+                c2b: document.getElementById('domTxtCard2B').innerText,
                 c3: document.getElementById('domTxtCard3').innerText,
+                c3b: document.getElementById('domTxtCard3B').innerText,
                 c4: document.getElementById('domTxtCard4').innerText,
-                c5: document.getElementById('domTxtCard5').innerText
+                c4b: document.getElementById('domTxtCard4B').innerText,
+                c5: document.getElementById('domTxtCard5').innerText,
+                c5b: document.getElementById('domTxtCard5B').innerText,
+                heroColor: document.getElementById('domHeroHeading').style.color,
+                paraColor: document.getElementById('domDescriptionPara').style.color
             };
-            localStorage.setItem('nomad_cache_scroll_v4', JSON.stringify(cachePayload));
+            localStorage.setItem('nomad_cache_scroll_v5', JSON.stringify(dynamicDataset));
         }
 
         function loadSystemStateFromCache() {
-            const localCache = localStorage.getItem('nomad_cache_scroll_v4');
-            if (localCache) {
-                const state = JSON.parse(localCache);
+            const cache = localStorage.getItem('nomad_cache_scroll_v5');
+            if (cache) {
+                const state = JSON.parse(cache);
                 document.getElementById('domBrandLogoText').innerText = state.brand;
+                document.getElementById('menuLabel1').innerText = state.m1 || "HOME";
+                document.getElementById('menuLabel2').innerText = state.m2 || "TIERS";
                 document.getElementById('domHeroHeading').innerHTML = state.hero;
                 document.getElementById('domDescriptionPara').innerText = state.desc;
                 document.getElementById('domPhotoNode').src = state.photo;
-                document.getElementById('bgLandscapeNode').src = state.video;
                 
                 document.getElementById('domTxtCard1').innerText = state.c1;
+                document.getElementById('domTxtCard1B').innerText = state.c1b;
                 document.getElementById('domTxtCard2').innerText = state.c2;
+                document.getElementById('domTxtCard2B').innerText = state.c2b;
                 document.getElementById('domTxtCard3').innerText = state.c3;
+                document.getElementById('domTxtCard3B').innerText = state.c3b;
                 document.getElementById('domTxtCard4').innerText = state.c4;
+                document.getElementById('domTxtCard4B').innerText = state.c4b;
                 document.getElementById('domTxtCard5').innerText = state.c5;
+                document.getElementById('domTxtCard5B').innerText = state.c5b;
+                
+                if(state.heroColor) document.getElementById('domHeroHeading').style.color = state.heroColor;
+                if(state.paraColor) document.getElementById('domDescriptionPara').style.color = state.paraColor;
             }
         }
 
-        // 6. SCROLL INTERACTION ANIMATION DETECTOR MATRIX
-        const revealElements = document.querySelectorAll('.scroll-reveal-active');
-        function checkScrollRevealThreshold() {
-            const triggerBottom = window.innerHeight * 0.88;
-            revealElements.forEach(element => {
-                const topLocation = element.getBoundingClientRect().top;
-                if (topLocation < triggerBottom) {
-                    element.classList.add('visible');
+        // 6. SCROLL DETECTOR INTERACTION MONITOR
+        const glideElements = document.querySelectorAll('.scroll-glide-node');
+        function checkScrollGlideMetric() {
+            const triggerMetric = window.innerHeight * 0.9;
+            glideElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < triggerMetric) {
+                    el.classList.add('visible');
                 } else {
-                    element.classList.remove('visible');
+                    el.classList.remove('visible');
                 }
             });
         }
-        window.addEventListener('scroll', checkScrollRevealThreshold);
+        window.addEventListener('scroll', checkScrollGlideMetric);
 
-        // 7. EXTERNAL MODAL HUD LOGIC DOCKS
+        // 7. MODAL DISPLAY HOOK PIPIELINES
         const portalModal = document.getElementById('portalModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalActionLink = document.getElementById('modalActionLink');
 
         function fireModalUrlStream(platform, url) {
-            modalTitle.innerText = `EXTERNAL ROUTE // ${platform.toUpperCase()}`;
+            modalTitle.innerText = `EXTERNAL HANDSHAKE // ${platform.toUpperCase()}`;
             modalActionLink.href = url;
             portalModal.classList.remove('hidden');
             setTimeout(() => { portalModal.classList.remove('opacity-0'); }, 50);
@@ -463,15 +620,15 @@
             setTimeout(() => { portalModal.classList.add('hidden'); }, 300);
         }
         function triggerAnchorAction(id) {
-            const targetElement = document.querySelector(id);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+            const element = document.querySelector(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
             } else {
                 window.location.hash = id;
             }
         }
 
-        // 8. CHRONOS DATA STREAM TICK
+        // 8. DATA FREQUENCY TICK PULSECLOCK
         function runChronosTick() {
             const now = new Date();
             document.getElementById('liveTime').innerText = now.toLocaleTimeString();
@@ -486,12 +643,14 @@
             localStorage.setItem('config-lang', lang);
         }
 
-        // INITIALIZE COMPILATION SEQUENCE RUNTIMES
+        // LIFE CYCLE RUNTIME BOOTLOADER INITS
         window.addEventListener('DOMContentLoaded', () => {
             runChronosTick();
             loadSystemStateFromCache();
-            checkScrollRevealThreshold();
-            document.documentElement.setAttribute('data-theme', localStorage.getItem('config-theme') || 'dark');
+            checkScrollGlideMetric();
+            const startTheme = localStorage.getItem('config-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', startTheme);
+            updateThematicImages(startTheme);
             setLang(localStorage.getItem('config-lang') || 'en');
         });
     </script>
