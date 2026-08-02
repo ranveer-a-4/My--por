@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranveer Amilkanthwar | Projects & Admin Core</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(20, 27, 45, 0.85);
+            --border-color: rgba(0, 230, 204, 0.25);
+            --primary-accent: #00e6cc;
+            --secondary-accent: #3b82f6;
+            --danger-accent: #ef4444;
+            --text-main: #f1f5f9;
+            --text-sub: #94a3b8;
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-mono: 'Fira Code', monospace, Consolas, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top Bar & Telemetry */
+        header {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+        }
+
+        .brand-title {
+            color: var(--primary-accent);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-admin {
+            background: transparent;
+            border: 1px solid var(--primary-accent);
+            color: var(--primary-accent);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-admin:hover {
+            background: var(--primary-accent);
+            color: var(--bg-color);
+            box-shadow: 0 0 10px rgba(0, 230, 204, 0.4);
+        }
+
+        /* Page Layout Container */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .section-header {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-accent);
+            padding-left: 12px;
+            font-family: var(--font-mono);
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-accent);
+        }
+
+        .card-img-wrapper {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background: #1e293b;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .card-links {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: var(--primary-accent);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .btn-link:hover {
+            background: rgba(0, 230, 204, 0.1);
+        }
+
+        /* Admin Controls on Cards */
+        .admin-controls {
+            display: none;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .body-admin-active .admin-controls {
+            display: flex;
+        }
+
+        .btn-edit {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid var(--secondary-accent);
+            color: var(--secondary-accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+        }
+
+        .btn-delete {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid var(--danger-accent);
+            color: var(--danger-accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+        }
+
+        /* Modals & Forms */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 16px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #111827;
+            border: 1px solid var(--primary-accent);
+            border-radius: 12px;
+            padding: 24px;
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+        }
+
+        .modal-title {
+            font-family: var(--font-mono);
+            color: var(--primary-accent);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            color: var(--text-sub);
+            margin-bottom: 4px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: #1f293d;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-accent);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-submit {
+            background: var(--primary-accent);
+            color: var(--bg-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-cancel {
+            background: transparent;
+            color: var(--text-sub);
+            border: 1px solid var(--text-sub);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            max-width: 1100px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand-title">RANVEER // CORE PORTFOLIO</div>
+        <div class="header-actions">
+            <span id="clock" style="color: var(--primary-accent);">00:00:00 AM</span>
+            <button class="btn-admin" id="authBtn" onclick="toggleAuthModal()">ADMIN LOGIN</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">PROJECTS MATRIX</h2>
+            <button class="btn-admin" id="addProjectBtn" style="display: none;" onclick="openProjectModal()">+ ADD PROJECT</button>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="project-grid" id="projectGrid"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        ENGINE OPERATIONAL MASTER CONFIGURATION FRAMEWORK // RANVEER • 2026
+    </footer>
+
+    <!-- Admin Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-box">
+            <h3 class="modal-title">ADMIN AUTHENTICATION</h3>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>USERNAME</label>
+                    <input type="text" id="loginUser" class="form-control" required placeholder="admin">
+                </div>
+                <div class="form-group">
+                    <label>PASSWORD</label>
+                    <input type="password" id="loginPass" class="form-control" required placeholder="ranveer123">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal('loginModal')">CANCEL</button>
+                    <button type="submit" class="btn-submit">LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-box">
+            <h3 class="modal-title" id="projectModalTitle">ADD NEW PROJECT</h3>
+            <form onsubmit="handleSaveProject(event)">
+                <input type="hidden" id="projectId">
+                <div class="form-group">
+                    <label>PROJECT TITLE</label>
+                    <input type="text" id="pTitle" class="form-control" required placeholder="e.g. AI Portfolio Generator">
+                </div>
+                <div class="form-group">
+                    <label>IMAGE URL</label>
+                    <input type="url" id="pImg" class="form-control" required placeholder="https://images.unsplash.com/...">
+                </div>
+                <div class="form-group">
+                    <label>DESCRIPTION</label>
+                    <textarea id="pDesc" class="form-control" required placeholder="Short description of the technology and functionality..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>PROJECT / DEPLOYMENT LINK</label>
+                    <input type="url" id="pLink" class="form-control" placeholder="https://github.com/..." required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal('projectModal')">CANCEL</button>
+                    <button type="submit" class="btn-submit">SAVE PROJECT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Control Script -->
+    <script>
+        // Initial Seed Projects
+        const defaultProjects = [
+            {
+                id: '1',
+                title: 'Portfolio Engine Core',
+                img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+                desc: 'Structured profile portfolio framework with custom components and dynamic route verification.',
+                link: 'https://ranveer-a-4.github.io/My--por/'
+            },
+            {
+                id: '2',
+                title: 'Dynamic Web Dashboard',
+                img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+                desc: 'Real-time telemetry and management interface with live state persistence.',
+                link: 'https://github.com/ranveer-a-4'
+            }
+        ];
+
+        let isAdmin = false;
+
+        // Initialize Data
+        function getProjects() {
+            const stored = localStorage.getItem('ranveer_projects');
+            if (!stored) {
+                localStorage.setItem('ranveer_projects', JSON.stringify(defaultProjects));
+                return defaultProjects;
+            }
+            return JSON.parse(stored);
+        }
+
+        function saveProjects(projects) {
+            localStorage.setItem('ranveer_projects', JSON.stringify(projects));
+            renderProjects();
+        }
+
+        // Render Cards
+        function renderProjects() {
+            const grid = document.getElementById('projectGrid');
+            const projects = getProjects();
+            
+            grid.innerHTML = projects.map(p => `
+                <div class="project-card">
+                    <div class="card-img-wrapper">
+                        <img src="${p.img}" alt="${p.title}" class="card-img" onerror="this.src='https://via.placeholder.com/400x200?text=Image+Unavailable'">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">${p.title}</h3>
+                        <p class="card-desc">${p.desc}</p>
+                        <div class="card-links">
+                            <a href="${p.link}" target="_blank" class="btn-link">OPEN PROJECT →</a>
+                        </div>
+                        <div class="admin-controls">
+                            <button class="btn-edit" onclick="editProject('${p.id}')">Edit</button>
+                            <button class="btn-delete" onclick="deleteProject('${p.id}')">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Clock
+        function updateClock() {
+            document.getElementById('clock').textContent = new Date().toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Modals
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function toggleAuthModal() {
+            if (isAdmin) {
+                // Logout
+                isAdmin = false;
+                document.body.classList.remove('body-admin-active');
+                document.getElementById('authBtn').textContent = 'ADMIN LOGIN';
+                document.getElementById('addProjectBtn').style.display = 'none';
+            } else {
+                document.getElementById('loginModal').classList.add('active');
+            }
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('loginUser').value;
+            const pass = document.getElementById('loginPass').value;
+
+            if (user === 'admin' && pass === 'ranveer123') {
+                isAdmin = true;
+                document.body.classList.add('body-admin-active');
+                document.getElementById('authBtn').textContent = 'LOGOUT';
+                document.getElementById('addProjectBtn').style.display = 'inline-block';
+                closeModal('loginModal');
+                document.getElementById('loginUser').value = '';
+                document.getElementById('loginPass').value = '';
+            } else {
+                alert('Invalid Credentials! (Default: admin / ranveer123)');
+            }
+        }
+
+        // Project CRUD
+        function openProjectModal() {
+            document.getElementById('projectModalTitle').textContent = 'ADD NEW PROJECT';
+            document.getElementById('projectId').value = '';
+            document.getElementById('pTitle').value = '';
+            document.getElementById('pImg').value = '';
+            document.getElementById('pDesc').value = '';
+            document.getElementById('pLink').value = '';
+            document.getElementById('projectModal').classList.add('active');
+        }
+
+        function handleSaveProject(e) {
+            e.preventDefault();
+            const id = document.getElementById('projectId').value;
+            const title = document.getElementById('pTitle').value;
+            const img = document.getElementById('pImg').value;
+            const desc = document.getElementById('pDesc').value;
+            const link = document.getElementById('pLink').value;
+
+            let projects = getProjects();
+
+            if (id) {
+                // Edit existing
+                projects = projects.map(p => p.id === id ? { id, title, img, desc, link } : p);
+            } else {
+                // Add new
+                projects.push({
+                    id: Date.now().toString(),
+                    title, img, desc, link
+                });
+            }
+
+            saveProjects(projects);
+            closeModal('projectModal');
+        }
+
+        function editProject(id) {
+            const project = getProjects().find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById('projectModalTitle').textContent = 'EDIT PROJECT';
+            document.getElementById('projectId').value = project.id;
+            document.getElementById('pTitle').value = project.title;
+            document.getElementById('pImg').value = project.img;
+            document.getElementById('pDesc').value = project.desc;
+            document.getElementById('pLink').value = project.link;
+            document.getElementById('projectModal').classList.add('active');
+        }
+
+        function deleteProject(id) {
+            if (confirm('Are you sure you want to remove this project?')) {
+                const projects = getProjects().filter(p => p.id !== id);
+                saveProjects(projects);
+            }
+        }
+
+        // Initial Load
+        renderProjects();
+    </script>
+</body>
+</html>
